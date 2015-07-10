@@ -1,0 +1,221 @@
+{
+	"type": "Collection",
+	"properties": {
+		"numberCase": {
+			"name": "numberCase",
+			"type": "number",
+			"typeLabel": "number",
+			"required": true,
+			"id": "numberCase",
+			"order": 0
+		},
+		"customer": {
+			"name": "customer",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "customer",
+			"order": 1
+		},
+		"performer": {
+			"name": "performer",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "performer",
+			"order": 2
+		},
+		"dateGetCase": {
+			"name": "dateGetCase",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "dateGetCase",
+			"order": 3
+		},
+		"dateReceiptCase": {
+			"name": "dateReceiptCase",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "dateReceiptCase",
+			"order": 4
+		},
+		"typeInsurance": {
+			"name": "typeInsurance",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "typeInsurance",
+			"order": 5
+		},
+		"affiliate": {
+			"name": "affiliate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "affiliate",
+			"order": 6
+		},
+		"euroProtocol": {
+			"name": "euroProtocol",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "euroProtocol",
+			"order": 7
+		},
+		"seriya500": {
+			"name": "seriya500",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "seriya500",
+			"order": 8
+		},
+		"totalPayments": {
+			"name": "totalPayments",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "totalPayments",
+			"order": 9
+		},
+		"numberInsuranceContract": {
+			"name": "numberInsuranceContract",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "numberInsuranceContract",
+			"order": 10
+		},
+		"dateInsuranceContract": {
+			"name": "dateInsuranceContract",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "dateInsuranceContract",
+			"order": 11
+		},
+		"numberInsuranceCase": {
+			"name": "numberInsuranceCase",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "numberInsuranceCase",
+			"order": 12
+		},
+		"dateCrash": {
+			"name": "dateCrash",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "dateCrash",
+			"order": 13
+		},
+		"placeCrash": {
+			"name": "placeCrash",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "placeCrash",
+			"order": 14
+		},
+		"f2Status": {
+			"name": "f2Status",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "f2Status",
+			"order": 15
+		},
+		"f2Region": {
+			"name": "f2Region",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "f2Region",
+			"order": 16
+		},
+		"daiName": {
+			"name": "daiName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "daiName",
+			"order": 17
+		},
+		"f2Number": {
+			"name": "f2Number",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "f2Number",
+			"order": 18
+		},
+		"f2Type": {
+			"name": "f2Type",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "f2Type",
+			"order": 19
+		},
+		"f2DateRequst": {
+			"name": "f2DateRequst",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "f2DateRequst",
+			"order": 20
+		},
+		"f2DateReceipt": {
+			"name": "f2DateReceipt",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "f2DateReceipt",
+			"order": 21
+		},
+		"statusWork": {
+			"name": "statusWork",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "statusWork",
+			"order": 22
+		},
+		"statusFinal": {
+			"name": "statusFinal",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "statusFinal",
+			"order": 23
+		},
+		"dateExclusion": {
+			"name": "dateExclusion",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "dateExclusion",
+			"order": 24
+		},
+		"reasonExclusion": {
+			"name": "reasonExclusion",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "reasonExclusion",
+			"order": 25
+		},
+		"application": {
+			"name": "application",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "application",
+			"order": 26
+		}
+	}
+}
