@@ -33,7 +33,7 @@ b.on('update', bundle);
 b.on('log', gutil.log);
 
 function bundle() {
-    return b.bundle()
+    return b.bundle ()
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('bundle.js'))
         .pipe(buffer())
