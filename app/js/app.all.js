@@ -68,3 +68,90 @@ angular.module('baseApp',
             });
 
     }]);
+angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', function($scope){
+    "use strict";
+
+    $scope.pages = [
+        {
+            name: 'main',
+            title: ' Головна',
+            icon: 'home'
+        },
+        {
+            name: 'case',
+            title: 'Справа #',
+            icon: 'file'
+        },
+        {
+            name: 'search',
+            title: ' Пошук',
+            icon: 'search'
+        }
+    ];
+
+    //print
+
+}]);
+angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', function($scope){
+    "use strict";
+
+    var caseMenu = [
+
+    ];
+
+
+}]);
+angular.module('baseApp.controller.main', []).controller('mainCtrl', ['$scope', function($scope){
+    "use strict";
+
+
+}]);
+'use strict';
+
+/* Directives */
+
+angular.module('baseApp.directive.menu', []).directive('headerMenu', function() {
+    return {
+        restrict: 'EA',
+        templateUrl: 'template/menu.html'
+    }
+});
+
+angular.module('baseApp.directive.case', [])
+    .directive('caseHeader', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/header.html'
+        }
+    })
+
+    .directive('caseBody', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/body.html'
+        }
+    })
+
+    .directive('caseFooter', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/footer.html'
+        }
+    })
+
+    .directive('caseInsurer', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/insurer.html'
+        }
+    });
+
+
+'use strict';
+
+/* Filters */
+
+'use strict';
+
+/* Services */
+
