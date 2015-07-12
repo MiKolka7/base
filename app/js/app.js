@@ -47,10 +47,10 @@ angular.module('baseApp',
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
         'use strict';
 
-        //$locationProvider.html5Mode({
-        //    enabled: true,
-        //    requireBase: false
-        //});
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
 
         $routeProvider
             .when('/', {
