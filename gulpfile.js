@@ -16,7 +16,7 @@ var   gulp         = require('gulp')
     // , assign     = require('lodash.assign')
     // , watchify   = require('watchify')
     // , browserify = require('browserify')
-    // , sourcemaps = require('gulp-sourcemaps')
+     , sourcemaps = require('gulp-sourcemaps')
     ;
 
 /*
@@ -57,7 +57,8 @@ gulp.task('server', function() {
 gulp.task('html',function(){
     gulp.src(['./app/template/**/*.html' ,'index.html'])
         .pipe(connect.reload())
-        .pipe(notify("Change html"));
+        //.pipe(notify("Change html"))
+    ;
 });
 
 
@@ -65,7 +66,8 @@ gulp.task('html',function(){
 gulp.task('css',function(){
     gulp.src('./app/css/*.css')
         .pipe(connect.reload())
-        .pipe(notify("Change css"));
+        //.pipe(notify("Change css"))
+    ;
 });
 
 
@@ -73,7 +75,6 @@ gulp.task('css',function(){
 gulp.task('js', function() {
     gulp.src([
             './app/js/app.js',
-            './app/js/route.js',
             './app/js/controllers/*.js',
             './app/js/directives.js',
             './app/js/filters.js',
@@ -84,7 +85,8 @@ gulp.task('js', function() {
         .pipe(gulp.dest('./app/js/'))
         .pipe(sourcemaps.write())
         .pipe(connect.reload())
-        .pipe(notify("Change js"));
+        //.pipe(notify("Change js"))
+    ;
 });
 
 gulp.task('js-lib', function() {
