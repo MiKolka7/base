@@ -1,0 +1,22 @@
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ng-repeat="page in pages"
+                    ng-class="page == activePage ? 'active' : '' ">
+                    <a href="{{ page.name }}">
+                        <i class="glyphicon glyphicon-{{ page.icon }}"></i>
+                        {{ page.title }}
+                    </a>
+                </li>
+            </ul>
+            <div class="navbar-header navbar-right">
+                <a class="navbar-brand" href="#">
+                </a>
+            </div>
+        </div>
+    </nav>
