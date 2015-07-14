@@ -1,0 +1,56 @@
+* {
+    font-weight: 300 !important;
+}
+
+.panel-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.info {
+    padding: 15px;
+}
+
+.btn:focus {
+    outline: 0 !important;
+}
+
+.form-horizontal .text-left {
+    text-align: left;
+}
+
+.form-horizontal h4 {
+    margin: 25px 0 15px;
+}
+
+.form-group {
+    max-width: 100%;
+    display: block;
+}
+
+.col-padding-0 {
+    padding: 0;
+}
+
+.col-margin-0 {
+    margin: 0;
+}
+
+.cur-p {
+    cursor: pointer;
+}
+
+.text-transparent {
+    color: transparent;
+}
+
+.case-item {
+    margin-bottom: -15px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.panel-footer {
+    border: 1px solid #ddd;
+    border-top: 0;
+}

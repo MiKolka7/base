@@ -96,7 +96,15 @@ angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', 
     "use strict";
 
     var caseMenu = [
-
+        , 'Страхувальник'
+        , 'ДТП, Ф-2, Потанова'
+        , 'Страхова справа'
+        , 'Винуватець'
+        , 'Заява/Претензія'
+        , 'Розрахунки'
+        , 'Суд винувитий'
+        , 'Суд СК'
+        , 'ВДВС'
     ];
 
 
@@ -143,6 +151,13 @@ angular.module('baseApp.directive.case', [])
         return {
             restrict: 'EA',
             templateUrl: 'template/case/insurer.html'
+        }
+    })
+
+    .directive('f2', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/f2.html'
         }
     });
 
