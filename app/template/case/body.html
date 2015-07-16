@@ -1,11 +1,11 @@
 
 <ul class="nav nav-tabs">
     <li ng-repeat="item in caseMenu"
-        ng-class="isPage == $index 'active' : '' "
-        ng-click="isPage == $index">
+        ng-class="isPage == $index ? 'active' : '' "
+        ng-click="setPage($index)">
         <a href="">{{ item }}</a>
     </li>
 </ul>
 
-<div case-insurer class="info form-horizontal clearfix case-item"></div>
-<div f2 class="info form-horizontal clearfix case-item"></div>
+<div class="info form-horizontal clearfix case-item" ng-show="isPage == 0" case-insurer ></div>
+<div class="info form-horizontal clearfix case-item" ng-show="isPage == 1" form-two></div>

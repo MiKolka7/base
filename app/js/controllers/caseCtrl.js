@@ -1,8 +1,14 @@
 angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', function($scope){
     "use strict";
 
-    var caseMenu = [
-        , 'Страхувальник'
+    $scope.isPage = 0;
+
+    $scope.setPage = function (num) {
+        return $scope.isPage = num;
+    };
+
+    $scope.caseMenu = [
+          'Страхувальник'
         , 'ДТП, Ф-2, Потанова'
         , 'Страхова справа'
         , 'Винуватець'

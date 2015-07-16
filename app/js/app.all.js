@@ -47,10 +47,10 @@ angular.module('baseApp',
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
         'use strict';
 
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
+        //$locationProvider.html5Mode({
+        //    enabled: true,
+        //    requireBase: false
+        //});
 
         $routeProvider
             .when('/', {
@@ -95,8 +95,14 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', fu
 angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', function($scope){
     "use strict";
 
-    var caseMenu = [
-        , 'Страхувальник'
+    $scope.isPage = 0;
+
+    $scope.setPage = function (num) {
+        return $scope.isPage = num;
+    };
+
+    $scope.caseMenu = [
+          'Страхувальник'
         , 'ДТП, Ф-2, Потанова'
         , 'Страхова справа'
         , 'Винуватець'
@@ -126,6 +132,7 @@ angular.module('baseApp.directive.menu', []).directive('headerMenu', function() 
 });
 
 angular.module('baseApp.directive.case', [])
+
     .directive('caseHeader', function() {
         return {
             restrict: 'EA',
@@ -154,7 +161,7 @@ angular.module('baseApp.directive.case', [])
         }
     })
 
-    .directive('f2', function() {
+    .directive('formTwo', function() {
         return {
             restrict: 'EA',
             templateUrl: 'template/case/f2.html'

@@ -10,6 +10,7 @@ angular.module('baseApp.directive.menu', []).directive('headerMenu', function() 
 });
 
 angular.module('baseApp.directive.case', [])
+
     .directive('caseHeader', function() {
         return {
             restrict: 'EA',
@@ -38,7 +39,7 @@ angular.module('baseApp.directive.case', [])
         }
     })
 
-    .directive('f2', function() {
+    .directive('formTwo', function() {
         return {
             restrict: 'EA',
             templateUrl: 'template/case/f2.html'
