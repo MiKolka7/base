@@ -154,7 +154,7 @@ angular.module('baseApp.directive.case', [])
         }
     })
 
-    .directive('caseInsurer', function() {
+    .directive('insurer', function() {
         return {
             restrict: 'EA',
             templateUrl: 'template/case/insurer.html'
@@ -165,6 +165,13 @@ angular.module('baseApp.directive.case', [])
         return {
             restrict: 'EA',
             templateUrl: 'template/case/f2.html'
+        }
+    })
+
+    .directive('insurerCase', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/insurer-case.html'
         }
     });
 
