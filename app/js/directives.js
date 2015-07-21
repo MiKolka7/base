@@ -58,5 +58,12 @@ angular.module('baseApp.directive.case', [])
             restrict: 'EA',
             templateUrl: 'template/case/guilty.html'
         }
+    })
+
+    .directive('claim', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/сlaim.html'
+        }
     });
 
