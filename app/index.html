@@ -29,7 +29,12 @@
 
     <section class="row" header-menu></section>
 
-    <ng-view></ng-view>
+    <main ng-switch="activePage">
+        <div page-main ng-switch-when="main"></div>
+        <div page-case ng-switch-when="case"></div>
+    </main>
+
+    <!--<ng-view></ng-view>-->
 
 </body>
 </html>

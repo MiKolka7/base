@@ -54,12 +54,12 @@ angular.module('baseApp',
 
         $routeProvider
             .when('/', {
-                templateUrl: '/template/main.html',
+                //templateUrl: '/template/main.html',
                 controller: 'mainCtrl'
             })
 
             .when('/case', {
-                templateUrl: '/template/case.html',
+            //    templateUrl: '/template/case.html',
                 controller: 'caseCtrl'
             })
 
@@ -70,6 +70,11 @@ angular.module('baseApp',
     }]);
 angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', function($scope){
     "use strict";
+
+
+    $scope.setPage = function (page) {
+        return $scope.activePage = page;
+    };
 
     $scope.pages = [
         {
@@ -124,14 +129,32 @@ angular.module('baseApp.controller.main', []).controller('mainCtrl', ['$scope', 
 
 /* Directives */
 
-angular.module('baseApp.directive.menu', []).directive('headerMenu', function() {
-    return {
-        restrict: 'EA',
-        templateUrl: 'template/menu.html'
-    }
-});
+angular.module('baseApp.directive.menu', [])
+    .directive('headerMenu', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/menu.html'
+        }
+    });
 
 angular.module('baseApp.directive.case', [])
+
+    .directive('pageMain', function() {
+        return {
+            restrict: 'EA',
+            replace: true,
+            templateUrl: 'template/main.html'
+        }
+    })
+
+    .directive('pageCase', function() {
+        return {
+            restrict: 'EA',
+            replace: true,
+            templateUrl: 'template/case.html'
+        }
+    })
+
 
     .directive('caseHeader', function() {
         return {

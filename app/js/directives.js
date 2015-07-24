@@ -2,14 +2,32 @@
 
 /* Directives */
 
-angular.module('baseApp.directive.menu', []).directive('headerMenu', function() {
-    return {
-        restrict: 'EA',
-        templateUrl: 'template/menu.html'
-    }
-});
+angular.module('baseApp.directive.menu', [])
+    .directive('headerMenu', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/menu.html'
+        }
+    });
 
 angular.module('baseApp.directive.case', [])
+
+    .directive('pageMain', function() {
+        return {
+            restrict: 'EA',
+            replace: true,
+            templateUrl: 'template/main.html'
+        }
+    })
+
+    .directive('pageCase', function() {
+        return {
+            restrict: 'EA',
+            replace: true,
+            templateUrl: 'template/case.html'
+        }
+    })
+
 
     .directive('caseHeader', function() {
         return {

@@ -54,12 +54,12 @@ angular.module('baseApp',
 
         $routeProvider
             .when('/', {
-                templateUrl: '/template/main.html',
+                //templateUrl: '/template/main.html',
                 controller: 'mainCtrl'
             })
 
             .when('/case', {
-                templateUrl: '/template/case.html',
+            //    templateUrl: '/template/case.html',
                 controller: 'caseCtrl'
             })
 
