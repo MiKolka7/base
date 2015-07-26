@@ -59,16 +59,16 @@
 		},
 		"euroProtocol": {
 			"name": "euroProtocol",
-			"type": "string",
-			"typeLabel": "string",
+			"type": "boolean",
+			"typeLabel": "boolean",
 			"required": false,
 			"id": "euroProtocol",
 			"order": 7
 		},
 		"seriya500": {
 			"name": "seriya500",
-			"type": "string",
-			"typeLabel": "string",
+			"type": "boolean",
+			"typeLabel": "boolean",
 			"required": false,
 			"id": "seriya500",
 			"order": 8
@@ -131,8 +131,8 @@
 		},
 		"f2Region": {
 			"name": "f2Region",
-			"type": "string",
-			"typeLabel": "string",
+			"type": "number",
+			"typeLabel": "number",
 			"required": false,
 			"id": "f2Region",
 			"order": 16
@@ -216,6 +216,30 @@
 			"required": false,
 			"id": "application",
 			"order": 26
+		},
+		"note": {
+			"name": "note",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "note",
+			"order": 27
+		},
+		"task": {
+			"name": "task",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "task",
+			"order": 28
+		},
+		"regresBasecol": {
+			"name": "regresBasecol",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "regresBasecol",
+			"order": 29
 		}
 	}
 }
