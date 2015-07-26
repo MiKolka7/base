@@ -1,7 +1,7 @@
 angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', function($scope){
     "use strict";
 
-    $scope.isPage = 0;
+    $scope.isPage = 7;
 
     $scope.setPage = function (num) {
         return $scope.isPage = num;

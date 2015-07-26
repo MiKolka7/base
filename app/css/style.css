@@ -6,6 +6,28 @@ b, strong {
     font-weight: 700 !important;
 }
 
+label {
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+label.list-group-item {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;    
+}
+
+label.list-group-item:hover {
+    background-color: #d9edf7;
+}
+
 .panel-body {
     padding-left: 0;
     padding-right: 0
@@ -31,6 +53,34 @@ b, strong {
     max-width: 100%;
     display: block
 }
+
+    .form-group--full {
+        display: block;
+        height: 39px;
+        margin: 0 !important;
+        text-align: center;
+        line-height: 39px;
+    }
+        /*input:checked + .form-group--full:before {*/
+            /*content: '✓';*/
+        /*}*/
+
+        .form-group--full > input {
+            width: 100%;
+            background: transparent;
+            padding: 8px;
+            border: 0;
+            line-height: 1.4;
+        }
+
+        .form-group--full > input[type=checkbox] {
+            width: auto;
+        }
+
+            .form-group--full > input:focus {
+                outline: 0 !important;
+                background: #fff;
+            }
 
 .col-padding-0 {
     padding: 0
@@ -58,3 +108,19 @@ b, strong {
     border: 1px solid #ddd;
     border-top: 0
 }
+
+
+.table-theme-smit td {
+    padding: 0 !important;
+}
+
+.table-theme-smit td input[type=date] {
+    width: 125px;
+}
+
+@media screen and (max-width: 768px) {
+    .form-horizontal .form-group {
+        margin-left: 0;
+    }
+}
+

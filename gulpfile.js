@@ -55,7 +55,10 @@ gulp.task('server', function() {
 
 //html
 gulp.task('html',function(){
-    gulp.src(['./app/template/**/*.html' ,'index.html'])
+    gulp.src([
+        './app/template/**/*.html' ,
+        './app/index.html'
+    ])
         .pipe(connect.reload())
         //.pipe(notify("Change html"))
     ;
@@ -134,10 +137,10 @@ gulp.task('clean-js', function() {
 
 //watch
 gulp.task('watch', function () {
-    gulp.watch('./app/template/*', ['html']);
-    gulp.watch('./app/css/**/*', ['css']);
-    //gulp.watch('./app/js/**/*', ['clean-js']);
-    gulp.watch('./app/js/**/*', ['js']);
+    gulp.watch('./app/index.html', ['html']);
+    gulp.watch('./app/template/**/*.html', ['html']);
+    gulp.watch('./app/css/**/*.css', ['css']);
+    gulp.watch('./app/js/**/*.js', ['js']);
 });
 
 

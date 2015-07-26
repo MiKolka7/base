@@ -50,6 +50,7 @@ angular.module('baseApp.directive.case', [])
         }
     })
 
+
     .directive('insurer', function() {
         return {
             restrict: 'EA',
@@ -82,6 +83,34 @@ angular.module('baseApp.directive.case', [])
         return {
             restrict: 'EA',
             templateUrl: 'template/case/сlaim.html'
+        }
+    })
+
+    .directive('payment', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/payment.html'
+        }
+    })
+
+    .directive('courtQuilty', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/court-guilty.html'
+        }
+    })
+
+    .directive('courtCk', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/court-ck.html'
+        }
+    })
+
+    .directive('vdvs', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/vdvs.html'
         }
     });
 
