@@ -240,6 +240,14 @@
 			"required": false,
 			"id": "regresBasecol",
 			"order": 29
+		},
+		"tables": {
+			"name": "tables",
+			"type": "object",
+			"typeLabel": "object",
+			"required": false,
+			"id": "tables",
+			"order": 30
 		}
 	}
 }
