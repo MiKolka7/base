@@ -1,3 +1,117 @@
 {
-	"type": "UserCollection"
+	"type": "UserCollection",
+	"properties": {
+		"surname": {
+			"name": "surname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "surname",
+			"order": 0
+		},
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 1
+		},
+		"name2": {
+			"name": "name2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name2",
+			"order": 2
+		},
+		"position": {
+			"name": "position",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "position",
+			"order": 3
+		},
+		"company": {
+			"name": "company",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "company",
+			"order": 4
+		},
+		"companyStatus": {
+			"name": "companyStatus",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "companyStatus",
+			"order": 5
+		},
+		"birthday": {
+			"name": "birthday",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "birthday",
+			"order": 6
+		},
+		"sex": {
+			"name": "sex",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "sex",
+			"order": 7
+		},
+		"foto": {
+			"name": "foto",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "foto",
+			"order": 8
+		},
+		"dateEmployment": {
+			"name": "dateEmployment",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateEmployment",
+			"order": 9
+		},
+		"phone": {
+			"name": "phone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "phone",
+			"order": 10
+		},
+		"emailWork": {
+			"name": "emailWork",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "emailWork",
+			"order": 11
+		},
+		"emailPersonal": {
+			"name": "emailPersonal",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "emailPersonal",
+			"order": 12
+		},
+		"mobile": {
+			"name": "mobile",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "mobile",
+			"order": 13
+		}
+	}
 }

@@ -68,14 +68,39 @@ angular.module('baseApp',
             });
 
     }]);
-angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', function($scope){
+angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$http', function($scope, $http){
     "use strict";
+
+    //$http.get('/json/vdai.json').success(function(data){
+    //    console.log(data);
+
+        //data.forEach(function(item){
+        //    $http.post('http://localhost:2403/vdai', item).success(function(data){});
+        //});
+    //});
 
     $scope.activePage = 'case';
 
     $scope.setPage = function (page) {
-        return $scope.activePage = page;
+        //return $scope.activePage = page;
     };
+
+
+    $scope.data = {
+        base: {
+            f2Region: 10,
+            f2Status: -1
+        },
+        vdai: {},
+        insurer: {},
+        judge: {}
+    };
+
+
+    $http.get('http://localhost:2403/vdai').success(function(data){
+        $scope.data.vdai = data;
+        console.log('vdai', data);
+    });
 
     $scope.pages = [
         {
@@ -94,6 +119,12 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', fu
             icon: 'search'
         }
     ];
+
+
+    $scope.$watch('data.base.f2Region', function(a){
+        //alert(a);
+        //$scope.data.base.numberInsuranceContract = String(a);
+    });
 
     $scope.regions = [
         {
@@ -212,7 +243,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', fu
 angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', function($scope){
     "use strict";
 
-    $scope.isPage = 7;
+    $scope.isPage = 1;
 
     $scope.setPage = function (num) {
         return $scope.isPage = num;
@@ -229,6 +260,11 @@ angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', 
         , 'Суд СК'
         , 'ВДВС'
     ];
+
+
+    $scope.setVdaiIndex = function (a) {
+        alert(a);
+    }
 
 
 }]);

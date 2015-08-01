@@ -18,27 +18,27 @@
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">Прізвище</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.surname">
+            <input type="text" class="form-control" ng-model="data.insurer.surname">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">Ім'я</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.name">
+            <input type="text" class="form-control" ng-model="data.insurer.name">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">По батькові</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.name2">
+            <input type="text" class="form-control" ng-model="data.insurer.name2">
         </span>
     </label>
 
     <div class="form-group">
         <label class="col-sm-9 col-sm-offset-3 col-padding-0 cur-p">
-            <input type="checkbox" ng-model="insurer.driverInsurer">
+            <input type="checkbox" ng-model="data.insurer.driveInsurer">
             Водій і страхувальник одна особа
         </label>
     </div>
@@ -50,14 +50,14 @@
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">Марка авто</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.object">
+            <input type="text" class="form-control" ng-model="data.insurer.object">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">д.р.н.</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.number">
+            <input type="text" class="form-control" ng-model="data.insurer.number">
         </span>
     </label>
 
@@ -67,14 +67,14 @@
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">Дата</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="date" class="form-control" ng-model="base.numberInsuranceContract">
+            <input type="date" class="form-control" ng-model="data.base.numberInsuranceContract">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">Номер</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="base.dateInsuranceContract">
+            <input type="text" class="form-control" ng-model="data.base.dateInsuranceContract">
         </span>
     </label>
 
@@ -84,21 +84,21 @@
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">Прізвище</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.driverSurname">
+            <input type="text" class="form-control" ng-model="data.insurer.driverSurname">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">Ім'я</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.driverName">
+            <input type="text" class="form-control" ng-model="data.insurer.driverName">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-3 control-label text-left">По батькові</span>
         <span class="col-sm-9 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.DriverName2">
+            <input type="text" class="form-control" ng-model="data.insurer.DriverName2">
         </span>
     </label>
 
@@ -111,14 +111,14 @@
     <label class="form-group">
         <span class="col-sm-4 control-label text-left">Філія</span>
         <span class="col-sm-8 col-padding-0">
-            <input type="text" class="form-control" ng-model="base.affiliate">
+            <input type="text" class="form-control" ng-model="data.base.affiliate">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-4 control-label text-left">Вид страхування</span>
         <span class="col-sm-8 col-padding-0">
-            <select class="form-control" ng-model="base.typeInsurance">
+            <select class="form-control" ng-model="data.base.typeInsurance">
                 <option value="КАСКО" selected="selected">КАСКО</option>
                 <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
                 <option value="Майно">Майно</option>
@@ -130,14 +130,14 @@
     <label class="form-group">
         <span class="col-sm-4 control-label text-left">Дата заяви про СВ</span>
         <span class="col-sm-8 col-padding-0">
-            <input type="date" class="form-control" ng-model="">>
+            <input type="date" class="form-control" b-ng-model="">
         </span>
     </label>
 
     !!!
     <label class="form-group" ng-show="typeInsurance === 'ОСЦПВВНТЗ'">
         <span class="col-sm-4 control-label text-left">Підстава регресу</span>
-        <span class="col-sm-8 col-padding-0" ng-model="">>
+        <span class="col-sm-8 col-padding-0" b-ng-model="">
             <select class="form-control"></select>
         </span>
     </label>
@@ -149,21 +149,21 @@
     <label class="form-group">
         <span class="col-sm-4 control-label text-left">Назва</span>
         <span class="col-sm-8 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.beneficiary">
+            <input type="text" class="form-control" ng-model="data.insurer.beneficiary">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-4 control-label text-left"># згоди</span>
         <span class="col-sm-8 col-padding-0">
-            <input type="text" class="form-control" ng-model="insurer.ConsentNumber">
+            <input type="text" class="form-control" ng-model="data.insurer.ConsentNumber">
         </span>
     </label>
 
     <label class="form-group">
         <span class="col-sm-4 control-label text-left">Дата згоди</span>
         <span class="col-sm-8 col-padding-0">
-            <input type="date" class="form-control" ng-model="insurer.consentDate">
+            <input type="date" class="form-control" ng-model="data.insurer.consentDate">
         </span>
     </label>
 
