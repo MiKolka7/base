@@ -161,12 +161,12 @@
 			"id": "f2Type",
 			"order": 19
 		},
-		"f2DateRequst": {
-			"name": "f2DateRequst",
+		"f2DateRequest": {
+			"name": "f2DateRequest",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "f2DateRequst",
+			"id": "f2DateRequest",
 			"order": 20
 		},
 		"f2DateReceipt": {

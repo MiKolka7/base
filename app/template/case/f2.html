@@ -23,14 +23,14 @@
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">Дата-час</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="datetime-local" class="form-control">
+                <input type="datetime-local" class="form-control" ng-model="base.dateCrash">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">Місце</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" ng-model="base.placeCrash">
             </span>
         </label>
 
@@ -39,7 +39,7 @@
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">ВДАІ (регіон)</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
+                <select class="form-control" ng-model="base.f2Region" ng-options="id, name regions">
                 </select>
             </span>
         </label>
@@ -47,7 +47,7 @@
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">ВДАІ (коротко)</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
+                <select class="form-control" ng-model="vdai.workName">
                 </select>
             </span>
         </label>
@@ -55,7 +55,7 @@
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">ВДАІ</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
+                <select class="form-control" ng-model="base.daiName" ng-options="vdai.fullName">
                 </select>
             </span>
         </label>
@@ -63,14 +63,14 @@
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">ВДАІ (місто)</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text" readonly="readonly" class="form-control" ng-model="vdai.city">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">ВДАІ (вулиця)</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date" readonly="readonly" class="form-control" ng-model="vdai.street">
             </span>
         </label>
 
@@ -79,7 +79,7 @@
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">Райсуд (регіон)</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
+                <select class="form-control" ng-options="regions">
                 </select>
             </span>
         </label>
@@ -87,7 +87,7 @@
         <label class="form-group">
             <span class="col-sm-3 control-label text-left">Райсуд</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
+                <select class="form-control" ng-options="judge.court">
                 </select>
             </span>
         </label>
@@ -102,7 +102,7 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Нвявність</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control" ng-model="f2Status">
+                <select class="form-control" ng-model="base.f2Status">
                     <option value="-1">Замовити</option>
                     <option value="0">Замовлено</option>
                     <option value="1">Отримано</option>
@@ -110,24 +110,24 @@
             </span>
         </label>
 
-        <label class="form-group" ng-show=" (f2Status == 0) || (f2Status == 1) ">
+        <label class="form-group" ng-if=" (base.f2Status == 0) || (base.f2Status == 1) ">
             <span class="col-sm-4 control-label text-left">Дата запиту</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" ng-model="base.f2DateRequest">
             </span>
         </label>
 
-        <label class="form-group" ng-show="f2Status == 1">
+        <label class="form-group" ng-if="base.f2Status == 1">
             <span class="col-sm-4 control-label text-left">Номер</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" ng-model="base.f2Number">
             </span>
         </label>
 
-        <label class="form-group" ng-show="f2Status == 1">
+        <label class="form-group" ng-if="base.f2Status == 1">
             <span class="col-sm-4 control-label text-left">Вид</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
+                <select class="form-control" ng-model="base.f2Type">
                     <option value="Відомості">Відомості</option>
                     <option value="Довідка">Довідка</option>
                 </select>
