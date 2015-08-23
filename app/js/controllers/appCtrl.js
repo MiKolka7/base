@@ -12,7 +12,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
     $scope.activePage = 'case';
 
     $scope.setPage = function (page) {
-        //return $scope.activePage = page;
+        return $scope.activePage = page;
     };
 
 
@@ -29,7 +29,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
 
     $http.get('http://localhost:2403/vdai').success(function(data){
         $scope.data.vdai = data;
-        console.log('vdai', data);
+        //console.log('vdai', data);
     });
 
     $scope.pages = [
@@ -40,7 +40,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
         },
         {
             name: 'case',
-            title: 'Справа #',
+            title: ' Справа #',
             icon: 'file'
         },
         {
@@ -93,7 +93,8 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
             id: 8,
             name: 'Івано-Франківська'
 
-        },	{
+        },
+        {
             id: 9,
             name: 'Київ'
         },

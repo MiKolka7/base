@@ -1,22 +1,22 @@
 {
   "name": "base",
   "description": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "angular": "1.4.2",
     "angular-mocks": "1.4.2",
     "angular-route": "1.4.2",
-    "angular-bootstrap-lightbox": "latest",
     "angular-loading-bar": "latest",
     "angular-cookies": "1.4.2",
     "angular-animate": "latest",
-    "ap.fotorama": "latest",
+    "angular-bootstrap": "latest",
     "jquery": "latest",
     "bootstrap": "latest",
     "karma": "latest",
     "karma-chrome-launcher": "latest",
     "karma-jasmine": "latest",
     "protractor": "latest",
-    "shelljs": "latest"
+    "shelljs": "latest",
+    "ngDialog": "latest"
   }
 }

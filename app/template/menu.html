@@ -6,12 +6,12 @@
                 </a>
             </div>
             <ul class="nav navbar-nav">
-                <li ng-repeat="page in pages"
+                <li ng-repeat="page in pages track by $index"
                     ng-class="page == activePage ? 'active' : '' "
                     ng-click="setPage(page.name)">
-                    <a href="#{{ page.name }}">
-                        <i class="glyphicon glyphicon-{{ ::page.icon }}"></i>
-                        {{ ::page.title }}
+                    <a href="#{{ ::page.name }}">
+                        <i class="glyphicon glyphicon-{{ ::page.icon }}"
+                           ng-bind=" ::page.title "></i>
                     </a>
                 </li>
             </ul>

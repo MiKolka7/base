@@ -78,7 +78,7 @@ gulp.task('css',function(){
 gulp.task('js', function() {
     gulp.src([
             './app/js/app.js',
-            './app/js/controllers/*.js',
+            './app/js/controllers/**/*.js',
             './app/js/directives.js',
             './app/js/filters.js',
             './app/js/services.js'

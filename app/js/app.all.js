@@ -7,10 +7,25 @@ angular.module('baseApp',
         , 'ngCookies'
         , 'ngAnimate'
         , 'chieffancypants.loadingBar'
+        , 'ngDialog'
 
         , 'baseApp.controller.app'
         , 'baseApp.controller.main'
         , 'baseApp.controller.case'
+        , 'baseApp.controller.case.insurer'
+        , 'baseApp.controller.case.guilty'
+        , 'baseApp.controller.case.claim'
+        , 'baseApp.controller.case.action'
+        , 'baseApp.controller.case.dvs'
+        , 'baseApp.controller.case.insuranceEvent'
+        , 'baseApp.controller.case.insuranceCompany'
+        , 'baseApp.controller.case.claimCk'
+        , 'baseApp.controller.case.actionCk'
+        , 'baseApp.controller.case.dvsCk'
+        , 'baseApp.controller.case.payment'
+        , 'baseApp.controller.case.instanceCk'
+        , 'baseApp.controller.case.instanceQuilty'
+        , 'baseApp.controller.case.instanceOwner'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.case'
@@ -82,7 +97,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
     $scope.activePage = 'case';
 
     $scope.setPage = function (page) {
-        //return $scope.activePage = page;
+        return $scope.activePage = page;
     };
 
 
@@ -99,7 +114,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
 
     $http.get('http://localhost:2403/vdai').success(function(data){
         $scope.data.vdai = data;
-        console.log('vdai', data);
+        //console.log('vdai', data);
     });
 
     $scope.pages = [
@@ -110,7 +125,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
         },
         {
             name: 'case',
-            title: 'Справа #',
+            title: ' Справа #',
             icon: 'file'
         },
         {
@@ -163,7 +178,8 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
             id: 8,
             name: 'Івано-Франківська'
 
-        },	{
+        },
+        {
             id: 9,
             name: 'Київ'
         },
@@ -240,39 +256,164 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
     //print
 
 }]);
-angular.module('baseApp.controller.case', []).controller('caseCtrl', ['$scope', function($scope){
+angular.module('baseApp.controller.case', [])
+    .controller('caseCtrl', function($scope, ngDialog){
     "use strict";
 
-    $scope.isPage = 1;
+    //$scope.isPage = 1;
 
     $scope.setPage = function (num) {
         return $scope.isPage = num;
     };
 
-    $scope.caseMenu = [
-          'Страхувальник'
-        , 'ДТП, Ф-2, Потанова'
-        , 'Страхова справа'
-        , 'Винуватець'
-        , 'Заява/Претензія'
-        , 'Розрахунки'
-        , 'Суд винувитий'
-        , 'Суд СК'
-        , 'ВДВС'
-    ];
+    var name = 'insurer';
+
+    ngDialog.open({
+        template: 'template/case/case-item/' + name + '.html',
+        controller: name + 'Ctrl'
+    });
+    //$scope.caseMenu = [
+    //      'Страхувальник'
+    //    , 'ДТП, Ф-2, Потанова'
+    //    , 'Страхова справа'
+    //    , 'Винуватець'
+    //    , 'Заява/Претензія'
+    //    , 'Розрахунки'
+    //    , 'Суд винувитий'
+    //    , 'Суд СК'
+    //    , 'ВДВС'
+    //];
 
 
     $scope.setVdaiIndex = function (a) {
         alert(a);
-    }
+    };
+
+    $scope.openCaseItem = function (name) {
+        ngDialog.open({
+            template: 'template/case/case-item/' + name + '.html',
+            controller: name + 'Ctrl'
+        });
+    };
 
 
-}]);
+});
 angular.module('baseApp.controller.main', []).controller('mainCtrl', ['$scope', function($scope){
     "use strict";
 
 
 }]);
+angular.module('baseApp.controller.case.actionCk', [])
+    .controller('actionCkCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.action', [])
+    .controller('actionCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.claimCk', [])
+    .controller('claimCkCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.claim', [])
+    .controller('claimCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.dvsCk', [])
+    .controller('dvsCkCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.dvs', [])
+    .controller('dvsCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.guilty', [])
+    .controller('guiltyCtrl', function($scope){
+        "use strict";
+
+
+
+    });
+angular.module('baseApp.controller.case.instanceCk', [])
+    .controller('instanceCkCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.instanceOwner', [])
+    .controller('instanceOwnerCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.instanceQuilty', [])
+    .controller('instanceQuiltyCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.insuranceCompany', [])
+    .controller('insuranceCompanyCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.insuranceEvent', [])
+    .controller('insuranceEventCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.insurer', [])
+    .controller('insurerCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
+angular.module('baseApp.controller.case.payment', [])
+    .controller('paymentCtrl', function($scope){
+        "use strict";
+
+
+
+
+    });
 'use strict';
 
 /* Directives */
@@ -386,6 +527,13 @@ angular.module('baseApp.directive.case', [])
         return {
             restrict: 'EA',
             templateUrl: 'template/case/vdvs.html'
+        }
+    })
+
+    .directive('caseMain', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/case-main.html'
         }
     });
 

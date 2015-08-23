@@ -54,6 +54,13 @@ label.list-group-item:hover {
     display: block
 }
 
+    .form-group:after {
+        content: '';
+        clear: both;
+        display: table;
+        overflow: hidden;
+    }
+
     .form-group--full {
         display: block;
         height: 39px;
@@ -99,6 +106,7 @@ label.list-group-item:hover {
 }
 
 .case-item {
+    margin-top: -15px;
     margin-bottom: -15px;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd
@@ -124,3 +132,63 @@ label.list-group-item:hover {
     }
 }
 
+
+.panel table td:first-child {
+    white-space: nowrap;
+}
+.panel table td:nth-of-type(2) {
+    width: 100%;
+}
+
+
+.case-section {
+    font-size: 0;
+}
+
+.case-section-item {
+    width: 20%;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+
+.case-section-item .panel-heading:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1349px) {
+    .case-section-item {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .case-section-item {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .case-section-item {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .case-section-item {
+        width: 100%;
+    }
+}
+
+.fz14 {
+    font-size: 14px;
+}
+
+
+
+body.ngdialog-open > .wrap {
+    -webkit-filter: blur(5px);
+       -moz-filter: blur(5px);
+        -ms-filter: blur(5px);
+}

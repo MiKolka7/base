@@ -112,5 +112,12 @@ angular.module('baseApp.directive.case', [])
             restrict: 'EA',
             templateUrl: 'template/case/vdvs.html'
         }
+    })
+
+    .directive('caseMain', function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'template/case/case-main.html'
+        }
     });
 
