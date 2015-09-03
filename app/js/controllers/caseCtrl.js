@@ -2,23 +2,12 @@ angular.module('baseApp.controller.case', [])
     .controller('caseCtrl', function($scope, ngDialog){
     "use strict";
 
-    var name = 'instanceQuilty';
+    var name = 'instanceCk';
 
     ngDialog.open({
         template: 'template/case/case-item/' + name + '.html',
         controller: name + 'Ctrl'
     });
-    //$scope.caseMenu = [
-    //      'Страхувальник'
-    //    , 'ДТП, Ф-2, Потанова'
-    //    , 'Страхова справа'
-    //    , 'Винуватець'
-    //    , 'Заява/Претензія'
-    //    , 'Розрахунки'
-    //    , 'Суд винувитий'
-    //    , 'Суд СК'
-    //    , 'ВДВС'
-    //];
 
 
     $scope.setVdaiIndex = function (a) {
