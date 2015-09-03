@@ -1,0 +1,116 @@
+
+<div class="container-fluid">
+    <div class="row">
+
+        <h3>
+            Страхова подія
+            &nbsp
+            &nbsp
+            &nbsp
+            <label class="checkbox-inline small">
+                <input type="checkbox" value="">
+                Європротокол
+            </label>
+        </h3>
+
+
+
+        <section class="col-sm-6">
+
+            <section>
+                <h4 class="case-item-title" >ДТП</h4>
+
+                <label class="form-group">
+                    <span class="col-sm-3 control-label text-left">Дата-час</span>
+                    <span class="col-sm-9 col-padding-0">
+                        <input type="datetime-local" class="form-control">
+                    </span>
+                </label>
+
+                <label class="form-group">
+                    <span class="col-sm-3 control-label text-left">Місце</span>
+                    <span class="col-sm-9 col-padding-0">
+                        <input type="text" class="form-control">
+                    </span>
+                </label>
+            </section>
+
+            <section>
+                <h4 class="case-item-title">ВДАІ</h4>
+
+                <label class="form-group">
+                    <span class="col-sm-3 control-label text-left">ВДАІ область</span>
+                    <span class="col-sm-9 col-padding-0">
+                        <select class="form-control"
+                                ng-model="data.base.f2Region"
+                                ng-options="item.id as item.name for item in regions">
+                        </select>
+                    </span>
+                </label>
+
+                <label class="form-group">
+                    <span class="col-sm-3 control-label text-left">ВДАІ назва</span>
+                    <span class="col-sm-9 col-padding-0">
+                        <select class="form-control" ng-model="data.base.daiName">
+                            <option value="{{::item.fullName}}"
+                                    ng-bind="::item.fullName"
+                                    ng-if="item.region === data.base.f2Region"
+                                    ng-repeat="item in data.vdai track by $index"></option>
+                        </select>
+                    </span>
+                </label>
+
+            </section>
+
+        </section>
+
+
+        <section class="col-sm-6">
+            <h4 class="case-item-title">
+                Розширена довідка ДАІ (Ф2)
+                <button class="btn btn-default pull-right" type="button">
+                    <i class="glyphicon glyphicon-file"></i>
+                    Запит Довідки Ф2
+                </button>
+            </h4>
+
+            <label class="form-group">
+                <span class="col-sm-3 control-label text-left">Нвявність</span>
+                <span class="col-sm-9 col-padding-0">
+                    <select class="form-control" ng-model="data.base.f2Status">
+                        <option ng-selected="data.base.f2Status === -1" value="-1">Замовити</option>
+                        <option ng-selected="data.base.f2Status === 0" value="0">Замовлено</option>
+                        <option ng-selected="data.base.f2Status === 1" value="1">Отримано</option>
+                    </select>
+                </span>
+            </label>
+
+            <label class="form-group" ng-if=" (data.base.f2Status == 0) || (data.base.f2Status == 1) ">
+                <span class="col-sm-3 control-label text-left">Дата запиту</span>
+                <span class="col-sm-9 col-padding-0">
+                    <input type="date" class="form-control" ng-model="data.base.f2DateRequest">
+                </span>
+            </label>
+
+            <label class="form-group" ng-if="data.base.f2Status == 1">
+                <span class="col-sm-3 control-label text-left">Номер довідки</span>
+                <span class="col-sm-9 col-padding-0">
+                    <input type="text" class="form-control" ng-model="data.base.f2Number">
+                </span>
+            </label>
+
+            <label class="form-group" ng-if="data.base.f2Status == 1">
+                <span class="col-sm-3 control-label text-left">Вид Ф2</span>
+                <span class="col-sm-9 col-padding-0">
+                    <select class="form-control" ng-model="data.base.f2Type">
+                        <option ng-selected="data.base.f2Type === 4" value="4">Відомості</option>
+                        <option ng-selected="data.base.f2Type === 5" value="5">Довідка</option>
+                    </select>
+                </span>
+            </label>
+            
+        </section>
+
+
+    </div>
+</div>
