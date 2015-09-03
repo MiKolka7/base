@@ -2,7 +2,7 @@ angular.module('baseApp.controller.case', [])
     .controller('caseCtrl', function($scope, ngDialog){
     "use strict";
 
-    var name = 'instanceCk';
+    var name = 'payment';
 
     ngDialog.open({
         template: 'template/case/case-item/' + name + '.html',
