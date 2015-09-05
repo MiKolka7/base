@@ -121,3 +121,25 @@ angular.module('baseApp.directive.case', [])
         }
     });
 
+
+
+angular.module('baseApp.directive.aside', [])
+    .directive('aside', function(ngDialog) {
+        return {
+            restrict: 'A',
+            templateUrl: 'template/aside.html',
+        }
+    })
+
+    .directive('scrollTop', function() {
+        var parent = $('.ngdialog');
+
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                element[0].onclick = function () {
+                    $('.ngdialog').animate({scrollTop: 0}, 500);
+                }
+            }
+        }
+    });

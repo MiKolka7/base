@@ -1,4 +1,4 @@
-angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$http', function($scope, $http){
+angular.module('baseApp.controller.app', []).controller('appCtrl', function($rootScope, $scope, $http){
     "use strict";
 
     //$http.get('/json/vdai.json').success(function(data){
@@ -16,7 +16,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
     };
 
 
-    $scope.data = {
+    $rootScope.data = {
         base: {
             f2Region: 10,
             f2Status: -1
@@ -28,7 +28,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
 
 
     $http.get('http://localhost:2403/vdai').success(function(data){
-        $scope.data.vdai = data;
+        $rootScope.data.vdai = data;
         //console.log('vdai', data);
     });
 
@@ -56,7 +56,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
         //$scope.data.base.numberInsuranceContract = String(a);
     });
 
-    $scope.regions = [
+    $rootScope.regions = [
         {
             id: 0,
             name: 'АР Крим'
@@ -170,4 +170,4 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
 
     //print
 
-}]);
+});

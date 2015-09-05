@@ -12,6 +12,8 @@ angular.module('baseApp',
         , 'baseApp.controller.app'
         , 'baseApp.controller.main'
         , 'baseApp.controller.case'
+        , 'baseApp.controller.aside'
+
         , 'baseApp.controller.case.insurer'
         , 'baseApp.controller.case.guilty'
         , 'baseApp.controller.case.claim'
@@ -27,7 +29,10 @@ angular.module('baseApp',
         , 'baseApp.controller.case.instanceQuilty'
         , 'baseApp.controller.case.instanceOwner'
 
+        , 'baseApp.controller.page.vdai'
+
         , 'baseApp.directive.menu'
+        , 'baseApp.directive.aside'
         , 'baseApp.directive.case'
     ])
 
@@ -59,22 +64,15 @@ angular.module('baseApp',
         });
     })
 
-    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+    .config(['$routeProvider', '$locationProvider', function($routeProvider){
         'use strict';
-
-        //$locationProvider.html5Mode({
-        //    enabled: true,
-        //    requireBase: false
-        //});
 
         $routeProvider
             .when('/', {
-                //templateUrl: '/template/main.html',
                 controller: 'mainCtrl'
             })
 
             .when('/case', {
-            //    templateUrl: '/template/case.html',
                 controller: 'caseCtrl'
             })
 

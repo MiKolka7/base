@@ -12,6 +12,8 @@ angular.module('baseApp',
         , 'baseApp.controller.app'
         , 'baseApp.controller.main'
         , 'baseApp.controller.case'
+        , 'baseApp.controller.aside'
+
         , 'baseApp.controller.case.insurer'
         , 'baseApp.controller.case.guilty'
         , 'baseApp.controller.case.claim'
@@ -27,7 +29,10 @@ angular.module('baseApp',
         , 'baseApp.controller.case.instanceQuilty'
         , 'baseApp.controller.case.instanceOwner'
 
+        , 'baseApp.controller.page.vdai'
+
         , 'baseApp.directive.menu'
+        , 'baseApp.directive.aside'
         , 'baseApp.directive.case'
     ])
 
@@ -59,22 +64,15 @@ angular.module('baseApp',
         });
     })
 
-    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+    .config(['$routeProvider', '$locationProvider', function($routeProvider){
         'use strict';
-
-        //$locationProvider.html5Mode({
-        //    enabled: true,
-        //    requireBase: false
-        //});
 
         $routeProvider
             .when('/', {
-                //templateUrl: '/template/main.html',
                 controller: 'mainCtrl'
             })
 
             .when('/case', {
-            //    templateUrl: '/template/case.html',
                 controller: 'caseCtrl'
             })
 
@@ -83,7 +81,7 @@ angular.module('baseApp',
             });
 
     }]);
-angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$http', function($scope, $http){
+angular.module('baseApp.controller.app', []).controller('appCtrl', function($rootScope, $scope, $http){
     "use strict";
 
     //$http.get('/json/vdai.json').success(function(data){
@@ -101,7 +99,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
     };
 
 
-    $scope.data = {
+    $rootScope.data = {
         base: {
             f2Region: 10,
             f2Status: -1
@@ -113,7 +111,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
 
 
     $http.get('http://localhost:2403/vdai').success(function(data){
-        $scope.data.vdai = data;
+        $rootScope.data.vdai = data;
         //console.log('vdai', data);
     });
 
@@ -141,7 +139,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
         //$scope.data.base.numberInsuranceContract = String(a);
     });
 
-    $scope.regions = [
+    $rootScope.regions = [
         {
             id: 0,
             name: 'АР Крим'
@@ -255,34 +253,29 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', ['$scope', '$
 
     //print
 
-}]);
+});
+angular.module('baseApp.controller.aside', [])
+    .controller('asideCtrl', function($scope, ngDialog){
+    "use strict";
+
+    $scope.openWindow = function (name) {
+        ngDialog.open({
+            template: 'template/page/' + name + '.html',
+            controller: name + 'Ctrl'
+        });
+    };
+
+});
 angular.module('baseApp.controller.case', [])
     .controller('caseCtrl', function($scope, ngDialog){
     "use strict";
 
-    //$scope.isPage = 1;
-
-    $scope.setPage = function (num) {
-        return $scope.isPage = num;
-    };
-
-    var name = 'insurer';
+    var name = 'guilty';
 
     ngDialog.open({
         template: 'template/case/case-item/' + name + '.html',
         controller: name + 'Ctrl'
     });
-    //$scope.caseMenu = [
-    //      'Страхувальник'
-    //    , 'ДТП, Ф-2, Потанова'
-    //    , 'Страхова справа'
-    //    , 'Винуватець'
-    //    , 'Заява/Претензія'
-    //    , 'Розрахунки'
-    //    , 'Суд винувитий'
-    //    , 'Суд СК'
-    //    , 'ВДВС'
-    //];
 
 
     $scope.setVdaiIndex = function (a) {
@@ -414,6 +407,43 @@ angular.module('baseApp.controller.case.payment', [])
 
 
     });
+angular.module('baseApp.controller.page.vdai', [])
+    .controller('vdaiCtrl', function($rootScope, $scope, $http){
+        "use strict";
+
+        var selectItemIndex;
+        $scope.isAdd = true;
+
+        $scope.editData = function (data, index) {
+            selectItemIndex = index;
+            $scope.vdai = data;
+            $scope.isAdd = false;
+        };
+
+        $scope.save = function () {
+            $http.put('http://localhost:2403/vdai/' + $scope.vdai.id, $scope.vdai).success(function(data){
+                if (data) {
+                    $rootScope.data.vdai[selectItemIndex] = data;
+                }
+            });
+        };
+
+        $scope.add = function () {
+            $http.post('http://localhost:2403/vdai', $scope.vdai).success(function(data){
+                $rootScope.data.vdai.unshift(data);
+                console.log(data);
+            });
+        };
+
+
+
+        $scope.reset = function () {
+            $scope.vdai = {};
+            $scope.isAdd = true;
+        };
+
+
+    });
 'use strict';
 
 /* Directives */
@@ -538,6 +568,27 @@ angular.module('baseApp.directive.case', [])
     });
 
 
+
+angular.module('baseApp.directive.aside', [])
+    .directive('aside', function(ngDialog) {
+        return {
+            restrict: 'A',
+            templateUrl: 'template/aside.html',
+        }
+    })
+
+    .directive('scrollTop', function() {
+        var parent = $('.ngdialog');
+
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                element[0].onclick = function () {
+                    $('.ngdialog').animate({scrollTop: 0}, 500);
+                }
+            }
+        }
+    });
 'use strict';
 
 /* Filters */

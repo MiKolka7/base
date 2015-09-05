@@ -16,6 +16,10 @@ ul {
     list-style-type: none;
 }
 
+.p-rel {
+    position: relative;
+}
+
 label.list-group-item {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -63,10 +67,10 @@ label.list-group-item:hover {
 
     .form-group--full {
         display: block;
-        height: 39px;
+        height: 34px;
         margin: 0 !important;
         text-align: center;
-        line-height: 39px;
+        line-height: 38px;
     }
         /*input:checked + .form-group--full:before {*/
             /*content: '✓';*/
@@ -191,4 +195,54 @@ body.ngdialog-open > .wrap {
     -webkit-filter: blur(5px);
        -moz-filter: blur(5px);
         -ms-filter: blur(5px);
+}
+
+
+.case-item-title {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+
+.aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 10;
+}
+
+
+h4 .btn {
+    margin-top: -10px;
+}
+
+
+select {
+    padding: 8px;
+    line-height: 1.4;
+    background: #fff;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: button;
+}
+
+.btn-delete-row {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+tr:hover .btn-delete-row {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+
+.btn.pull-right + .btn.pull-right {
+    margin-right: 10px;
 }

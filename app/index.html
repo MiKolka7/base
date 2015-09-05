@@ -34,6 +34,12 @@
 
         <section class="row" header-menu></section>
 
+        <aside class="aside navbar-default" aside
+               ng-controller="asideCtrl"
+               ng-click="visibleAside = false"
+               ng-show="visibleAside">
+        </aside>
+
         <main ng-switch="activePage">
             <div page-main ng-switch-when="main"></div>
             <div page-case ng-switch-when="case"></div>
