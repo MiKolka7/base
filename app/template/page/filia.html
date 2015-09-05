@@ -1,0 +1,86 @@
+
+<div class="container-fluid">
+    <div class="row">
+
+        <h3>Філія</h3>
+
+        <br/>
+
+        <div class="col-xs-4">
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Замовник</span>
+                <span class="col-sm-8 col-padding-0">
+                    <select class="form-control" ng-model="affiliate.customers">
+                        <option value="КАСКО" selected="selected">КАСКО</option>
+                        <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
+                        <option value="Майно">Майно</option>
+                    </select>
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Назва філії/ирекції</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.nameFull">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Рахунок №</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.score">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Банк назва</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.bank">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Банк МФО</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.mfo">
+                </span>
+            </label>
+
+        </div>
+
+
+        <div class="col-xs-6 text-right">
+            <button class="btn btn-warning" ng-click="reset()">Очистити</button>
+            <button class="btn btn-success" ng-click="save()" ng-show="!isAdd">Зберегти</button>
+            <button class="btn btn-success" ng-click="add()" ng-show="isAdd">Додати філію</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Замовник</th>
+                    <th>Назва філії/Дирекції</th>
+                    <th>Рахунок №</th>
+                    <th>Банк назва</th>
+                    <th>Банк МФО</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in affiliate track by $index"
+                    ng-click="editData(item, $index)"
+                    scroll-top>
+                    <td ng-bind="item.customers"></td>
+                    <td ng-bind="item.nameFull"></td>
+                    <td ng-bind="item.score"></td>
+                    <td ng-bind="item.bank"></td>
+                    <td ng-bind="item.mfo"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
