@@ -1,0 +1,110 @@
+
+<h3 class="case-item-title">
+    Страхові акти у справі
+</h3>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4">
+            <label class="form-group">
+        <span class="col-sm-4 control-label text-left">
+            Сума виплати
+        </span>
+        <span class="col-sm-7 col-padding-0">
+            <input type="number" class="form-control" readonly="readonly">
+        </span>
+            </label>
+        </div>
+        <button class="btn btn-primary pull-right">Дадати акт</button>
+    </div>
+</div>
+
+<table class="table table-bordered table-hover table-theme-smit">
+    <thead>
+        <tr>
+            <th>Дата платежу</th>
+            <th>Сума платежу</th>
+            <th>Платник</th>
+            <th>Призначення платежу</th>
+            <th>Звітний місяць</th>
+            <th>Звітний рік</th>
+            <th>Дата внесення</th>
+            <th>Автор внесення</th>
+            <th>Підтв. замовнику</th>
+            <th>Включено в акт</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <label class="form-group form-group--full">
+                    <input type="number" class="form-control"/>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <input type="date" class="form-control"/>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <select class="form-control" ng-model="ccStatus">
+                        <option value="-1">Замовити</option>
+                        <option value="0">Замовлено</option>
+                        <option value="1">Отримано</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <select class="form-control" ng-model="ccStatus">
+                        <option value="-1">Замовити</option>
+                        <option value="0">Замовлено</option>
+                        <option value="1">Отримано</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <select class="form-control" ng-model="ccStatus">
+                        <option value="-1">Замовити</option>
+                        <option value="0">Замовлено</option>
+                        <option value="1">Отримано</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <select class="form-control" ng-model="ccStatus">
+                        <option value="-1">Замовити</option>
+                        <option value="0">Замовлено</option>
+                        <option value="1">Отримано</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <input type="checkbox" class="form-control"/>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <input type="checkbox" class="form-control"/>
+                </label>
+            </td>
+            <td>
+                <label class="form-group form-group--full">
+                    <input type="text" class="form-control"/>
+                </label>
+            </td>
+            <td class="p-rel">
+                <label class="form-group form-group--full">
+                    <input type="date" class="form-control"/>
+                </label>
+                <button class="btn btn-danger btn-delete-row">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
