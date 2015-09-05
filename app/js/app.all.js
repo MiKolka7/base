@@ -30,6 +30,7 @@ angular.module('baseApp',
         , 'baseApp.controller.case.instanceOwner'
 
         , 'baseApp.controller.page.vdai'
+        , 'baseApp.controller.page.сustomers'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.aside'
@@ -441,6 +442,15 @@ angular.module('baseApp.controller.page.vdai', [])
             $scope.vdai = {};
             $scope.isAdd = true;
         };
+
+
+    });
+angular.module('baseApp.controller.page.сustomers', [])
+    .controller('сustomersCtrl', function($rootScope, $scope, $http){
+        "use strict";
+
+
+        $scope.customers = [];
 
 
     });

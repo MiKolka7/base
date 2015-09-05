@@ -30,6 +30,7 @@ angular.module('baseApp',
         , 'baseApp.controller.case.instanceOwner'
 
         , 'baseApp.controller.page.vdai'
+        , 'baseApp.controller.page.сustomers'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.aside'
