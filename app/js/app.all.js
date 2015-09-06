@@ -6,8 +6,12 @@ angular.module('baseApp',
         //, 'ngFileUpload'
         , 'ngCookies'
         , 'ngAnimate'
+        , 'oitozero.ngSweetAlert'
+        , 'ui-notification'
         , 'chieffancypants.loadingBar'
         , 'ngDialog'
+
+        , 'baseApp.filters'
 
         , 'baseApp.controller.app'
         , 'baseApp.controller.main'
@@ -32,6 +36,7 @@ angular.module('baseApp',
         , 'baseApp.controller.page.vdai'
         , 'baseApp.controller.page.сustomers'
         , 'baseApp.controller.page.filia'
+        , 'baseApp.controller.page.worker'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.aside'
@@ -40,6 +45,18 @@ angular.module('baseApp',
 
     .config(function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = true;
+    })
+
+    .config(function(NotificationProvider) {
+        NotificationProvider.setOptions({
+            delay: 3000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'left',
+            positionY: 'bottom'
+        });
     })
 
     .run(function ($rootScope, $location, $cookieStore) {
@@ -272,7 +289,7 @@ angular.module('baseApp.controller.case', [])
     .controller('caseCtrl', function($scope, ngDialog){
     "use strict";
 
-    var name = 'guilty';
+    //var name = 'guilty';
 
     ngDialog.open({
         template: 'template/case/case-item/' + name + '.html',
@@ -293,11 +310,12 @@ angular.module('baseApp.controller.case', [])
 
 
 });
-angular.module('baseApp.controller.main', []).controller('mainCtrl', ['$scope', function($scope){
+angular.module('baseApp.controller.main', [])
+    .controller('mainCtrl', function($scope, Notification){
     "use strict";
 
 
-}]);
+});
 angular.module('baseApp.controller.case.actionCk', [])
     .controller('actionCkCtrl', function($scope){
         "use strict";
@@ -446,39 +464,168 @@ angular.module('baseApp.controller.page.filia', [])
 
     });
 angular.module('baseApp.controller.page.vdai', [])
-    .controller('vdaiCtrl', function($rootScope, $scope, $http){
+    .controller('vdaiCtrl', function($rootScope, $scope, $http, Notification, SweetAlert){
         "use strict";
 
         var selectItemIndex;
+
+        /**
+         * $scope.isAdd
+         * true - можна додавати новий запис
+         * false - редагування обраного запису
+         */
         $scope.isAdd = true;
 
         $scope.editData = function (data, index) {
             selectItemIndex = index;
             $scope.vdai = data;
             $scope.isAdd = false;
+
+            Notification({
+                title: 'Обрано для редагування',
+                message: $scope.vdai.fullName
+            });
+        };
+
+        $scope.deleteData = function (i) {
+            var id = $rootScope.data.vdai[i].id;
+
+            SweetAlert.swal({
+                    title: "Видалити запис?",
+                    text: "Відновити буде неможливо!",
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: "Відміна",
+                    showLoaderOnConfirm: true,
+                    closeOnConfirm: false
+                },
+                function(isConfirm){
+                    if (isConfirm) {
+                        $http.delete('http://localhost:2403/vdai/' + id).success(function(data){
+                            if (data) {
+                                $rootScope.data.vdai.splice(selectItemIndex, 1);
+                                $scope.vdai = {};
+                                swal("Успішно!", "Запис видалено", "success");
+                            }
+                        }).error(function(){
+                            swal("Відміна", "Сталася помилка", "error");
+                        });
+                    }
+                });
         };
 
         $scope.save = function () {
             $http.put('http://localhost:2403/vdai/' + $scope.vdai.id, $scope.vdai).success(function(data){
                 if (data) {
                     $rootScope.data.vdai[selectItemIndex] = data;
+                    Notification.success('Дані оновлено!');
                 }
+            }).error(function(){
+                Notification.error('Виникла помилка!');
             });
         };
 
         $scope.add = function () {
             $http.post('http://localhost:2403/vdai', $scope.vdai).success(function(data){
                 $rootScope.data.vdai.unshift(data);
-                console.log(data);
+                Notification.success('Запис додано!');
+            }).error(function(){
+                Notification.error('Виникла помилка!');
             });
         };
-
-
 
         $scope.reset = function () {
             $scope.vdai = {};
             $scope.isAdd = true;
         };
+
+
+        $scope.selectOption = function (a) {
+            $scope.selectRegion = a;
+        }
+
+
+    });
+angular.module('baseApp.controller.page.worker', [])
+    .controller('workerCtrl', function($rootScope, $scope, $http, Notification, SweetAlert){
+        "use strict";
+
+        var selectItemIndex;
+
+        /**
+         * $scope.isAdd
+         * true - можна додавати новий запис
+         * false - редагування обраного запису
+         */
+        $scope.isAdd = true;
+
+        $scope.editData = function (data, index) {
+            selectItemIndex = index;
+            $scope.vdai = data;
+            $scope.isAdd = false;
+
+            Notification({
+                title: 'Обрано для редагування',
+                message: $scope.vdai.fullName
+            });
+        };
+
+        $scope.deleteData = function (i) {
+            var id = $rootScope.data.vdai[i].id;
+
+            SweetAlert.swal({
+                    title: "Видалити запис?",
+                    text: "Відновити буде неможливо!",
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: "Відміна",
+                    showLoaderOnConfirm: true,
+                    closeOnConfirm: false
+                },
+                function(isConfirm){
+                    if (isConfirm) {
+                        $http.delete('http://localhost:2403/vdai/' + id).success(function(data){
+                            if (data) {
+                                $rootScope.data.vdai.splice(selectItemIndex, 1);
+                                $scope.vdai = {};
+                                swal("Успішно!", "Запис видалено", "success");
+                            }
+                        }).error(function(){
+                            swal("Відміна", "Сталася помилка", "error");
+                        });
+                    }
+                });
+        };
+
+        $scope.save = function () {
+            $http.put('http://localhost:2403/vdai/' + $scope.vdai.id, $scope.vdai).success(function(data){
+                if (data) {
+                    $rootScope.data.vdai[selectItemIndex] = data;
+                    Notification.success('Дані оновлено!');
+                }
+            }).error(function(){
+                Notification.error('Виникла помилка!');
+            });
+        };
+
+        $scope.add = function () {
+            $http.post('http://localhost:2403/vdai', $scope.vdai).success(function(data){
+                $rootScope.data.vdai.unshift(data);
+                Notification.success('Запис додано!');
+            }).error(function(){
+                Notification.error('Виникла помилка!');
+            });
+        };
+
+        $scope.reset = function () {
+            $scope.vdai = {};
+            $scope.isAdd = true;
+        };
+
+
+        $scope.selectOption = function (a) {
+            $scope.selectRegion = a;
+        }
 
 
     });
@@ -625,21 +772,49 @@ angular.module('baseApp.directive.aside', [])
     })
 
     .directive('scrollTop', function() {
-        var parent = $('.ngdialog');
-
         return {
             restrict: 'A',
             link: function (scope, element, attr) {
                 element[0].onclick = function () {
-                    $('.ngdialog').animate({scrollTop: 0}, 500);
+                    $('body').animate({scrollTop: 0}, 500);
                 }
             }
         }
     });
-'use strict';
+angular.module('baseApp.filters', [])
 
-/* Filters */
+    .filter('unique', function(){
+        "use strict";
 
+        return function(arr, key) {
+            var obj = {};
+
+            arr.forEach(function(item){
+                var str = item[key];
+                obj[str] = true;
+            });
+
+            return Object.keys(obj);
+        }
+    })
+
+    .filter('exactlyFilter', function(){
+        "use strict";
+
+        return function(arr, num, key) {
+            var newArr = [];
+
+            arr.forEach(function(item){
+                if (item[key] == num)
+                    newArr.push(item);
+            });
+
+            if (!newArr.length)
+                newArr = arr;
+
+            return newArr;
+        }
+    });
 'use strict';
 
 /* Services */

@@ -36,6 +36,7 @@ angular.module('baseApp',
         , 'baseApp.controller.page.vdai'
         , 'baseApp.controller.page.сustomers'
         , 'baseApp.controller.page.filia'
+        , 'baseApp.controller.page.worker'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.aside'
