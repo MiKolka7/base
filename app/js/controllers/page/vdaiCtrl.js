@@ -69,12 +69,15 @@ angular.module('baseApp.controller.page.vdai', [])
             });
         };
 
-
-
         $scope.reset = function () {
             $scope.vdai = {};
             $scope.isAdd = true;
         };
+
+
+        $scope.selectOption = function (a) {
+            $scope.selectRegion = a;
+        }
 
 
     });

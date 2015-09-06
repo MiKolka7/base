@@ -248,3 +248,15 @@ tr:hover .btn-delete-row {
 .btn.pull-right + .btn.pull-right {
     margin-right: 10px;
 }
+
+th.dropdown {
+    padding: 0 !important;
+}
+th.dropdown > .btn {
+    width: 100%;
+    margin: 0 !important;
+    padding: 8px;
+    text-align: left;
+    border: 0;
+    border-radius: 0;
+}

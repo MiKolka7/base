@@ -93,8 +93,30 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Регіон</th>
-                    <th>Назва робоча</th>
+                    <th class="dropdown">
+                        <button class="btn btn-default dropdown-toggle"
+                                type="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="true">
+                            Регіон
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu"
+                            aria-labelledby="dropdownMenu3">
+                            <li>
+                                <a href="#"
+                                   ng-click="selectOption('')">
+                                    Скинути фільтр
+                                </a>
+                            </li>
+                            <li ng-repeat="item in data.vdai | unique : 'region'"
+                                ng-click="selectOption(item)" >
+                                <a href="" ng-bind="::regions[item].name"></a>
+                            </li>
+                        </ul>
+                    </th>
+                    <th>Назва робоча {{b}}</th>
                     <th>Назва повна</th>
                     <th>Індекс</th>
                     <th>Вулиця</th>
@@ -105,7 +127,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in data.vdai track by $index"
+                <tr ng-repeat="item in data.vdai | exactlyFilter : selectRegion : 'region'"
                     ng-click="editData(item, $index)">
                     <td ng-bind="regions[item.region].name"></td>
                     <td ng-bind="item.workName"></td>

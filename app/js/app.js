@@ -11,6 +11,8 @@ angular.module('baseApp',
         , 'chieffancypants.loadingBar'
         , 'ngDialog'
 
+        , 'baseApp.filters'
+
         , 'baseApp.controller.app'
         , 'baseApp.controller.main'
         , 'baseApp.controller.case'
