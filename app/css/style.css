@@ -233,6 +233,8 @@ select {
     position: absolute;
     top: 0;
     left: 100%;
+    bottom: 0;
+    margin: auto;
     opacity: 0;
     visibility: hidden;
 }

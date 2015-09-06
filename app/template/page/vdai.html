@@ -106,8 +106,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="item in data.vdai track by $index"
-                    ng-click="editData(item, $index)"
-                    scroll-top>
+                    ng-click="editData(item, $index)">
                     <td ng-bind="regions[item.region].name"></td>
                     <td ng-bind="item.workName"></td>
                     <td ng-bind="item.fullName"></td>
@@ -116,7 +115,12 @@
                     <td ng-bind="item.city"></td>
                     <td ng-bind="item.phone"></td>
                     <td ng-bind="item.email"></td>
-                    <td ng-bind="item.www"></td>
+                    <td class="p-rel">
+                        <span ng-bind="item.www"></span>
+                        <button ng-click="deleteData($index)" class="btn btn-danger btn-delete-row">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -3,20 +3,22 @@
   "description": "",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "1.4.2",
-    "angular-mocks": "1.4.2",
-    "angular-route": "1.4.2",
-    "angular-loading-bar": "latest",
-    "angular-cookies": "1.4.2",
+    "angular": "latest",
     "angular-animate": "latest",
     "angular-bootstrap": "latest",
-    "jquery": "latest",
+    "angular-cookies": "latest",
+    "angular-loading-bar": "latest",
+    "angular-mocks": "latest",
+    "angular-route": "latest",
+    "angular-ui-notification": "latest",
     "bootstrap": "latest",
+    "jquery": "latest",
     "karma": "latest",
     "karma-chrome-launcher": "latest",
     "karma-jasmine": "latest",
+    "ngDialog": "latest",
+    "ngSweetAlert": "latest",
     "protractor": "latest",
-    "shelljs": "latest",
-    "ngDialog": "latest"
+    "shelljs": "latest"
   }
 }

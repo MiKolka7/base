@@ -132,13 +132,11 @@ angular.module('baseApp.directive.aside', [])
     })
 
     .directive('scrollTop', function() {
-        var parent = $('.ngdialog');
-
         return {
             restrict: 'A',
             link: function (scope, element, attr) {
                 element[0].onclick = function () {
-                    $('.ngdialog').animate({scrollTop: 0}, 500);
+                    $('body').animate({scrollTop: 0}, 500);
                 }
             }
         }

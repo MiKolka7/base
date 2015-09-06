@@ -6,6 +6,8 @@ angular.module('baseApp',
         //, 'ngFileUpload'
         , 'ngCookies'
         , 'ngAnimate'
+        , 'oitozero.ngSweetAlert'
+        , 'ui-notification'
         , 'chieffancypants.loadingBar'
         , 'ngDialog'
 
@@ -40,6 +42,18 @@ angular.module('baseApp',
 
     .config(function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = true;
+    })
+
+    .config(function(NotificationProvider) {
+        NotificationProvider.setOptions({
+            delay: 3000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'left',
+            positionY: 'bottom'
+        });
     })
 
     .run(function ($rootScope, $location, $cookieStore) {
