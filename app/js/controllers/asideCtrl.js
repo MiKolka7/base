@@ -1,11 +1,13 @@
 angular.module('baseApp.controller.aside', [])
-    .controller('asideCtrl', function($scope, ngDialog){
+    .controller('asideCtrl', function($rootScope, $scope, ngDialog){
     "use strict";
 
     $scope.openWindow = function (name) {
+        $rootScope.table = name;
+
         ngDialog.open({
             template: 'template/page/' + name + '.html',
-            controller: name + 'Ctrl'
+            controller:  'additionalTablesCtrl'
         });
     };
 

@@ -70,14 +70,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in affiliate track by $index"
-                    ng-click="editData(item, $index)"
-                    scroll-top>
+                <tr ng-repeat="item in data.affiliate track by $index"
+                    ng-click="editData(item, $index)">
                     <td ng-bind="item.customers"></td>
                     <td ng-bind="item.nameFull"></td>
                     <td ng-bind="item.score"></td>
                     <td ng-bind="item.bank"></td>
-                    <td ng-bind="item.mfo"></td>
+                    <td class="p-rel">
+                        <span ng-bind="item.mfo"></span>
+                        <button ng-click="deleteData($index)" class="btn btn-danger btn-delete-row">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

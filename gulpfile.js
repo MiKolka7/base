@@ -81,7 +81,7 @@ gulp.task('js', function() {
             './app/js/controllers/**/*.js',
             './app/js/directives.js',
             './app/js/filters.js',
-            './app/js/services.js'
+            './app/js/factory.js'
         ])
         .pipe(sourcemaps.init())
         .pipe(concat('app.all.js'))

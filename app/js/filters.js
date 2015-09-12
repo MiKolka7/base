@@ -6,6 +6,9 @@ angular.module('baseApp.filters', [])
         return function(arr, key) {
             var obj = {};
 
+            if (key === 'all')
+                return arr;
+
             arr.forEach(function(item){
                 var str = item[key];
                 obj[str] = true;

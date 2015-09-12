@@ -27,11 +27,6 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function($roo
     };
 
 
-    $http.get('http://localhost:2403/vdai').success(function(data){
-        $rootScope.data.vdai = data;
-        //console.log('vdai', data);
-    });
-
     $scope.pages = [
         {
             name: 'main',

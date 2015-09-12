@@ -6,54 +6,77 @@
 
         <br/>
 
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <label class="form-group">
+                        <span class="col-xs-4 control-label text-left">Логін</span>
+                        <span class="col-xs-8 col-padding-0">
+                            <input type="text" class="form-control" ng-model="users.username">
+                        </span>
+                    </label>
+                </div>
+                <div class="col-xs-6">
+                    <label class="form-group">
+                        <span class="col-xs-4 control-label text-left">Пароль</span>
+                        <span class="col-xs-8 col-padding-0">
+                            <input type="password" class="form-control" ng-model="users.password">
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
         <div class="col-xs-6">
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Прізвище</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.surname">
+                    <input type="text" class="form-control" ng-model="users.surname">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Ім'я</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.name">
+                    <input type="text" class="form-control" ng-model="users.name">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">По батькові</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.name2">
+                    <input type="text" class="form-control" ng-model="users.name2">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Посада</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.position">
+                    <input type="text" class="form-control" ng-model="users.position">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Телефон роб.</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.mobile">
+                    <input type="text" class="form-control" ng-model="users.mobile">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Email робочий</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.emailWork">
+                    <input type="text" class="form-control" ng-model="users.emailWork">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Email особистий</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.emailPersonal">
+                    <input type="text" class="form-control" ng-model="users.emailPersonal">
                 </span>
             </label>
 
@@ -65,14 +88,14 @@
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Дата народження</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="date" class="form-control" ng-model="user.birthday">
+                    <input type="date" class="form-control" ng-model="users.birthday">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Стать</span>
                 <span class="col-xs-8 col-padding-0">
-                    <select class="form-control" ng-model="user.sex">
+                    <select class="form-control" ng-model="users.sex">
                         <option value="Чоловіча">Чоловіча</option>
                         <option value="Жіноча">Жіноча</option>
                     </select>
@@ -82,21 +105,21 @@
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Дата прийняття на роботу</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="date" class="form-control" ng-model="user.dateEmployment">
+                    <input type="date" class="form-control" ng-model="users.dateEmployment">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Компанія</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.company">
+                    <input type="text" class="form-control" ng-model="users.company">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Статус компанії</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="user.companyStatus">
+                    <input type="text" class="form-control" ng-model="users.companyStatus">
                 </span>
             </label>
 
@@ -105,7 +128,7 @@
         <div class="col-xs-6 text-right">
             <button class="btn btn-warning" ng-click="reset()">Очистити</button>
             <button class="btn btn-success" ng-click="save()" ng-show="!isAdd">Зберегти</button>
-            <button class="btn btn-success" ng-click="add()" ng-show="isAdd">Додати ВДАІ</button>
+            <button class="btn btn-success" ng-click="add()" ng-show="isAdd">Додати користувача</button>
         </div>
 
     </div>
@@ -116,31 +139,29 @@
                 <tr>
                     <th>Прізвище</th>
                     <th>Ім'я</th>
-                    <th>По батькові</th>
                     <th>Посада</th>
                     <th>Тел. роб.</th>
                     <th>Email роб.</th>
                     <th>Email особ.</th>
-                    <th>Дата народ.</th>
-                    <th>Стать</th>
-                    <th>Прийняття на роботу</th>
                     <th>Компанія</th>
                     <th>Статус компанії</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in data.user track by $index"
+                <tr ng-repeat="item in data.users track by $index"
                     ng-click="editData(item, $index)">
                     <td ng-bind="item.surname"></td>
                     <td ng-bind="item.name"></td>
-                    <td ng-bind="item.name2"></td>
                     <td ng-bind="item.position"></td>
-                    <td ng-bind="item.mobile"></td>
-                    <td ng-bind="item.emailWork"></td>
-                    <td ng-bind="item.emailPersonal"></td>
-                    <td ng-bind="item.birthday"></td>
-                    <td ng-bind="item.sex"></td>
-                    <td ng-bind="item.dateEmployment"></td>
+                    <td>
+                        <a href="tel:{{item.mobile}}" ng-bind="item.mobile"></a>
+                    </td>
+                    <td>
+                        <a href="mailto:{{item.emailWork}}" ng-bind="item.emailWork"></a>
+                    </td>
+                    <td>
+                        <a href="mailto:{{item.emailPersonal}}" ng-bind="item.emailPersonal"></a>
+                    </td>
                     <td ng-bind="item.company"></td>
                     <td class="p-rel">
                         <span ng-bind="item.companyStatus"></span>

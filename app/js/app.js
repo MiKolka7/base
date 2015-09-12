@@ -12,6 +12,7 @@ angular.module('baseApp',
         , 'ngDialog'
 
         , 'baseApp.filters'
+        , 'baseApp.factory.serializeDate'
 
         , 'baseApp.controller.app'
         , 'baseApp.controller.main'
@@ -33,10 +34,7 @@ angular.module('baseApp',
         , 'baseApp.controller.case.instanceQuilty'
         , 'baseApp.controller.case.instanceOwner'
 
-        , 'baseApp.controller.page.vdai'
-        , 'baseApp.controller.page.сustomers'
-        , 'baseApp.controller.page.filia'
-        , 'baseApp.controller.page.worker'
+        , 'baseApp.controller.page.additionalTables'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.aside'

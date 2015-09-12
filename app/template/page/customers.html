@@ -23,7 +23,7 @@
             </label>
 
             <label class="form-group">
-                <span class="col-xs-4 control-label text-left">форма власності</span>
+                <span class="col-xs-4 control-label text-left">Форма власності</span>
                 <span class="col-xs-8 col-padding-0">
                     <input type="text" class="form-control" ng-model="customers.property">
                 </span>
@@ -32,28 +32,28 @@
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Код ЄДРПОУ</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="customers.b">
+                    <input type="text" class="form-control" ng-model="customers.cod">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Телефон</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="customers.b">
+                    <input type="text" class="form-control" ng-model="customers.phone">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">E-mail</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="email" class="form-control" ng-model="customers.b">
+                    <input type="email" class="form-control" ng-model="customers.email">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Індекс</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="customers.b">
+                    <input type="text" class="form-control" ng-model="customers.index">
                 </span>
             </label>
 
@@ -61,7 +61,7 @@
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Вулиця</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="customers.b">
+                    <input type="text" class="form-control" ng-model="customers.street">
                 </span>
             </label>
 
@@ -69,7 +69,7 @@
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Місто</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="customers.b">
+                    <input type="text" class="form-control" ng-model="customers.city">
                 </span>
             </label>
 
@@ -106,7 +106,7 @@
                 <label class="form-group">
                     <span class="col-xs-4 control-label text-left">Телефон моб.</span>
                     <span class="col-xs-8 col-padding-0">
-                        <input type="text" class="form-control" ng-model="customers.worker2Name">
+                        <input type="text" class="form-control" ng-model="customers.workerMobile">
                     </span>
                 </label>
 
@@ -127,7 +127,7 @@
                 <label class="form-group">
                     <span class="col-xs-4 control-label text-left">Дата народ.</span>
                     <span class="col-xs-8 col-padding-0">
-                        <input type="data" class="form-control" ng-model="customers.workerDate">
+                        <input type="date" class="form-control" ng-model="customers.workerDate">
                     </span>
                 </label>
 
@@ -138,7 +138,7 @@
                 <label class="form-group">
                     <span class="col-xs-4 control-label text-left">Договір дата</span>
                     <span class="col-xs-8 col-padding-0">
-                        <input type="data" class="form-control" ng-model="customers.agrementDate">
+                        <input type="date" class="form-control" ng-model="customers.agrementDate">
                     </span>
                 </label>
 
@@ -150,7 +150,7 @@
                 </label>
 
                 <label class="form-group">
-                    <span class="col-xs-4 control-label text-left">Договір №</span>
+                    <span class="col-xs-4 control-label text-left">Ставка</span>
                     <span class="col-xs-8 col-padding-0">
                         <input type="text" class="form-control" ng-model="customers.stavka">
                     </span>
@@ -160,7 +160,7 @@
 
         </div>
 
-        <div class="col-xs-6 text-right">
+        <div class="col-xs-8 text-right">
             <button class="btn btn-warning" ng-click="reset()">Очистити</button>
             <button class="btn btn-success" ng-click="save()" ng-show="!isAdd">Зберегти</button>
             <button class="btn btn-success" ng-click="add()" ng-show="isAdd">Додати замовника</button>
@@ -168,5 +168,33 @@
 
     </div>
 
-</div>
+    <div class="row">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Назва скорочена</th>
+                    <th>Назва повна</th>
+                    <th>Форма власності</th>
+                    <th>Прізвище</th>
+                    <th>Ім'я</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.customers"
+                    ng-click="editData(item, $index)">
+                    <td ng-bind="item.name"></td>
+                    <td ng-bind="item.nameFull"></td>
+                    <td ng-bind="item.property"></td>
+                    <td ng-bind="item.workerSurname"></td>
+                    <td class="p-rel">
+                        <span ng-bind="item.workerName"></span>
+                        <button ng-click="deleteData($index)" class="btn btn-danger btn-delete-row">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>

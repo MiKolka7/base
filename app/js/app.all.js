@@ -12,6 +12,7 @@ angular.module('baseApp',
         , 'ngDialog'
 
         , 'baseApp.filters'
+        , 'baseApp.factory.serializeDate'
 
         , 'baseApp.controller.app'
         , 'baseApp.controller.main'
@@ -33,10 +34,7 @@ angular.module('baseApp',
         , 'baseApp.controller.case.instanceQuilty'
         , 'baseApp.controller.case.instanceOwner'
 
-        , 'baseApp.controller.page.vdai'
-        , 'baseApp.controller.page.сustomers'
-        , 'baseApp.controller.page.filia'
-        , 'baseApp.controller.page.worker'
+        , 'baseApp.controller.page.additionalTables'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.aside'
@@ -128,11 +126,6 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function($roo
         judge: {}
     };
 
-
-    $http.get('http://localhost:2403/vdai').success(function(data){
-        $rootScope.data.vdai = data;
-        //console.log('vdai', data);
-    });
 
     $scope.pages = [
         {
@@ -274,13 +267,15 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function($roo
 
 });
 angular.module('baseApp.controller.aside', [])
-    .controller('asideCtrl', function($scope, ngDialog){
+    .controller('asideCtrl', function($rootScope, $scope, ngDialog){
     "use strict";
 
     $scope.openWindow = function (name) {
+        $rootScope.table = name;
+
         ngDialog.open({
             template: 'template/page/' + name + '.html',
-            controller: name + 'Ctrl'
+            controller:  'additionalTablesCtrl'
         });
     };
 
@@ -427,47 +422,22 @@ angular.module('baseApp.controller.case.payment', [])
 
 
     });
-angular.module('baseApp.controller.page.filia', [])
-    .controller('filiaCtrl', function($rootScope, $scope, $http){
+angular.module('baseApp.controller.page.additionalTables', [])
+    .controller('additionalTablesCtrl', function ($rootScope, $scope, $http, Notification, SweetAlert, serializeDate) {
         "use strict";
 
-
-        var selectItemIndex;
-        $scope.isAdd = true;
-
-        $scope.editData = function (data, index) {
-            selectItemIndex = index;
-            $scope.affiliate = data;
-            $scope.isAdd = false;
-        };
-
-        $scope.save = function () {
-            $http.put('http://localhost:2403/affiliate/' + $scope.affiliate.id, $scope.affiliate).success(function(data){
-                if (data) {
-                    $scope.affiliate[selectItemIndex] = data;
-                }
-            });
-        };
-
-        $scope.add = function () {
-            $http.post('http://localhost:2403/affiliate', $scope.vdai).success(function(data){
-                $scope.affiliate.unshift(data);
-                console.log(data);
-            });
-        };
-
-        $scope.reset = function () {
-            $scope.affiliate = {};
-            $scope.isAdd = true;
-        };
+        var table = $rootScope.table;
+        var selectItemIndex = null;
 
 
-    });
-angular.module('baseApp.controller.page.vdai', [])
-    .controller('vdaiCtrl', function($rootScope, $scope, $http, Notification, SweetAlert){
-        "use strict";
+        $http.get('http://localhost:2403/' + table).success(function (data) {
+            $rootScope.data[table] = serializeDate(data);
+            console.log(serializeDate(data));
 
-        var selectItemIndex;
+            if (_.isEmpty($rootScope.data[table]))
+                $rootScope.data[table] = [];
+        });
+
 
         /**
          * $scope.isAdd
@@ -478,17 +448,17 @@ angular.module('baseApp.controller.page.vdai', [])
 
         $scope.editData = function (data, index) {
             selectItemIndex = index;
-            $scope.vdai = data;
+            $scope[table] = data;
             $scope.isAdd = false;
 
             Notification({
                 title: 'Обрано для редагування',
-                message: $scope.vdai.fullName
+                message: $scope[table].fullName
             });
         };
 
         $scope.deleteData = function (i) {
-            var id = $rootScope.data.vdai[i].id;
+            var id = $rootScope.data[table][i].id;
 
             SweetAlert.swal({
                     title: "Видалити запис?",
@@ -499,15 +469,19 @@ angular.module('baseApp.controller.page.vdai', [])
                     showLoaderOnConfirm: true,
                     closeOnConfirm: false
                 },
-                function(isConfirm){
+                function (isConfirm) {
                     if (isConfirm) {
-                        $http.delete('http://localhost:2403/vdai/' + id).success(function(data){
+                        $http.delete('http://localhost:2403/' + table + '/' + id).success(function (data) {
                             if (data) {
-                                $rootScope.data.vdai.splice(selectItemIndex, 1);
-                                $scope.vdai = {};
+                                $rootScope.data[table].splice(selectItemIndex, 1);
+                                $scope[table] = {};
+                                $scope.isAdd = true;
                                 swal("Успішно!", "Запис видалено", "success");
+
+                                if (_.isEmpty($rootScope.data[table]))
+                                    $rootScope.data[table] = [];
                             }
-                        }).error(function(){
+                        }).error(function () {
                             swal("Відміна", "Сталася помилка", "error");
                         });
                     }
@@ -515,127 +489,42 @@ angular.module('baseApp.controller.page.vdai', [])
         };
 
         $scope.save = function () {
-            $http.put('http://localhost:2403/vdai/' + $scope.vdai.id, $scope.vdai).success(function(data){
+            console.log($scope[table]);
+
+            $http.put('http://localhost:2403/' + table + '/' + $scope[table].id, $scope[table]).success(function (data) {
                 if (data) {
-                    $rootScope.data.vdai[selectItemIndex] = data;
+                    $rootScope.data[table][selectItemIndex] = serializeDate(data);
                     Notification.success('Дані оновлено!');
                 }
-            }).error(function(){
+            }).error(function () {
                 Notification.error('Виникла помилка!');
             });
         };
 
         $scope.add = function () {
-            $http.post('http://localhost:2403/vdai', $scope.vdai).success(function(data){
-                $rootScope.data.vdai.unshift(data);
+            console.log($scope[table]);
+            if (_.isEmpty($scope[table])) {
+                Notification.warning('Пустий запис!');
+                return false;
+            }
+
+            $http.post('http://localhost:2403/' + table, $scope[table]).success(function (data) {
+                $rootScope.data[table].unshift(serializeDate(data));
+                $scope[table] = {};
                 Notification.success('Запис додано!');
-            }).error(function(){
+            }).error(function (e) {
                 Notification.error('Виникла помилка!');
             });
         };
 
         $scope.reset = function () {
-            $scope.vdai = {};
+            $scope[table] = {};
             $scope.isAdd = true;
         };
 
-
         $scope.selectOption = function (a) {
             $scope.selectRegion = a;
-        }
-
-
-    });
-angular.module('baseApp.controller.page.worker', [])
-    .controller('workerCtrl', function($rootScope, $scope, $http, Notification, SweetAlert){
-        "use strict";
-
-        var selectItemIndex;
-
-        /**
-         * $scope.isAdd
-         * true - можна додавати новий запис
-         * false - редагування обраного запису
-         */
-        $scope.isAdd = true;
-
-        $scope.editData = function (data, index) {
-            selectItemIndex = index;
-            $scope.vdai = data;
-            $scope.isAdd = false;
-
-            Notification({
-                title: 'Обрано для редагування',
-                message: $scope.vdai.fullName
-            });
         };
-
-        $scope.deleteData = function (i) {
-            var id = $rootScope.data.vdai[i].id;
-
-            SweetAlert.swal({
-                    title: "Видалити запис?",
-                    text: "Відновити буде неможливо!",
-                    type: "warning",
-                    showCancelButton: true,
-                    cancelButtonText: "Відміна",
-                    showLoaderOnConfirm: true,
-                    closeOnConfirm: false
-                },
-                function(isConfirm){
-                    if (isConfirm) {
-                        $http.delete('http://localhost:2403/vdai/' + id).success(function(data){
-                            if (data) {
-                                $rootScope.data.vdai.splice(selectItemIndex, 1);
-                                $scope.vdai = {};
-                                swal("Успішно!", "Запис видалено", "success");
-                            }
-                        }).error(function(){
-                            swal("Відміна", "Сталася помилка", "error");
-                        });
-                    }
-                });
-        };
-
-        $scope.save = function () {
-            $http.put('http://localhost:2403/vdai/' + $scope.vdai.id, $scope.vdai).success(function(data){
-                if (data) {
-                    $rootScope.data.vdai[selectItemIndex] = data;
-                    Notification.success('Дані оновлено!');
-                }
-            }).error(function(){
-                Notification.error('Виникла помилка!');
-            });
-        };
-
-        $scope.add = function () {
-            $http.post('http://localhost:2403/vdai', $scope.vdai).success(function(data){
-                $rootScope.data.vdai.unshift(data);
-                Notification.success('Запис додано!');
-            }).error(function(){
-                Notification.error('Виникла помилка!');
-            });
-        };
-
-        $scope.reset = function () {
-            $scope.vdai = {};
-            $scope.isAdd = true;
-        };
-
-
-        $scope.selectOption = function (a) {
-            $scope.selectRegion = a;
-        }
-
-
-    });
-angular.module('baseApp.controller.page.сustomers', [])
-    .controller('сustomersCtrl', function($rootScope, $scope, $http){
-        "use strict";
-
-
-        $scope.customers = [];
-
 
     });
 'use strict';
@@ -789,6 +678,9 @@ angular.module('baseApp.filters', [])
         return function(arr, key) {
             var obj = {};
 
+            if (key === 'all')
+                return arr;
+
             arr.forEach(function(item){
                 var str = item[key];
                 obj[str] = true;
@@ -815,7 +707,19 @@ angular.module('baseApp.filters', [])
             return newArr;
         }
     });
-'use strict';
 
-/* Services */
-
+angular.module('baseApp.factory.serializeDate', [])
+    .factory('serializeDate', function () {
+        return function (data) {
+            if (!_.isEmpty(data)) {
+                data.forEach(function(item, i){
+                    for (var key in item) {
+                        if (key.search(/(D|d)ate/g) + 1) {
+                            data[i][key] = new Date(item[key]);
+                        }
+                    }
+                });
+            }
+            return data;
+        }
+    });
