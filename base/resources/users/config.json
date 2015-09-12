@@ -81,21 +81,13 @@
 			"id": "dateEmployment",
 			"order": 9
 		},
-		"phone": {
-			"name": "phone",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "phone",
-			"order": 10
-		},
 		"emailWork": {
 			"name": "emailWork",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
 			"id": "emailWork",
-			"order": 11
+			"order": 10
 		},
 		"emailPersonal": {
 			"name": "emailPersonal",
@@ -103,15 +95,15 @@
 			"typeLabel": "string",
 			"required": false,
 			"id": "emailPersonal",
-			"order": 12
+			"order": 11
 		},
 		"mobile": {
 			"name": "mobile",
-			"type": "number",
-			"typeLabel": "number",
+			"type": "string",
+			"typeLabel": "string",
 			"required": false,
 			"id": "mobile",
-			"order": 13
+			"order": 12
 		}
 	}
 }
