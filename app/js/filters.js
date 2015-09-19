@@ -6,12 +6,17 @@ angular.module('baseApp.filters', [])
         return function(arr, key) {
             var obj = {};
 
+            if (_.isEmpty(arr))
+                return false;
+
             if (key === 'all')
                 return arr;
 
             arr.forEach(function(item){
                 var str = item[key];
-                obj[str] = true;
+
+                if (str)
+                    obj[str] = true;
             });
 
             return Object.keys(obj);
@@ -21,8 +26,11 @@ angular.module('baseApp.filters', [])
     .filter('exactlyFilter', function(){
         "use strict";
 
-        return function(arr, num, key) {
+        return function(arr, key, num) {
             var newArr = [];
+
+            if (_.isEmpty(arr))
+                return false;
 
             arr.forEach(function(item){
                 if (item[key] == num)

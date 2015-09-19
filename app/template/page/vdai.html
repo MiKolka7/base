@@ -68,14 +68,14 @@
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Назва робоча</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="vdai.workName">
+                    <textarea class="form-control" rows="3" ng-model="vdai.workName"></textarea>
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Назва повна</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="vdai.fullName">
+                    <textarea class="form-control" rows="3" ng-model="vdai.fullName"></textarea>
                 </span>
             </label>
 
@@ -111,34 +111,26 @@
                                 </a>
                             </li>
                             <li ng-repeat="item in data.vdai | unique : 'region'"
-                                ng-click="selectOption(item)" >
+                                ng-click="selectOption(item, 'region')" >
                                 <a href="" ng-bind="::regions[item].name"></a>
                             </li>
                         </ul>
                     </th>
                     <th>Назва робоча</th>
-                    <th>Назва повна</th>
                     <th>Індекс</th>
                     <th>Вулиця</th>
                     <th>Місто</th>
-                    <th>Телефон</th>
-                    <th>Email</th>
-                    <th>www</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in data.vdai | exactlyFilter : selectRegion : 'region'"
+                <tr ng-repeat="item in data.vdai | exactlyFilter : selectKey : selectValue"
                     ng-click="editData(item, $index)">
                     <td ng-bind="regions[item.region].name"></td>
                     <td ng-bind="item.workName"></td>
-                    <td ng-bind="item.fullName"></td>
                     <td ng-bind="item.index"></td>
                     <td ng-bind="item.street"></td>
-                    <td ng-bind="item.city"></td>
-                    <td ng-bind="item.phone"></td>
-                    <td ng-bind="item.email"></td>
                     <td class="p-rel">
-                        <span ng-bind="item.www"></span>
+                        <span ng-bind="item.city"></span>
                         <button ng-click="deleteData($index)" class="btn btn-danger btn-delete-row">
                             <i class="glyphicon glyphicon-trash"></i>
                         </button>

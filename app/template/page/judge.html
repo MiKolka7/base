@@ -1,0 +1,197 @@
+
+<div class="container-fluid">
+    <div class="row">
+
+        <h3>Суддя</h3>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <label class="form-group">
+                        <span class="col-xs-4 control-label text-left">Регіон</span>
+                        <span class="col-xs-8 col-padding-0">
+                            <select class="form-control"
+                                    ng-options="item.id as item.name for item in regions"
+                                    ng-model="judge.region">
+                            </select>
+                        </span>
+                    </label>
+                </div>
+                <div class="col-xs-6">
+                    <label class="form-group">
+                        <span class="col-xs-4 control-label text-left">Суд</span>
+                        <span class="col-xs-8 col-padding-0">
+                            <input type="text" class="form-control" ng-model="judge.court">
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="col-xs-6">
+            <h4>Помічник судді</h4>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Прізвище</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.assistantSurname">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Ім'я</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.assistantName">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">По батькові</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.assistantName2">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Телефон</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.assistantPhone">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Телефон моб.</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.assistantPhone2">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Email</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.assistantEmail">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Примітка</span>
+                <span class="col-xs-8 col-padding-0">
+                    <textarea type="text" class="form-control" ng-model="judge.note"></textarea>
+                </span>
+            </label>
+
+        </div>
+
+
+        <div class="col-xs-6">
+            <h4>Суддя</h4>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Прізвище</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.judgeSurname">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Ім'я</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.judgeName">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">По батькові</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.judgeName2">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Телефон</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.judgePhone">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Посада</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.judgePosition">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Email</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="judge.judgeEmail">
+                </span>
+            </label>
+
+        </div>
+
+        <div class="col-xs-6 text-right">
+            <button class="btn btn-warning" ng-click="reset()">Очистити</button>
+            <button class="btn btn-success" ng-click="save()" ng-show="!isAdd">Зберегти</button>
+            <button class="btn btn-success" ng-click="add()" ng-show="isAdd">Додати суддю</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="dropdown">
+                        <button class="btn btn-default dropdown-toggle"
+                                type="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="true">
+                            Регіон
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu"
+                            aria-labelledby="dropdownMenu3">
+                            <li>
+                                <a href="#"
+                                   ng-click="selectOption('all')">
+                                    Скинути фільтр
+                                </a>
+                            </li>
+                            <li ng-repeat="item in data.judge | unique : 'region'"
+                                ng-click="selectOption(item, 'region')" >
+                                <a href="" ng-bind="::regions[item].name"></a>
+                            </li>
+                        </ul>
+                    </th>
+                    <th>Суд</th>
+                    <th>Помічник прізвище</th>
+                    <th>Суддя прізвище</th>
+                    <th>Суддя посада</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.judge | exactlyFilter : selectKey : selectValue"
+                    ng-click="editData(item, $index)">
+                    <td ng-bind="regions[item.region].name"></td>
+                    <td ng-bind="item.court"></td>
+                    <td ng-bind="item.assistantSurname"></td>
+                    <td ng-bind="item.judgeSurname"></td>
+                    <td class="p-rel">
+                        <span ng-bind="item.judgePosition"></span>
+                        <button ng-click="deleteData($index)" class="btn btn-danger btn-delete-row">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+</div>

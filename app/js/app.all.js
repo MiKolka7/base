@@ -427,10 +427,11 @@ angular.module('baseApp.controller.page.additionalTables', [])
         "use strict";
 
         var table = $rootScope.table;
+        var dbTable = angular.lowercase(table);
         var selectItemIndex = null;
 
 
-        $http.get('http://localhost:2403/' + table).success(function (data) {
+        $http.get('http://localhost:2403/' + dbTable).success(function (data) {
             $rootScope.data[table] = serializeDate(data);
             console.log(serializeDate(data));
 
@@ -448,12 +449,11 @@ angular.module('baseApp.controller.page.additionalTables', [])
 
         $scope.editData = function (data, index) {
             selectItemIndex = index;
-            $scope[table] = data;
+            $scope[table] = _.clone(data);
             $scope.isAdd = false;
 
             Notification({
-                title: 'Обрано для редагування',
-                message: $scope[table].fullName
+                message: 'Обрано запис!'
             });
         };
 
@@ -471,7 +471,7 @@ angular.module('baseApp.controller.page.additionalTables', [])
                 },
                 function (isConfirm) {
                     if (isConfirm) {
-                        $http.delete('http://localhost:2403/' + table + '/' + id).success(function (data) {
+                        $http.delete('http://localhost:2403/' + dbTable + '/' + id).success(function (data) {
                             if (data) {
                                 $rootScope.data[table].splice(selectItemIndex, 1);
                                 $scope[table] = {};
@@ -491,7 +491,7 @@ angular.module('baseApp.controller.page.additionalTables', [])
         $scope.save = function () {
             console.log($scope[table]);
 
-            $http.put('http://localhost:2403/' + table + '/' + $scope[table].id, $scope[table]).success(function (data) {
+            $http.put('http://localhost:2403/' + dbTable + '/' + $scope[table].id, $scope[table]).success(function (data) {
                 if (data) {
                     $rootScope.data[table][selectItemIndex] = serializeDate(data);
                     Notification.success('Дані оновлено!');
@@ -503,16 +503,17 @@ angular.module('baseApp.controller.page.additionalTables', [])
 
         $scope.add = function () {
             console.log($scope[table]);
+
             if (_.isEmpty($scope[table])) {
                 Notification.warning('Пустий запис!');
                 return false;
             }
 
-            $http.post('http://localhost:2403/' + table, $scope[table]).success(function (data) {
+            $http.post('http://localhost:2403/' + dbTable, $scope[table]).success(function (data) {
                 $rootScope.data[table].unshift(serializeDate(data));
                 $scope[table] = {};
                 Notification.success('Запис додано!');
-            }).error(function (e) {
+            }).error(function () {
                 Notification.error('Виникла помилка!');
             });
         };
@@ -522,8 +523,9 @@ angular.module('baseApp.controller.page.additionalTables', [])
             $scope.isAdd = true;
         };
 
-        $scope.selectOption = function (a) {
-            $scope.selectRegion = a;
+        $scope.selectOption = function (val, key) {
+            $scope.selectValue = val;
+            $scope.selectKey = key;
         };
 
     });
@@ -678,12 +680,17 @@ angular.module('baseApp.filters', [])
         return function(arr, key) {
             var obj = {};
 
+            if (_.isEmpty(arr))
+                return false;
+
             if (key === 'all')
                 return arr;
 
             arr.forEach(function(item){
                 var str = item[key];
-                obj[str] = true;
+
+                if (str)
+                    obj[str] = true;
             });
 
             return Object.keys(obj);
@@ -693,8 +700,11 @@ angular.module('baseApp.filters', [])
     .filter('exactlyFilter', function(){
         "use strict";
 
-        return function(arr, num, key) {
+        return function(arr, key, num) {
             var newArr = [];
+
+            if (_.isEmpty(arr))
+                return false;
 
             arr.forEach(function(item){
                 if (item[key] == num)
@@ -712,7 +722,8 @@ angular.module('baseApp.factory.serializeDate', [])
     .factory('serializeDate', function () {
         return function (data) {
             if (!_.isEmpty(data)) {
-                data.forEach(function(item, i){
+                console.log(data);
+                _.each(data, function(item, i){
                     for (var key in item) {
                         if (key.search(/(D|d)ate/g) + 1) {
                             data[i][key] = new Date(item[key]);
