@@ -13,23 +13,23 @@
                 <tbody>
                     <tr>
                         <td>Авто:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.insurer.object"></td>
                     </tr>
                     <tr>
                         <td>Д.р.н.:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.insurer.number"></td>
                     </tr>
                     <tr>
                         <td>Прізвище:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.insurer.surname"></td>
                     </tr>
                     <tr>
                         <td>Ім'я:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.insurer.name"></td>
                     </tr>
                     <tr>
                         <td>По-батькові:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.insurer.name2"></td>
                     </tr>
                 </tbody>
             </table>
@@ -48,23 +48,23 @@
                 <tbody>
                     <tr>
                         <td>Авто:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.carModel"></td>
                     </tr>
                     <tr>
                         <td>Д.р.н.:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.carNumber"></td>
                     </tr>
                     <tr>
                         <td>Прізвище:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.driverSurname"></td>
                     </tr>
                     <tr>
                         <td>Ім'я:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.driverName"></td>
                     </tr>
                     <tr>
                         <td>По-батькові:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.driverName2"></td>
                     </tr>
                 </tbody>
             </table>
@@ -83,15 +83,15 @@
                 <tbody>
                     <tr>
                         <td>№:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.claimNumber"></td>
                     </tr>
                     <tr>
                         <td>Дата:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.claimData"></td>
                     </tr>
                     <tr>
                         <td>Дата вручення:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.participantCrash.claimDateDelivery"></td>
                     </tr>
                 </tbody>
             </table>
@@ -176,11 +176,11 @@
                 <tbody>
                     <tr>
                         <td>Європротокол:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="data.case.base.euroProtocol"></td>
                     </tr>
                     <tr>
                         <td>Дата ДТП:</td>
-                        <td ng-bind=""></td>
+                        <td ng-bind="dateCrash"></td>
                     </tr>
                     <tr>
                         <td>Місце ДТП:</td>

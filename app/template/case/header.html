@@ -8,8 +8,8 @@
         </div>
 
         <div class="col-sm-2 col-xs-8">
-            <h4>Вид страхування</h4>
-            <h4>№ справи замовника</h4>
+            <h4 ng-bind="data.base.typeInsurance"></h4>
+            <h4 ng-bind="data.base.numberInsuranceCase"></h4>
         </div>
 
         <div class="col-sm-4 col-xs-8">
@@ -18,13 +18,13 @@
                     Статус робочий
                     <span class="text-transparent">и</span>
                 </span>
-                <select type="text" class="form-control" ng-mode="statusWork">
+                <select type="text" class="form-control" ng-mode="data.base.statusWork">
                     <option value="1">В роботі</option>
                 </select>
             </label>
             <label class="input-group">
                 <span class="input-group-addon">Статус фінальний</span>
-                <select type="text" class="form-control" ng-model="statusFinal">
+                <select type="text" class="form-control" ng-model="data.base.statusFinal">
                     <option value="1">В роботі</option>
                 </select>
             </label>
@@ -33,9 +33,11 @@
         <div class="col-sm-3 col-xs-8">
             <h4 class="col-sm-12 col-xs-6">
                 <img src="" alt=""/>
+                № справи:
+                <span ng-bind="data.base.numberCase"></span>
             </h4>
             <h4 class="col-sm-12 col-xs-6">
-                Виконавець: Петя
+                Виконавець: <span ng-bind="data.base.performer"></span>
             </h4>
         </div>
 
