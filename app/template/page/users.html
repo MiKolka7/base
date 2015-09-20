@@ -141,8 +141,6 @@
                     <th>Ім'я</th>
                     <th>Посада</th>
                     <th>Тел. роб.</th>
-                    <th>Email роб.</th>
-                    <th>Email особ.</th>
                     <th>Компанія</th>
                     <th>Статус компанії</th>
                 </tr>
@@ -155,12 +153,6 @@
                     <td ng-bind="item.position"></td>
                     <td>
                         <a href="tel:{{item.mobile}}" ng-bind="item.mobile"></a>
-                    </td>
-                    <td>
-                        <a href="mailto:{{item.emailWork}}" ng-bind="item.emailWork"></a>
-                    </td>
-                    <td>
-                        <a href="mailto:{{item.emailPersonal}}" ng-bind="item.emailPersonal"></a>
                     </td>
                     <td ng-bind="item.company"></td>
                     <td class="p-rel">
