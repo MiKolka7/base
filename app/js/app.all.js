@@ -26,8 +26,8 @@ angular.module('baseApp',
         , 'baseApp.controller.case.dvs'
         , 'baseApp.controller.case.insuranceEvent'
         , 'baseApp.controller.case.insuranceCompany'
-        , 'baseApp.controller.case.claimCk'
         , 'baseApp.controller.case.actionCk'
+        , 'baseApp.controller.case.claimCk'
         , 'baseApp.controller.case.dvsCk'
         , 'baseApp.controller.case.payment'
         , 'baseApp.controller.case.instanceCk'
@@ -328,13 +328,13 @@ angular.module('baseApp.controller.case.action', [])
 
     });
 angular.module('baseApp.controller.case.claimCk', [])
-    .controller('claimCkCtrl', function($scope){
-        "use strict";
+  .controller('claimCkCtrl', function($scope){
+    "use strict";
 
 
 
 
-    });
+  });
 angular.module('baseApp.controller.case.claim', [])
     .controller('claimCtrl', function($scope){
         "use strict";
