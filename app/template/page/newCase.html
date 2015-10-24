@@ -1,0 +1,98 @@
+
+<div class="container-fluid">
+    <div class="row">
+
+        <h3>Внесення/розприділення справ</h3>
+
+        <br/>
+
+        <div class="col-xs-4">
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">№ справи</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.nameFull">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Виконавець</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.score">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Страхувальник</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.score">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Замовник</span>
+                <span class="col-sm-8 col-padding-0">
+                    <select class="form-control" ng-model="affiliate.customers">
+                        <option value="КАСКО" selected="selected">КАСКО</option>
+                        <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
+                        <option value="Майно">Майно</option>
+                    </select>
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">№ спрви замовника</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.bank">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-xs-4 control-label text-left">Справа надійшла</span>
+                <span class="col-xs-8 col-padding-0">
+                    <input type="text" class="form-control" ng-model="affiliate.mfo">
+                </span>
+            </label>
+
+        </div>
+
+
+        <div class="col-xs-6 text-right">
+            <button class="btn btn-warning" ng-click="reset()">Очистити</button>
+            <button class="btn btn-success" ng-click="save()" ng-show="!isAdd">Зберегти</button>
+            <button class="btn btn-success" ng-click="add()" ng-show="isAdd">Додати справу</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>№ справи</th>
+                    <th>Виконавець</th>
+                    <th>Страхувальник</th>
+                    <th>Замовник</th>
+                    <th>№ спрви замовника</th>
+                    <th>Справа надійшла</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.cases track by $index"
+                    ng-click="editData(item, $index)">
+                    <td ng-bind="item.customers"></td>
+                    <td ng-bind="item.nameFull"></td>
+                    <td ng-bind="item.score"></td>
+                    <td ng-bind="item.bank"></td>
+                    <td class="p-rel">
+                        <span ng-bind="item.mfo"></span>
+                        <button ng-click="deleteData($index)" class="btn btn-danger btn-delete-row">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

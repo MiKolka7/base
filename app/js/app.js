@@ -35,6 +35,7 @@ angular.module('baseApp',
         , 'baseApp.controller.case.instanceOwner'
 
         , 'baseApp.controller.page.additionalTables'
+        , 'baseApp.controller.page.newCase'
 
         , 'baseApp.directive.menu'
         , 'baseApp.directive.aside'
