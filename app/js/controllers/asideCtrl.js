@@ -2,14 +2,16 @@ angular.module('baseApp.controller.aside', [])
     .controller('asideCtrl', function($rootScope, $scope, ngDialog){
     "use strict";
 
-    $scope.openWindow = function (name, ctrl) {
-        $rootScope.table = name;
+      $rootScope.changeVisibleAside = function() {
+        return $rootScope.visibleAside = $rootScope.visibleAside ? false : true;
+    };
 
-        ctrl = ctrl || 'additionalTablesCtrl';
+    $scope.openWindow = function (name) {
+        $rootScope.table = name;
 
         ngDialog.open({
             template: 'template/page/' + name + '.html',
-            controller:  ctrl + 'Ctrl'
+            controller:  'additionalTablesCtrl'
         });
     };
 
