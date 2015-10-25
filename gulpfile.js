@@ -2,46 +2,18 @@
 
 var   gulp         = require('gulp')
     , csso         = require('gulp-csso')
+    , inject       = require('gulp-inject')
     , notify       = require("gulp-notify")
     , concat       = require('gulp-concat')
     , uglify       = require('gulp-uglify')
     , connect      = require('gulp-connect')
-    , imagemin     = require('gulp-imagemin')
-    , pngquant     = require('imagemin-pngquant')
+    //, imagemin     = require('gulp-imagemin')
+    //, pngquant     = require('imagemin-pngquant')
+    , bowerFiles = require('main-bower-files')
+    , sourcemaps   = require('gulp-sourcemaps')
     , autoprefixer = require('gulp-autoprefixer')
-
-    // , source     = require('vinyl-source-stream')
-    // , buffer     = require('vinyl-buffer')
-    // , gutil      = require('gulp-util')
-    // , assign     = require('lodash.assign')
-    // , watchify   = require('watchify')
-    // , browserify = require('browserify')
-     , sourcemaps = require('gulp-sourcemaps')
+    , angularFilesort = require('gulp-angular-filesort')
     ;
-
-/*
-var customOpts = {
-    entries: ['./app/js/'],
-    noparse: ['app.all', 'app.min'],
-    debug: true
-};
-var opts = assign({}, watchify.args, customOpts);
-var b = watchify(browserify(opts));
-
-gulp.task('js', bundle);
-b.on('update', bundle);
-b.on('log', gutil.log);
-
-function bundle() {
-    return b.bundle ()
-        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-        .pipe(source('bundle.js'))
-        .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./dist'));
-}
-*/
 
 
 //server
@@ -67,7 +39,7 @@ gulp.task('html',function(){
 
 //css
 gulp.task('css',function(){
-    gulp.src('./app/css/*.css')
+    gulp.src('./app/css/**/*.css')
         .pipe(connect.reload())
         //.pipe(notify("Change css"))
     ;
@@ -76,20 +48,38 @@ gulp.task('css',function(){
 
 //js
 gulp.task('js', function() {
-    gulp.src([
-            './app/js/app.js',
-            './app/js/controllers/**/*.js',
-            './app/js/directives.js',
-            './app/js/filters.js',
-            './app/js/factory.js'
-        ])
-        .pipe(sourcemaps.init())
-        .pipe(concat('app.all.js'))
-        .pipe(gulp.dest('./app/js/'))
-        .pipe(sourcemaps.write())
+    gulp.src(['./app/js/**/*.js'])
+        //.pipe(sourcemaps.init())
+        //.pipe(concat('app.all.js'))
+        //.pipe(gulp.dest('./app/js/'))
+        //.pipe(sourcemaps.write())
         .pipe(connect.reload())
         //.pipe(notify("Change js"))
     ;
+});
+
+//inject
+gulp.task('inject', function () {
+    var js = {
+        app: {
+            src: './app/js/**/*.js',
+            name: 'app'
+        }
+    };
+
+    gulp.src('./app/index.html')
+        .pipe(inject(
+            gulp.src(bowerFiles(), { base: './app/bower_components' }, {read: false}),
+            {name: 'bower', relative: true}
+        )
+    )
+        .pipe(inject(
+            gulp.src(js.app.src).pipe(angularFilesort()),
+            {name: js.app.name, relative: true}
+        )
+    )
+        .pipe(gulp.dest('./app/'))
+        .pipe(connect.reload());
 });
 
 gulp.task('js-lib', function() {
@@ -165,20 +155,20 @@ gulp.task('compress-js', function() {
 
 
 //compress image
-gulp.task('compress-image', function () {
-    gulp.src('./app/images/**/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant({ quality: '50-70', speed: 4 })],
-            interlaced: true
-        }))
-        .pipe(gulp.dest('./app/images/'))
-        .pipe(notify("Compress img"));
-});
+//gulp.task('compress-image', function () {
+//    gulp.src('./app/images/**/*')
+//        .pipe(imagemin({
+//            progressive: true,
+//            svgoPlugins: [{removeViewBox: false}],
+//            use: [pngquant({ quality: '50-70', speed: 4 })],
+//            interlaced: true
+//        }))
+//        .pipe(gulp.dest('./app/images/'))
+//        .pipe(notify("Compress img"));
+//});
 
 
 
 
-gulp.task('default', ['server', 'html', 'css', 'js', 'watch']);
+gulp.task('default', ['server', 'html', 'inject', 'css', 'js', 'watch']);
 gulp.task('production', ['js-lib', 'css-all', 'compress-js', 'compress-css', 'compress-image']);

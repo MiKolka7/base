@@ -13,6 +13,8 @@ angular.module('baseApp.controller.page.additionalTables', [])
 
             if (_.isEmpty($rootScope.data[table]))
                 $rootScope.data[table] = [];
+
+            //console.log($rootScope);
         });
 
 
@@ -69,7 +71,7 @@ angular.module('baseApp.controller.page.additionalTables', [])
 
             $http.put('http://localhost:2403/' + dbTable + '/' + $scope[table].id, $scope[table]).success(function (data) {
                 if (data) {
-                    $rootScope.data[table][selectItemIndex] = serializeDate(data);
+                    $rootScope.data[table][selectItemIndex] = serializeDate(data)[0];
                     Notification.success('Дані оновлено!');
                 }
             }).error(function () {
@@ -86,11 +88,14 @@ angular.module('baseApp.controller.page.additionalTables', [])
             }
 
             $http.post('http://localhost:2403/' + dbTable, $scope[table]).success(function (data) {
-                $rootScope.data[table].unshift(serializeDate(data));
+                $rootScope.data[table].unshift(serializeDate(data)[0]);
                 $scope[table] = {};
                 Notification.success('Запис додано!');
-            }).error(function () {
-                Notification.error('Виникла помилка!');
+            }).error(function (error) {
+                if (error.errors && error.errors.username)
+                    Notification.error('username ' + error.errors.username);
+                else
+                    Notification.error('Виникла помилка!');
             });
         };
 

@@ -57,20 +57,20 @@
 			"id": "birthday",
 			"order": 6
 		},
-		"sex": {
-			"name": "sex",
+		"gender": {
+			"name": "gender",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "sex",
+			"id": "gender",
 			"order": 7
 		},
-		"foto": {
-			"name": "foto",
+		"photo": {
+			"name": "photo",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "foto",
+			"id": "photo",
 			"order": 8
 		},
 		"dateEmployment": {

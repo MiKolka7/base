@@ -6,33 +6,37 @@
 
         <br/>
 
-        <div class="col-xs-4">
+        <div class="col-xs-6">
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">№ справи</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="affiliate.nameFull">
+                    <input type="text" class="form-control" ng-model="base.numberCase" required>
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Виконавець</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="affiliate.score">
+                    <select class="form-control" ng-model="base.user">
+                        <option ng-repeat="user in data.users"
+                                value="{{user.id}}"
+                                ng-bind="user.surname + ' ' + user.name"></option>
+                    </select>
                 </span>
             </label>
 
-            <label class="form-group">
-                <span class="col-xs-4 control-label text-left">Страхувальник</span>
-                <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="affiliate.score">
-                </span>
-            </label>
+            <!--<label class="form-group">-->
+                <!--<span class="col-xs-4 control-label text-left">Страхувальник</span>-->
+                <!--<span class="col-xs-8 col-padding-0">-->
+                    <!--<input type="text" class="form-control" ng-model="base.score">-->
+                <!--</span>-->
+            <!--</label>-->
 
             <label class="form-group">
                 <span class="col-xs-4 control-label text-left">Замовник</span>
                 <span class="col-sm-8 col-padding-0">
-                    <select class="form-control" ng-model="affiliate.customers">
+                    <select class="form-control" ng-model="base.customer">
                         <option value="КАСКО" selected="selected">КАСКО</option>
                         <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
                         <option value="Майно">Майно</option>
@@ -41,16 +45,16 @@
             </label>
 
             <label class="form-group">
-                <span class="col-xs-4 control-label text-left">№ спрви замовника</span>
+                <span class="col-xs-4 control-label text-left">№ страхової справи</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="affiliate.bank">
+                    <input type="text" class="form-control" ng-model="base.numberInsuranceCase">
                 </span>
             </label>
 
             <label class="form-group">
-                <span class="col-xs-4 control-label text-left">Справа надійшла</span>
+                <span class="col-xs-4 control-label text-left">Дата надходження справи</span>
                 <span class="col-xs-8 col-padding-0">
-                    <input type="text" class="form-control" ng-model="affiliate.mfo">
+                    <input type="date" class="form-control" ng-model="base.dateReceiptCase">
                 </span>
             </label>
 
@@ -71,21 +75,20 @@
                 <tr>
                     <th>№ справи</th>
                     <th>Виконавець</th>
-                    <th>Страхувальник</th>
                     <th>Замовник</th>
                     <th>№ спрви замовника</th>
-                    <th>Справа надійшла</th>
+                    <th>Дата надходження справи</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in data.cases track by $index"
+                <tr ng-repeat="item in data.base track by $index"
                     ng-click="editData(item, $index)">
-                    <td ng-bind="item.customers"></td>
-                    <td ng-bind="item.nameFull"></td>
-                    <td ng-bind="item.score"></td>
-                    <td ng-bind="item.bank"></td>
+                    <td ng-bind="item.numberCase"></td>
+                    <td ng-bind="item.user"></td>
+                    <td ng-bind="item.customer"></td>
+                    <td ng-bind="item.numberInsuranceCase"></td>
                     <td class="p-rel">
-                        <span ng-bind="item.mfo"></span>
+                        <span ng-bind="item.dateReceiptCase | date : 'MM.dd.yyyy' "></span>
                         <button ng-click="deleteData($index)" class="btn btn-danger btn-delete-row">
                             <i class="glyphicon glyphicon-trash"></i>
                         </button>

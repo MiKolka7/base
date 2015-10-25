@@ -1,12 +1,12 @@
-angular.module('baseApp.controller.app', []).controller('appCtrl', function($rootScope, $scope, $http){
+angular.module('baseApp.controller.app', []).controller('appCtrl', function ($rootScope, $scope, $http, serializeDate) {
     "use strict";
 
     //$http.get('/json/vdai.json').success(function(data){
     //    console.log(data);
-
-        //data.forEach(function(item){
-        //    $http.post('http://localhost:2403/vdai', item).success(function(data){});
-        //});
+    //
+    //    data.forEach(function(item){
+    //        $http.post('http://localhost:2403/vdai', item).success(function(data){});
+    //    });
     //});
 
     $scope.activePage = 'case';
@@ -21,10 +21,30 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function($roo
             f2Region: 10,
             f2Status: -1
         },
-        vdai: {},
-        insurer: {},
-        judge: {}
+        case: {}
     };
+
+    var additionalTables = [
+        'vdai',
+        'insuranceCompany',
+        'stateEnforcement',
+        'stateExecutiveService',
+        'judge',
+        'court',
+        'affiliate',
+        'customers',
+        'users'
+    ];
+
+    _.forEach(additionalTables, function(table) {
+        $http.get('http://localhost:2403/' + table.toLowerCase()).success(function (data) {
+            $rootScope.data[table] = serializeDate(data);
+
+            if (_.isEmpty($rootScope.data[table]))
+                $rootScope.data[table] = [];
+        });
+    });
+
 
 
     $scope.pages = [
@@ -46,7 +66,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function($roo
     ];
 
 
-    $scope.$watch('data.base.f2Region', function(a){
+    $scope.$watch('data.base.f2Region', function (a) {
         //alert(a);
         //$scope.data.base.numberInsuranceContract = String(a);
     });

@@ -2,7 +2,7 @@ angular.module('baseApp.controller.page.newCase', [])
     .controller('newCaseCtrl', function ($rootScope, $scope, $http, Notification, SweetAlert, serializeDate) {
         "use strict";
 
-        var table = $rootScope.table;
+        var table = 'base';
         var dbTable = angular.lowercase(table);
         var selectItemIndex = null;
 
@@ -14,6 +14,11 @@ angular.module('baseApp.controller.page.newCase', [])
             if (_.isEmpty($rootScope.data[table]))
                 $rootScope.data[table] = [];
         });
+
+        // users
+        //$http.get('http://localhost:2403/users').success(function (data) {
+        //    $scope.users = data;
+        //});
 
 
         /**
@@ -69,7 +74,7 @@ angular.module('baseApp.controller.page.newCase', [])
 
             $http.put('http://localhost:2403/' + dbTable + '/' + $scope[table].id, $scope[table]).success(function (data) {
                 if (data) {
-                    $rootScope.data[table][selectItemIndex] = serializeDate(data);
+                    $rootScope.data[table][selectItemIndex] = serializeDate(data)[0];
                     Notification.success('Дані оновлено!');
                 }
             }).error(function () {
@@ -86,7 +91,7 @@ angular.module('baseApp.controller.page.newCase', [])
             }
 
             $http.post('http://localhost:2403/' + dbTable, $scope[table]).success(function (data) {
-                $rootScope.data[table].unshift(serializeDate(data));
+                $rootScope.data[table].unshift(serializeDate(data)[0]);
                 $scope[table] = {};
                 Notification.success('Запис додано!');
             }).error(function () {

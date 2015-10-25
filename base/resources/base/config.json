@@ -17,12 +17,12 @@
 			"id": "customer",
 			"order": 1
 		},
-		"performer": {
-			"name": "performer",
+		"user": {
+			"name": "user",
 			"type": "string",
 			"typeLabel": "string",
-			"required": false,
-			"id": "performer",
+			"required": true,
+			"id": "user",
 			"order": 2
 		},
 		"dateGetCase": {
