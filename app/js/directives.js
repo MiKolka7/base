@@ -51,69 +51,6 @@ angular.module('baseApp.directive.case', [])
     })
 
 
-    .directive('insurer', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/insurer.html'
-        }
-    })
-
-    .directive('formTwo', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/f2.html'
-        }
-    })
-
-    .directive('insurerCase', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/insurer-case.html'
-        }
-    })
-
-    .directive('guilty', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/guilty.html'
-        }
-    })
-
-    .directive('claim', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/сlaim.html'
-        }
-    })
-
-    .directive('payment', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/payment.html'
-        }
-    })
-
-    .directive('courtQuilty', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/court-guilty.html'
-        }
-    })
-
-    .directive('courtCk', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/court-ck.html'
-        }
-    })
-
-    .directive('vdvs', function() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'template/case/vdvs.html'
-        }
-    })
-
     .directive('caseMain', function() {
         return {
             restrict: 'EA',
