@@ -1,0 +1,165 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 0
+		},
+		"nameFull": {
+			"name": "nameFull",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "nameFull",
+			"order": 1
+		},
+		"agrementNumber": {
+			"name": "agrementNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "agrementNumber",
+			"order": 2
+		},
+		"agrementDate": {
+			"name": "agrementDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "agrementDate",
+			"order": 3
+		},
+		"stavka": {
+			"name": "stavka",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "stavka",
+			"order": 4
+		},
+		"property": {
+			"name": "property",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "property",
+			"order": 5
+		},
+		"index": {
+			"name": "index",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "index",
+			"order": 6
+		},
+		"street": {
+			"name": "street",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "street",
+			"order": 7
+		},
+		"city": {
+			"name": "city",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "city",
+			"order": 8
+		},
+		"phone": {
+			"name": "phone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "phone",
+			"order": 9
+		},
+		"email": {
+			"name": "email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "email",
+			"order": 10
+		},
+		"cod": {
+			"name": "cod",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cod",
+			"order": 11
+		},
+		"worker": {
+			"name": "worker",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "worker",
+			"order": 12
+		},
+		"workerSurname": {
+			"name": "workerSurname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "workerSurname",
+			"order": 13
+		},
+		"workerName": {
+			"name": "workerName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "workerName",
+			"order": 14
+		},
+		"worker2Name": {
+			"name": "worker2Name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "worker2Name",
+			"order": 15
+		},
+		"workerPhone": {
+			"name": "workerPhone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "workerPhone",
+			"order": 16
+		},
+		"workerMobile": {
+			"name": "workerMobile",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "workerMobile",
+			"order": 17
+		},
+		"workerEmail": {
+			"name": "workerEmail",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "workerEmail",
+			"order": 18
+		},
+		"workerDate": {
+			"name": "workerDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "workerDate",
+			"order": 19
+		}
+	}
+}

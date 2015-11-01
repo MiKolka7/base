@@ -1,0 +1,141 @@
+{
+	"type": "Collection",
+	"properties": {
+		"starckNumber": {
+			"name": "starckNumber",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "starckNumber",
+			"order": 0
+		},
+		"caseNumber": {
+			"name": "caseNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "caseNumber",
+			"order": 1
+		},
+		"actNumber": {
+			"name": "actNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "actNumber",
+			"order": 2
+		},
+		"dateAct": {
+			"name": "dateAct",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateAct",
+			"order": 3
+		},
+		"compensation": {
+			"name": "compensation",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "compensation",
+			"order": 6
+		},
+		"compensationPayment": {
+			"name": "compensationPayment",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "compensationPayment",
+			"order": 5
+		},
+		"orderNumber": {
+			"name": "orderNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "orderNumber",
+			"order": 7
+		},
+		"orderDate": {
+			"name": "orderDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "orderDate",
+			"order": 8
+		},
+		"orderStatus": {
+			"name": "orderStatus",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "orderStatus",
+			"order": 9
+		},
+		"dateReceiptOrder": {
+			"name": "dateReceiptOrder",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateReceiptOrder",
+			"order": 10
+		},
+		"dateRequestOrder": {
+			"name": "dateRequestOrder",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateRequestOrder",
+			"order": 11
+		},
+		"receiver": {
+			"name": "receiver",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "receiver",
+			"order": 12
+		},
+		"receiverName": {
+			"name": "receiverName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "receiverName",
+			"order": 13
+		},
+		"accoundNumber": {
+			"name": "accoundNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "accoundNumber",
+			"order": 14
+		},
+		"accoundDate": {
+			"name": "accoundDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "accoundDate",
+			"order": 15
+		},
+		"victim": {
+			"name": "victim",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "victim",
+			"order": 16
+		},
+		"victimIC": {
+			"name": "victimIC",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "victimIC",
+			"order": 17
+		}
+	}
+}

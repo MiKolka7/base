@@ -1,0 +1,205 @@
+{
+	"type": "Collection",
+	"properties": {
+		"numberCase": {
+			"name": "numberCase",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "numberCase",
+			"order": 0
+		},
+		"surname": {
+			"name": "surname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "surname",
+			"order": 1
+		},
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 2
+		},
+		"name2": {
+			"name": "name2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name2",
+			"order": 3
+		},
+		"insurerCod": {
+			"name": "insurerCod",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "insurerCod",
+			"order": 4
+		},
+		"insurerPhone": {
+			"name": "insurerPhone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "insurerPhone",
+			"order": 5
+		},
+		"insurerMobile": {
+			"name": "insurerMobile",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "insurerMobile",
+			"order": 6
+		},
+		"insurerlndex": {
+			"name": "insurerlndex",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "insurerlndex",
+			"order": 7
+		},
+		"insurerStreet": {
+			"name": "insurerStreet",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "insurerStreet",
+			"order": 8
+		},
+		"insurerCity": {
+			"name": "insurerCity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "insurerCity",
+			"order": 9
+		},
+		"object": {
+			"name": "object",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "object",
+			"order": 10
+		},
+		"number": {
+			"name": "number",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "number",
+			"order": 11
+		},
+		"driverSurname": {
+			"name": "driverSurname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverSurname",
+			"order": 12
+		},
+		"driverName": {
+			"name": "driverName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverName",
+			"order": 13
+		},
+		"DriverName2": {
+			"name": "DriverName2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "DriverName2",
+			"order": 14
+		},
+		"driverMiddleName": {
+			"name": "driverMiddleName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverMiddleName",
+			"order": 15
+		},
+		"beneficiary": {
+			"name": "beneficiary",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "beneficiary",
+			"order": 16
+		},
+		"consentDate": {
+			"name": "consentDate",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "consentDate",
+			"order": 17
+		},
+		"consentNumber": {
+			"name": "consentNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "consentNumber",
+			"order": 18
+		},
+		"driverCod": {
+			"name": "driverCod",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverCod",
+			"order": 19
+		},
+		"driverPhone": {
+			"name": "driverPhone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverPhone",
+			"order": 20
+		},
+		"driverMobile": {
+			"name": "driverMobile",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverMobile",
+			"order": 21
+		},
+		"driverlndex": {
+			"name": "driverlndex",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverlndex",
+			"order": 22
+		},
+		"driverStreet": {
+			"name": "driverStreet",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverStreet",
+			"order": 23
+		},
+		"driverCity": {
+			"name": "driverCity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverCity",
+			"order": 24
+		}
+	}
+}

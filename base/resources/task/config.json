@@ -1,0 +1,53 @@
+{
+	"type": "Collection",
+	"properties": {
+		"type": {
+			"name": "type",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "type",
+			"order": 0
+		},
+		"starckNumber": {
+			"name": "starckNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "starckNumber",
+			"order": 1
+		},
+		"dateTask": {
+			"name": "dateTask",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateTask",
+			"order": 2
+		},
+		"task": {
+			"name": "task",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "task",
+			"order": 3
+		},
+		"dateFinalTask": {
+			"name": "dateFinalTask",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "dateFinalTask",
+			"order": 4
+		},
+		"status": {
+			"name": "status",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "status",
+			"order": 5
+		}
+	}
+}

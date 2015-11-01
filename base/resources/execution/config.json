@@ -1,0 +1,125 @@
+{
+	"type": "Collection",
+	"properties": {
+		"starckNumber": {
+			"name": "starckNumber",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "starckNumber",
+			"order": 0
+		},
+		"debtor": {
+			"name": "debtor",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "debtor",
+			"order": 1
+		},
+		"region": {
+			"name": "region",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "region",
+			"order": 2
+		},
+		"ses": {
+			"name": "ses",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "ses",
+			"order": 3
+		},
+		"stateEnforcement": {
+			"name": "stateEnforcement",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "stateEnforcement",
+			"order": 4
+		},
+		"statementNumber": {
+			"name": "statementNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "statementNumber",
+			"order": 5
+		},
+		"statementDate": {
+			"name": "statementDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "statementDate",
+			"order": 6
+		},
+		"dateRequestStatement": {
+			"name": "dateRequestStatement",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateRequestStatement",
+			"order": 7
+		},
+		"dateResolution": {
+			"name": "dateResolution",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateResolution",
+			"order": 8
+		},
+		"enforcementPproceedingNumber": {
+			"name": "enforcementPproceedingNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "enforcementPproceedingNumber",
+			"order": 9
+		},
+		"accesCode": {
+			"name": "accesCode",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "accesCode",
+			"order": 10
+		},
+		"refusal": {
+			"name": "refusal",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "refusal",
+			"order": 11
+		},
+		"reasonRefusal": {
+			"name": "reasonRefusal",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "reasonRefusal",
+			"order": 12
+		},
+		"dateClose": {
+			"name": "dateClose",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateClose",
+			"order": 13
+		},
+		"reasonCloseER": {
+			"name": "reasonCloseER",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "reasonCloseER",
+			"order": 14
+		}
+	}
+}

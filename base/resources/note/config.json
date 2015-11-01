@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"starckNumber": {
+			"name": "starckNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "starckNumber",
+			"order": 0
+		},
+		"dateNote": {
+			"name": "dateNote",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dateNote",
+			"order": 1
+		},
+		"Note": {
+			"name": "Note",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "Note",
+			"order": 2
+		}
+	}
+}

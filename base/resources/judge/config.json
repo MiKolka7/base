@@ -1,0 +1,125 @@
+{
+	"type": "Collection",
+	"properties": {
+		"region": {
+			"name": "region",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "region",
+			"order": 0
+		},
+		"court": {
+			"name": "court",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "court",
+			"order": 1
+		},
+		"judgeSurname": {
+			"name": "judgeSurname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgeSurname",
+			"order": 2
+		},
+		"judgeName": {
+			"name": "judgeName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgeName",
+			"order": 3
+		},
+		"judgeName2": {
+			"name": "judgeName2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgeName2",
+			"order": 4
+		},
+		"judgePosition": {
+			"name": "judgePosition",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgePosition",
+			"order": 5
+		},
+		"judgePhone": {
+			"name": "judgePhone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgePhone",
+			"order": 6
+		},
+		"judgeEmail": {
+			"name": "judgeEmail",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgeEmail",
+			"order": 7
+		},
+		"assistantSurname": {
+			"name": "assistantSurname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "assistantSurname",
+			"order": 8
+		},
+		"assistantName": {
+			"name": "assistantName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "assistantName",
+			"order": 9
+		},
+		"assistantName2": {
+			"name": "assistantName2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "assistantName2",
+			"order": 10
+		},
+		"assistantPhone": {
+			"name": "assistantPhone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "assistantPhone",
+			"order": 11
+		},
+		"assistantPhone2": {
+			"name": "assistantPhone2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "assistantPhone2",
+			"order": 12
+		},
+		"assistantEmail": {
+			"name": "assistantEmail",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "assistantEmail",
+			"order": 13
+		},
+		"note": {
+			"name": "note",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "note",
+			"order": 14
+		}
+	}
+}

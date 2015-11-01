@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"nameFull": {
+			"name": "nameFull",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "nameFull",
+			"order": 0
+		},
+		"score": {
+			"name": "score",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "score",
+			"order": 1
+		},
+		"bank": {
+			"name": "bank",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "bank",
+			"order": 2
+		},
+		"mfo": {
+			"name": "mfo",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mfo",
+			"order": 3
+		},
+		"customers": {
+			"name": "customers",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "customers",
+			"order": 4
+		}
+	}
+}

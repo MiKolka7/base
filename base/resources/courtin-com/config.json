@@ -1,0 +1,277 @@
+{
+	"type": "Collection",
+	"properties": {
+		"starckNumber": {
+			"name": "starckNumber",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "starckNumber",
+			"order": 0
+		},
+		"note": {
+			"name": "note",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "note",
+			"order": 1
+		},
+		"region": {
+			"name": "region",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "region",
+			"order": 2
+		},
+		"nameCourt": {
+			"name": "nameCourt",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "nameCourt",
+			"order": 3
+		},
+		"fee": {
+			"name": "fee",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "fee",
+			"order": 4
+		},
+		"orderStatus": {
+			"name": "orderStatus",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "orderStatus",
+			"order": 5
+		},
+		"orderNumber": {
+			"name": "orderNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "orderNumber",
+			"order": 6
+		},
+		"orderDate": {
+			"name": "orderDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "orderDate",
+			"order": 7
+		},
+		"claimNumber": {
+			"name": "claimNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimNumber",
+			"order": 8
+		},
+		"claimDate": {
+			"name": "claimDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimDate",
+			"order": 9
+		},
+		"caseCourt": {
+			"name": "caseCourt",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "caseCourt",
+			"order": 10
+		},
+		"judje": {
+			"name": "judje",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judje",
+			"order": 11
+		},
+		"amoutClaim": {
+			"name": "amoutClaim",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "amoutClaim",
+			"order": 12
+		},
+		"lossClaim": {
+			"name": "lossClaim",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "lossClaim",
+			"order": 13
+		},
+		"penaltyClaim": {
+			"name": "penaltyClaim",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "penaltyClaim",
+			"order": 14
+		},
+		"percentClaim": {
+			"name": "percentClaim",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "percentClaim",
+			"order": 15
+		},
+		"inflationClaim": {
+			"name": "inflationClaim",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "inflationClaim",
+			"order": 16
+		},
+		"otherClaim": {
+			"name": "otherClaim",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "otherClaim",
+			"order": 17
+		},
+		"judgmentDate": {
+			"name": "judgmentDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgmentDate",
+			"order": 18
+		},
+		"gistJudgment": {
+			"name": "gistJudgment",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "gistJudgment",
+			"order": 19
+		},
+		"satisfiedAmout": {
+			"name": "satisfiedAmout",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "satisfiedAmout",
+			"order": 20
+		},
+		"satisfiedLoss": {
+			"name": "satisfiedLoss",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "satisfiedLoss",
+			"order": 21
+		},
+		"satisfiedPenalty": {
+			"name": "satisfiedPenalty",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "satisfiedPenalty",
+			"order": 22
+		},
+		"satisfiedPercent": {
+			"name": "satisfiedPercent",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "satisfiedPercent",
+			"order": 23
+		},
+		"satisfiedlnflation": {
+			"name": "satisfiedlnflation",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "satisfiedlnflation",
+			"order": 24
+		},
+		"satisfiedOther": {
+			"name": "satisfiedOther",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "satisfiedOther",
+			"order": 25
+		},
+		"appealLodgedByWhom": {
+			"name": "appealLodgedByWhom",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "appealLodgedByWhom",
+			"order": 26
+		},
+		"appealDate": {
+			"name": "appealDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "appealDate",
+			"order": 27
+		},
+		"appealResolutionDate": {
+			"name": "appealResolutionDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "appealResolutionDate",
+			"order": 28
+		},
+		"appealEssence": {
+			"name": "appealEssence",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "appealEssence",
+			"order": 29
+		},
+		"cassationWhoFiled": {
+			"name": "cassationWhoFiled",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cassationWhoFiled",
+			"order": 30
+		},
+		"cassationFilingDate": {
+			"name": "cassationFilingDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cassationFilingDate",
+			"order": 31
+		},
+		"cassationResolutionDate": {
+			"name": "cassationResolutionDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cassationResolutionDate",
+			"order": 32
+		},
+		"cassationEssence": {
+			"name": "cassationEssence",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "cassationEssence",
+			"order": 33
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"work": {
+			"name": "work",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "work",
+			"order": 0
+		},
+		"final": {
+			"name": "final",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "final",
+			"order": 1
+		}
+	}
+}

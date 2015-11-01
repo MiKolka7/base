@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"numberCase": {
+			"name": "numberCase",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "numberCase",
+			"order": 0
+		},
+		"PropertyShortName": {
+			"name": "PropertyShortName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "PropertyShortName",
+			"order": 1
+		},
+		"PropertyFullName": {
+			"name": "PropertyFullName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "PropertyFullName",
+			"order": 2
+		}
+	}
+}

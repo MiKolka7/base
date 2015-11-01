@@ -1,0 +1,93 @@
+{
+	"type": "Collection",
+	"properties": {
+		"region": {
+			"name": "region",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "region",
+			"order": 0
+		},
+		"type": {
+			"name": "type",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "type",
+			"order": 1
+		},
+		"workName": {
+			"name": "workName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "workName",
+			"order": 2
+		},
+		"fullName": {
+			"name": "fullName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fullName",
+			"order": 3
+		},
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 4
+		},
+		"index": {
+			"name": "index",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "index",
+			"order": 5
+		},
+		"street": {
+			"name": "street",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "street",
+			"order": 6
+		},
+		"city": {
+			"name": "city",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "city",
+			"order": 7
+		},
+		"phone": {
+			"name": "phone",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "phone",
+			"order": 8
+		},
+		"email": {
+			"name": "email",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "email",
+			"order": 9
+		},
+		"www": {
+			"name": "www",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "www",
+			"order": 10
+		}
+	}
+}

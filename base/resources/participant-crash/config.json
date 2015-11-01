@@ -1,0 +1,405 @@
+{
+	"type": "Collection",
+	"properties": {
+		"starckNumber": {
+			"name": "starckNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "starckNumber",
+			"order": 0
+		},
+		"partDipanStatus": {
+			"name": "partDipanStatus",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "partDipanStatus",
+			"order": 1
+		},
+		"carModel": {
+			"name": "carModel",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "carModel",
+			"order": 2
+		},
+		"carNumber": {
+			"name": "carNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "carNumber",
+			"order": 3
+		},
+		"chekOwnerDriver": {
+			"name": "chekOwnerDriver",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "chekOwnerDriver",
+			"order": 4
+		},
+		"driverSurname": {
+			"name": "driverSurname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverSurname",
+			"order": 5
+		},
+		"driverName": {
+			"name": "driverName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverName",
+			"order": 6
+		},
+		"driverName2": {
+			"name": "driverName2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverName2",
+			"order": 7
+		},
+		"driverCod": {
+			"name": "driverCod",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverCod",
+			"order": 8
+		},
+		"driverWorkplace": {
+			"name": "driverWorkplace",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverWorkplace",
+			"order": 9
+		},
+		"driverPosition": {
+			"name": "driverPosition",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverPosition",
+			"order": 10
+		},
+		"driverlndex": {
+			"name": "driverlndex",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverlndex",
+			"order": 11
+		},
+		"driverStreet": {
+			"name": "driverStreet",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverStreet",
+			"order": 12
+		},
+		"driverCity": {
+			"name": "driverCity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverCity",
+			"order": 13
+		},
+		"trafficRules": {
+			"name": "trafficRules",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "trafficRules",
+			"order": 14
+		},
+		"protocol": {
+			"name": "protocol",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "protocol",
+			"order": 15
+		},
+		"courtRegion": {
+			"name": "courtRegion",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "courtRegion",
+			"order": 16
+		},
+		"courtName": {
+			"name": "courtName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "courtName",
+			"order": 17
+		},
+		"judgmentDate": {
+			"name": "judgmentDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgmentDate",
+			"order": 18
+		},
+		"judgmentDateOrder": {
+			"name": "judgmentDateOrder",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgmentDateOrder",
+			"order": 19
+		},
+		"judgmentStatus": {
+			"name": "judgmentStatus",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgmentStatus",
+			"order": 20
+		},
+		"judgmentDateReceipt": {
+			"name": "judgmentDateReceipt",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "judgmentDateReceipt",
+			"order": 21
+		},
+		"ownerSurname": {
+			"name": "ownerSurname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerSurname",
+			"order": 22
+		},
+		"ownerName": {
+			"name": "ownerName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerName",
+			"order": 23
+		},
+		"ownerName2": {
+			"name": "ownerName2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerName2",
+			"order": 24
+		},
+		"ownerCjd": {
+			"name": "ownerCjd",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerCjd",
+			"order": 25
+		},
+		"ownerlndex": {
+			"name": "ownerlndex",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerlndex",
+			"order": 26
+		},
+		"ownerStreet": {
+			"name": "ownerStreet",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerStreet",
+			"order": 27
+		},
+		"ownerCity": {
+			"name": "ownerCity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerCity",
+			"order": 28
+		},
+		"ownerWorkplace": {
+			"name": "ownerWorkplace",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerWorkplace",
+			"order": 29
+		},
+		"ownerPosition": {
+			"name": "ownerPosition",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerPosition",
+			"order": 30
+		},
+		"ownerEmail": {
+			"name": "ownerEmail",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerEmail",
+			"order": 31
+		},
+		"ownerPhone": {
+			"name": "ownerPhone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerPhone",
+			"order": 32
+		},
+		"ownerMobile": {
+			"name": "ownerMobile",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerMobile",
+			"order": 33
+		},
+		"driverEmail": {
+			"name": "driverEmail",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverEmail",
+			"order": 34
+		},
+		"driverPhone": {
+			"name": "driverPhone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverPhone",
+			"order": 35
+		},
+		"driverMobile": {
+			"name": "driverMobile",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "driverMobile",
+			"order": 36
+		},
+		"insuranceCompany": {
+			"name": "insuranceCompany",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "insuranceCompany",
+			"order": 37
+		},
+		"polisy": {
+			"name": "polisy",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "polisy",
+			"order": 38
+		},
+		"franchise": {
+			"name": "franchise",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "franchise",
+			"order": 39
+		},
+		"claimNumber": {
+			"name": "claimNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimNumber",
+			"order": 40
+		},
+		"claimData": {
+			"name": "claimData",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimData",
+			"order": 41
+		},
+		"claimDateDelivery": {
+			"name": "claimDateDelivery",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimDateDelivery",
+			"order": 42
+		},
+		"claimChekDelivery": {
+			"name": "claimChekDelivery",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimChekDelivery",
+			"order": 43
+		},
+		"reasonDelivery": {
+			"name": "reasonDelivery",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "reasonDelivery",
+			"order": 44
+		},
+		"claimICNumber": {
+			"name": "claimICNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimICNumber",
+			"order": 45
+		},
+		"claimICDate": {
+			"name": "claimICDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimICDate",
+			"order": 46
+		},
+		"claimICDateDelivery": {
+			"name": "claimICDateDelivery",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "claimICDateDelivery",
+			"order": 47
+		},
+		"controlDate": {
+			"name": "controlDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "controlDate",
+			"order": 48
+		},
+		"numberCaseIC": {
+			"name": "numberCaseIC",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "numberCaseIC",
+			"order": 49
+		}
+	}
+}

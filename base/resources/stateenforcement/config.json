@@ -1,0 +1,77 @@
+{
+	"type": "Collection",
+	"properties": {
+		"region": {
+			"name": "region",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "region",
+			"order": 0
+		},
+		"ses": {
+			"name": "ses",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ses",
+			"order": 1
+		},
+		"surname": {
+			"name": "surname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "surname",
+			"order": 2
+		},
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 3
+		},
+		"name2": {
+			"name": "name2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name2",
+			"order": 4
+		},
+		"position": {
+			"name": "position",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "position",
+			"order": 5
+		},
+		"phone": {
+			"name": "phone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "phone",
+			"order": 6
+		},
+		"email": {
+			"name": "email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "email",
+			"order": 7
+		},
+		"cabinet": {
+			"name": "cabinet",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cabinet",
+			"order": 8
+		}
+	}
+}

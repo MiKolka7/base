@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"starckNumber": {
+			"name": "starckNumber",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "starckNumber",
+			"order": 0
+		},
+		"listDoc": {
+			"name": "listDoc",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "listDoc",
+			"order": 1
+		},
+		"DateRequest": {
+			"name": "DateRequest",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "DateRequest",
+			"order": 2
+		},
+		"DateReceipt": {
+			"name": "DateReceipt",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "DateReceipt",
+			"order": 3
+		}
+	}
+}
