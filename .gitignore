@@ -46,3 +46,7 @@ $RECYCLE.BIN/
 *.msp
 *.rar
 *.zip
+
+
+mongod
+mongod.lock
