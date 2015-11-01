@@ -87,7 +87,7 @@ angular.module('baseApp',
 
         $routeProvider
             .when('/', {
-                controller: 'mainCtrl'
+                controller: 'mainCtrl',
             })
 
             .when('/case', {

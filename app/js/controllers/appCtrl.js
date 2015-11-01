@@ -19,7 +19,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($ro
     $rootScope.data = {
         base: {
             f2Region: 10,
-            f2Status: -1
+            f2Status: "-1"
         },
         case: {}
     };
