@@ -200,6 +200,22 @@
 			"required": false,
 			"id": "driverCity",
 			"order": 24
+		},
+		"insurerIsDriver": {
+			"name": "insurerIsDriver",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "insurerIsDriver",
+			"order": 25
+		},
+		"insurerIsOwnerInsurer": {
+			"name": "insurerIsOwnerInsurer",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "insurerIsOwnerInsurer",
+			"order": 26
 		}
 	}
 }

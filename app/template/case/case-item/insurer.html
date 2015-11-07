@@ -35,19 +35,19 @@
 
                 <div class="container-fluid">
                     <label class="form-group">
-                    <span class="col-sm-12 control-label col-padding-0 cur-p">
-                        <input type="checkbox"
-                               checklist-model="names"
-                               checklist-value="data.case.insurer">
-                        ￼Страхувальник і водій одна одна особа
-                    </span>
+                        <span class="col-sm-12 control-label col-padding-0 cur-p">
+                            <input type="checkbox"
+                                   ng-model="data.case.insurer.insurerIsDriver">
+                            ￼Страхувальник і водій одна одна особа
+                        </span>
                     </label>
 
                     <label class="form-group">
-                    <span class="col-sm-12 control-label col-padding-0 cur-p">
-                        <input type="checkbox" ng-model="data.case.insurer.driveInsurer2">
-                        ￼Страхувальник і власник одна одна особа
-                    </span>
+                        <span class="col-sm-12 control-label col-padding-0 cur-p">
+                            <input type="checkbox"
+                                   ng-model="data.case.insurer.insurerIsOwnerInsurer">
+                            ￼Страхувальник і власник одна одна особа
+                        </span>
                     </label>
                 </div>
             </section>
