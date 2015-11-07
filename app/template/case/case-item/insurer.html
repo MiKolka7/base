@@ -36,7 +36,9 @@
                 <div class="container-fluid">
                     <label class="form-group">
                     <span class="col-sm-12 control-label col-padding-0 cur-p">
-                        <input type="checkbox" ng-model="data.case.insurer.driveInsurer">
+                        <input type="checkbox"
+                               checklist-model="names"
+                               checklist-value="data.case.insurer">
                         ￼Страхувальник і водій одна одна особа
                     </span>
                     </label>
@@ -94,21 +96,30 @@
                 <label class="form-group">
                     <span class="col-sm-3 control-label text-left">Прізвище</span>
                     <span class="col-sm-9 col-padding-0">
-                        <input type="text" class="form-control" ng-model="data.case.insurer.driverSurname">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="data.case.insurer.driverSurname"
+                               ng-bind="names.surname">
                     </span>
                 </label>
 
                 <label class="form-group">
                     <span class="col-sm-3 control-label text-left">Ім'я</span>
                     <span class="col-sm-9 col-padding-0">
-                        <input type="text" class="form-control" ng-model="data.case.insurer.driverName">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="data.case.insurer.driverName"
+                               ng-bind="names.name">
                     </span>
                 </label>
 
                 <label class="form-group">
                     <span class="col-sm-3 control-label text-left">По батькові</span>
                     <span class="col-sm-9 col-padding-0">
-                        <input type="text" class="form-control" ng-model="data.case.insurer.DriverName2">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="data.case.insurer.DriverName2"
+                               ng-bind="names.name2">
                     </span>
                 </label>
             </section>

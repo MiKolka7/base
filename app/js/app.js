@@ -10,6 +10,7 @@ angular.module('baseApp',
         , 'ui-notification'
         , 'chieffancypants.loadingBar'
         , 'ngDialog'
+        , 'checklist-model'
 
         , 'baseApp.filters'
         , 'baseApp.factory.serializeDate'

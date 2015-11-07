@@ -185,4 +185,6 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($ro
 
     //print
 
+    $scope.names = [];
+
 });

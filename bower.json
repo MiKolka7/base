@@ -14,7 +14,8 @@
     "bootstrap": "latest",
     "jquery": "latest",
     "ngDialog": "latest",
-    "ngSweetAlert": "latest",
-    "underscore": "latest"
+    "angular-sweetalert": "latest",
+    "underscore": "latest",
+    "checklist-model": "~0.6.0"
   }
 }
