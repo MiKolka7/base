@@ -209,13 +209,37 @@
 			"id": "insurerIsDriver",
 			"order": 25
 		},
-		"insurerIsOwnerInsurer": {
-			"name": "insurerIsOwnerInsurer",
+		"insurerIsOwner": {
+			"name": "insurerIsOwner",
 			"type": "boolean",
 			"typeLabel": "boolean",
 			"required": false,
-			"id": "insurerIsOwnerInsurer",
+			"id": "insurerIsOwner",
 			"order": 26
+		},
+		"ownerSurname": {
+			"name": "ownerSurname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerSurname",
+			"order": 27
+		},
+		"ownerName": {
+			"name": "ownerName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerName",
+			"order": 28
+		},
+		"ownerName2": {
+			"name": "ownerName2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerName2",
+			"order": 29
 		}
 	}
 }

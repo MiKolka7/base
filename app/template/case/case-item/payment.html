@@ -14,7 +14,7 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Сума виплати</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="number" class="form-control">
+                <input type="number" class="form-control" ng-model="data.base.totalPayments">
             </span>
         </label>
     </div>
@@ -34,54 +34,55 @@
                 <tr>
                     <th colspan="5"></th>
                     <th colspan="3">Платіжне доручення</th>
-                    <th collapse="2">Отримувач СВ</th>
+                    <th colspan="2">Отримувач СВ</th>
                     <th colspan="2">СТО</th>
                 </tr>
                 <tr>
-                    <th>#СА</th>
-                    <th>Дата</th>
-                    <th>Сума</th>
+                    <th>№ СА</th>
+                    <th>Дата СА</th>
+                    <th>Виплата</th>
                     <th>Утримання</th>
-                    <th>Виплати</th>
-                    <th>Наявність</th>
-                    <th>#</th>
+                    <th>Виплата всього</th>
+                    <th>Статус</th>
+                    <th>№</th>
                     <th>Дата</th>
                     <th>Отримувач</th>
                     <th>Назва</th>
-                    <th>Дата</th>
+                    <th>№ Рахунку</th>
+                    <th>Дата рахунку</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
                         <label class="form-group form-group--full">
-                            <input type="text" class="form-controll"/>
+                            <input type="number" class="form-controll" ng-model="data.case.insuranceActs.actNum"/>
                         </label>
                     </td>
                     <td>
                         <label class="form-group form-group--full">
-                            <input type="date" class="form-controll"/>
+                            <input type="date" class="form-controll" ng-model="data.case.insuranceActs.dateAct"/>
                         </label>
                     </td>
                     <td>
                         <label class="form-group form-group--full">
-                            <input type="number" class="form-controll" readonly="readonly"/>
+                            <input type="number" class="form-controll" readonly="readonly" ng-model="data.case.insuranceActs.compensationPayment"/>
                         </label>
                     </td>
                     <td>
                         <label class="form-group form-group--full">
-                            <input type="number" class="form-controll"/>
+                            <input type="number" class="form-controll" ng-model="data.case.insuranceActs.compensationRetention"/>
                             <p></p>
                         </label>
                     </td>
                     <td>
                         <label class="form-group form-group--full">
-                            <input type="number" class="form-controll"/>
+                            <input type="number" class="form-controll" ng-model="data.case.insuranceActs.compensation"/>
                         </label>
                     </td>
                     <td>
                         <label class="form-group form-group--full">
-                            <select class="form-controll" ng-model="ccStatus">
+                            <select class="form-controll" ng-model="data.case.insuranceActs.orderStatus">
                                 <option value="-1">Замовити</option>
                                 <option value="0">Замовлено</option>
                                 <option value="1">Отримано</option>
@@ -89,18 +90,18 @@
                         </label>
                     </td>
                     <td width="150">
-                        <label class="form-group form-group--full" ng-show="ccStatus == 1">
-                            <input type="text" class="form-controll"/>
+                        <label class="form-group form-group--full" ng-show="data.case.insuranceActs.orderStatus == 1">
+                            <input type="text" class="form-controll" ng-model="data.case.insuranceActs.orderNum"/>
                         </label>
                     </td>
                     <td width="150">
-                        <label class="form-group form-group--full" ng-show="ccStatus == 1">
-                            <input type="date" class="form-controll"/>
+                        <label class="form-group form-group--full" ng-show="data.case.insuranceActs.orderStatus == 1">
+                            <input type="date" class="form-controll" ng-model="data.case.insuranceActs.orderDate"/>
                         </label>
                     </td>
                     <td>
                         <label class="form-group form-group--full">
-                            <select class="form-controll">
+                            <select class="form-controll" ng-model="data.case.insuranceActs.receiver">
                                 <option value="Страхувальник">Страхувальник</option>
                                 <option value="Авторизована СТО">Авторизована СТО</option>
                                 <option value="Вигодонабувач">Вигодонабувач</option>
@@ -109,12 +110,17 @@
                     </td>
                     <td>
                         <label class="form-group form-group--full">
-                            <input type="text" class="form-controll"/>
+                            <input type="text" class="form-controll" ng-model="data.case.insuranceActs.receiverName"/>
                         </label>
                     </td>
                     <td>
-                        <label class="form-group form-group--full" ng-show="ccStatus == 1">
-                            <input type="date" class="form-controll"/>
+                        <label class="form-group form-group--full">
+                            <input type="number" class="form-controll" ng-model="data.case.insuranceActs.accountNum"/>
+                        </label>
+                    </td>
+                    <td>
+                        <label class="form-group form-group--full" ng-show="data.case.insuranceActs.orderStatus == 1">
+                            <input type="date" class="form-controll" ng-model="data.case.insuranceActs.accountDate"/>
                         </label>
                     </td>
                 </tr>

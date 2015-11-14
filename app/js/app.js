@@ -31,6 +31,7 @@ angular.module('baseApp',
         , 'baseApp.controller.case.claimCk'
         , 'baseApp.controller.case.dvsCk'
         , 'baseApp.controller.case.payment'
+        , 'baseApp.controller.case.paymentForCase'
         , 'baseApp.controller.case.instanceCk'
         , 'baseApp.controller.case.instanceQuilty'
         , 'baseApp.controller.case.instanceOwner'

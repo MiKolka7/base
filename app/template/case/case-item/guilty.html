@@ -14,14 +14,18 @@
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">Марка</span>
                 <span class="col-sm-8 col-padding-0">
-                    <input type="text" class="form-control">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash.carModel">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">Д.р.н.</span>
                 <span class="col-sm-8 col-padding-0">
-                    <input type="text" class="form-control">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash.carNumber">
                 </span>
             </label>
 
@@ -43,9 +47,20 @@
             </label>
 
             <label class="form-group">
-                <span class="col-sm-4 control-label text-left">Д.р.н.</span>
+                <span class="col-sm-4 control-label text-left">п. ПДР</span>
                 <span class="col-sm-8 col-padding-0">
-                    <input type="text" class="form-control">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash.trafficRules">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-sm-4 control-label text-left">Адмін. протокол</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash.protocol">
                 </span>
             </label>
 
@@ -81,14 +96,18 @@
                 <label class="form-group">
                     <span class="col-sm-4 control-label text-left">Дата запиту</span>
                     <span class="col-sm-8 col-padding-0">
-                        <input type="date" class="form-control">
+                        <input type="date"
+                               class="form-control"
+                               ng-model="data.case.participantCrash.judgmentDateOrder">
                     </span>
                 </label>
 
                 <label class="form-group">
                     <span class="col-sm-4 control-label text-left">Дата постанови</span>
                     <span class="col-sm-8 col-padding-0">
-                        <input type="date" class="form-control">
+                        <input type="date"
+                               class="form-control"
+                               ng-model="data.case.participantCrash.judgmentDate">
                     </span>
                 </label>
 
@@ -150,21 +169,27 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Прізвище</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverSurname">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Ім'я</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverName">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">По батькові</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverName2">
             </span>
         </label>
 
@@ -186,21 +211,27 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Індекс</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverIndex">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Вулиця</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverStreet">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Село/місто</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverCity">
             </span>
         </label>
 
@@ -219,7 +250,9 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">ІПН</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverCod">
             </span>
         </label>
 
@@ -233,28 +266,36 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Email</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="email" class="form-control">
+                <input type="email"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverEmail">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Тел. моб</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverMobile">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Місце роботи</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverWorkplace">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Посада</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.driverPosition">
             </span>
         </label>
 
@@ -281,21 +322,27 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">№</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.claimNum">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Дата</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.claimDate">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Дата вручення</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.claimDateDelivery">
             </span>
         </label>
 
@@ -405,14 +452,18 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Поліс</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.polisy">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Ліміт</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.limit">
             </span>
         </label>
 
@@ -423,14 +474,18 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Франшиза</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.franchise">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">№ справи</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.numberCaseIC">
             </span>
         </label>
 
@@ -448,28 +503,36 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">№</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.claimICNum">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Дата</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.claimICDate">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Дата вруч.</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.claimICDateDelivery">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Конт. дата</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.controlDate">
             </span>
         </label>
 
@@ -502,21 +565,27 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Прізвище</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerSurname">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Ім'я</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerName">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">По батькові</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerName2">
             </span>
         </label>
 
@@ -537,21 +606,27 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Індекс</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerIndex">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Вулиця</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerStreet">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Село/місто</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerCity">
             </span>
         </label>
 
@@ -570,7 +645,9 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">ІПН</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerCod">
             </span>
         </label>
 
@@ -584,28 +661,36 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Email</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="email" class="form-control">
+                <input type="email"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerEmail">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Тел. моб</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerMobile">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Місце роботи</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerWorkplace">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Посада</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash.ownerPosition">
             </span>
         </label>
 

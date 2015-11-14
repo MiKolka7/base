@@ -17,5 +17,8 @@
     "angular-sweetalert": "latest",
     "underscore": "latest",
     "checklist-model": "~0.6.0"
+  },
+  "resolutions": {
+    "angular": "1.4.7"
   }
 }

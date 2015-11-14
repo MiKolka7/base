@@ -185,6 +185,73 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($ro
 
     //print
 
-    $scope.names = [];
+    $scope.$watch('data.case.insurer.insurerIsDriver', function(value) {
+        if(value) {
+            $scope.data.case.insurer.driverSurname = $scope.data.case.insurer.surname;
+            $scope.data.case.insurer.driverName = $scope.data.case.insurer.name;
+            $scope.data.case.insurer.DriverName2 = $scope.data.case.insurer.name2;
+        } else {
+            $scope.data.case.insurer.driverSurname = "";
+            $scope.data.case.insurer.driverName = "";
+            $scope.data.case.insurer.DriverName2 = "";
+        }
+    });
+
+    $scope.$watch('data.case.insurer.insurerIsOwner', function(value) {
+        if(value) {
+            $scope.data.case.insurer.ownerSurname = $scope.data.case.insurer.surname;
+            $scope.data.case.insurer.ownerName = $scope.data.case.insurer.name;
+            $scope.data.case.insurer.ownerName2 = $scope.data.case.insurer.name2;
+        } else {
+            $scope.data.case.insurer.ownerSurname = "";
+            $scope.data.case.insurer.ownerName = "";
+            $scope.data.case.insurer.ownerName2 = "";
+        }
+    });
+
+    $rootScope.addons = [
+        {
+            title: "Копія повідомлення про настання події, що має ознаки страхового випадку за договором добровільного страхування транспортного засобу"
+        },
+        {
+            title: "Копія акту огляду ТЗ"
+        },
+        {
+            title: "Копія Калькуляції"
+        },
+        {
+            title: "Копія Модуля розрахунку збитків"
+        },
+        {
+            title: "Копія Звіт експерта"
+        },
+        {
+            title: "Копія Фотододатки"
+        },
+        {
+            title: "Копія Договору страхування №2744а/12зп від 17.09.2012"
+        },
+        {
+            title: "Копія Заяви на страхування"
+        },
+        {
+            title: "Копія свідоцвта про реєстрацію ТЗ та посвідчення водія"
+        },
+        {
+            title: "Копія паспорту та коду страхувальника"
+        },
+        {
+            title: "Копія паспорту та коду водія"
+        },
+        {
+            title: "Копія первинної довідки ДАЇ"
+        },
+        {
+            title: "Копія роздруківки з бази МТСБУ"
+        },
+        {
+            title: "Копія Довіреності № 3179/18 від 17.12.2013 року"
+        }
+    ]
 
 });

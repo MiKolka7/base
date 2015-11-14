@@ -27,22 +27,35 @@
     </h4>
 
     <header class="col-sm-12">
-        <p class="col-sm-2 text-center"></p>
-        <p class="col-sm-8 text-center">Назва документу</p>
+        <p class="col-sm-10 text-center">Назва документу</p>
         <p class="col-sm-2 text-center">Кількість сторінок</p>
     </header>
 
-    <div class="col-sm-12">
-        <label class="col-sm-2 form-group">
-            <input type="text" class="form-control">
-        </label>
-        <label class="col-sm-8 form-group">
-            <input type="text" class="form-control">
-        </label>
-        <label class="col-sm-2 form-group">
-            <input type="number" class="form-control">
-        </label>
-    </div>
+    <ol class="col-sm-12">
+        <li class="col-sm-12" ng-repeat="item in addons">
+            <input type="checkbox"
+                   class="col-sm-10 form-control"
+                   checklist-model="data.case.participantCrash.addons"
+                   checklist-value="item.title"/>{{ ::item.title }}
+            <label class="col-sm-2 form-group">
+                <input type="number" class="form-control" />
+            </label>
+        </li>
+        <li class="col-sm-12" ng-repeat="i in [0, 1, 2, 3, 4] track by $index">
+            <input type="checkbox"
+                   class="form-control"
+                   id="'adn' + $index"
+                   checklist-model="data.case.participantCrash.addons"
+                   checklist-value="data.case.participantCrash.writtenAddons[i]"
+                    />
+            <label class="col-sm-5 form-group" for="'adn' + $index">
+                <input type="text" class="form-control" ng-model="data.case.participantCrash.writtenAddons[i]"/>
+            </label>
+            <label class="col-sm-2 form-group">
+                <input type="number" class="form-control" />
+            </label>
+        </li>
+    </ol>
 
 </div>
 
@@ -60,11 +73,11 @@
                 <tbody>
                 <tr>
                     <td>СК:</td>
-                    <td ng-bind=""></td>
+                    <td ng-bind="data.case.participantCrash.insuranceCompany"></td>
                 </tr>
                 <tr>
                     <td>Поліс:</td>
-                    <td ng-bind=""></td>
+                    <td ng-bind="data.case.participantCrash.polisy"></td>
                 </tr>
                 </tbody>
             </table>
@@ -79,11 +92,11 @@
                 <tbody>
                 <tr>
                     <td>Винуватець:</td>
-                    <td ng-bind=""></td>
+                    <td ng-bind="data.case.participantCrash.driverSurname"></td>
                 </tr>
                 <tr>
                     <td>Власник:</td>
-                    <td ng-bind=""></td>
+                    <td ng-bind="data.case.participantCrash.ownerSurname"></td>
                 </tr>
                 </tbody>
             </table>
@@ -104,33 +117,33 @@
 
         <div class="col-sm-12">
 
-            <h4 class="case-item-title">Суд</h4>
+            <h4 class="case-item-title">Заява</h4>
 
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">№</span>
                 <span class="col-sm-8 col-padding-0">
-                    <input type="number" class="form-control">
+                    <input type="number" class="form-control" ng-model="data.case.participantCrash.claimICNum">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">Дата</span>
                 <span class="col-sm-8 col-padding-0">
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" ng-model="data.case.participantCrash.claimICDate">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">Дата вручення</span>
                 <span class="col-sm-8 col-padding-0">
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" ng-model="data.case.participantCrash.claimICDateDelivery">
                 </span>
             </label>
 
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">Контрольна дата оплати</span>
                 <span class="col-sm-8 col-padding-0">
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" ng-model="data.case.participantCrash.controlDate">
                 </span>
             </label>
 
