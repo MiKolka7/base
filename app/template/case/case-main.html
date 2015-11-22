@@ -176,7 +176,7 @@
                 <tbody>
                     <tr>
                         <td>Європротокол:</td>
-                        <td ng-bind="data.case.base.euroProtocol"></td>
+                        <td ng-bind="data.base.euroProtocol"></td>
                     </tr>
                     <tr>
                         <td>Дата ДТП:</td>
@@ -327,7 +327,7 @@
         <div class="panel panel-success fz14">
             <div class="panel-heading text-center"
                  ng-click="openCaseItem('paymentForCase')">
-                Страхова виплата та розрахунки
+                Розрахунки по справі
                 <i class="glyphicon glyphicon-pencil pull-right"></i>
             </div>
         </div>
@@ -336,7 +336,7 @@
                 <div class="panel panel-success">
                     <div class="panel-heading"
                          ng-click="openCaseItem('payment')">
-                        Виплата
+                        Страхова виплата
                         <i class="glyphicon glyphicon-pencil pull-right"></i>
                     </div>
 
@@ -347,7 +347,7 @@
                                 <td ng-bind=""></td>
                             </tr>
                             <tr>
-                                <td>Статус виплати:</td>
+                                <td>Сума виплати:</td>
                                 <td ng-bind=""></td>
                             </tr>
                         </tbody>
