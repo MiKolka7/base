@@ -152,30 +152,45 @@
         <p class="col-sm-2 text-center">Кількість сторінок</p>
     </header>
 
-    <ol class="col-sm-12">
-        <li class="row checkbox" ng-repeat="item in addons">
-            <input type="checkbox"
-                   class="form-control col-sm-11"
-                   checklist-model="data.case.participantCrash.addons"
-                   checklist-value="item.title"/>{{ ::item.title }}
-            <label class="form-group col-sm-1">
-                <input type="number" class="form-control" />
+    <ul class="col-sm-12">
+        <li class="row" ng-repeat="item in addons">
+            <label class="col-sm-10">
+                <input type="checkbox"
+                       class="col-sm-1"
+                       checklist-model="data.case.participantCrash.addons"
+                       checklist-value="item.title"
+                />
+                <span class="col-sm-11" ng-bind=" ::item.title "></span>
             </label>
+            <span class="col-sm-2 form-group">
+                <input type="number"
+                       min="0"
+                       class="form-control"
+                />
+            </span>
         </li>
-        <li class="checkbox row" ng-repeat="i in [0, 1, 2, 3, 4] track by $index">
-            <input type="checkbox"
-                   class="form-control col-sm-1"
-                   id="'adn' + $index"
-                   checklist-model="data.case.participantCrash.addons"
-                   checklist-value="data.case.participantCrash.writtenAddons[i]"
+        <li class="row" ng-repeat="i in [0, 1, 2, 3, 4] track by $index">
+            <dic class="col-sm-10">
+                <input type="checkbox"
+                       class="col-sm-1"
+                       id="'adn' + $index"
+                       checklist-model="data.case.participantCrash.addons"
+                       checklist-value="$index"
+                />
+                <label class="col-sm-11 form-group" for="'adn' + $index">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="$index"
                     />
-            <label class="col-sm-10 form-group" for="'adn' + $index">
-                <input type="text" class="form-control" ng-model="data.case.participantCrash.writtenAddons[i]"/>
-            </label>
-            <label class="col-sm-1 form-group">
-                <input type="number" class="form-control" />
+                </label>
+            </dic>
+            <label class="col-sm-2 form-group">
+                <input type="number"
+                       min="0"
+                       class="form-control"
+                />
             </label>
         </li>
-    </ol>
+    </ul>
 
 </div>
