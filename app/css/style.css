@@ -235,7 +235,8 @@ select {
     visibility: hidden;
 }
 
-tr:hover .btn-delete-row {
+tr:hover .btn-delete-row,
+li:hover .btn-delete-row {
     opacity: 1;
     visibility: visible;
     transition: all 0.5s ease;
