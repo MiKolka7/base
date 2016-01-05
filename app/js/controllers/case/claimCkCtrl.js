@@ -1,5 +1,5 @@
 angular.module('baseApp.controller.case.claimCk', [])
-    .controller('claimCkCtrl', function($rootScope, $scope, $http){
+    .controller('claimCkCtrl', function($rootScope, $scope, $http) {
         "use strict";
 
         $rootScope.addons = [
@@ -48,20 +48,18 @@ angular.module('baseApp.controller.case.claimCk', [])
         ];
 
         $scope.addDoc = function () {
+            if ($scope.doc.title === '') return;
+            $scope.doc.delete = true;
             $rootScope.addons.push($scope.doc);
             $scope.doc = {}
         };
 
         $scope.changeStatus = function(idx, checked) {
-            if (!checked) {
-                $rootScope.addons[idx].active = false
-            }
-            if (checked) {
-                $rootScope.addons[idx].active = true
-            }
+            $rootScope.addons[idx].active = checked
         };
 
         $scope.deleteData = function(idx) {
+            console.log(idx);
             $rootScope.addons.splice(idx, 1)
         }
 
