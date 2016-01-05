@@ -157,9 +157,7 @@
             <label class="col-sm-10">
                 <input type="checkbox"
                        class="col-sm-1"
-                       checklist-model=""
-                       checklist-value="item"
-                       ng-change="changeStatus($index, checked)"
+                       ng-model="item.active"
                 />
                 <span class="col-sm-11" ng-bind=" item.title "></span>
             </label>
