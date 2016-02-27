@@ -142,71 +142,71 @@
 <br/>
 
 <div class="row">
+    <div class="col-sm-12 ">
+        <h4 class="case-item-title">
+            Додатки до Заяви
+        </h4>
 
-    <h4 class="col-sm-12 case-item-title">
-        Додатки до Заяви
-    </h4>
+        <header class="col-sm-12">
+            <p class="col-sm-10 text-center">Назва документу</p>
+            <p class="col-sm-2 text-center">Кількість сторінок</p>
+        </header>
 
-    <header class="col-sm-12">
-        <p class="col-sm-10 text-center">Назва документу</p>
-        <p class="col-sm-2 text-center">Кількість сторінок</p>
-    </header>
-
-    <ul class="col-sm-12">
-        <li class="row p-rel" ng-repeat="item in addons track by $index">
-            <label class="col-sm-10">
-                <input type="checkbox"
-                       class="col-sm-1"
-                       ng-model="item.active"
-                />
-                <span class="col-sm-11" ng-bind=" item.title "></span>
-            </label>
-            <label class="col-sm-2">
-                <input type="number"
-                       min="0"
-                       class="form-control"
-                       ng-model="item.pages"
-                />
-            </label>
-            <button class="btn btn-danger btn-delete-row"
-                    ng-click="deleteData($index)"
-                    ng-if="item.delete">
-                <i class="glyphicon glyphicon-trash"></i>
-            </button>
-        </li>
-        <!--<li class="row" ng-repeat="i in [0, 1, 2, 3, 4] track by $index">-->
-            <!--<div class="col-sm-10">-->
-                <!--<input type="checkbox"-->
-                       <!--class="col-sm-1"-->
-                       <!--id="'adn' + $index"-->
-                       <!--checklist-model="data.case.participantCrash.addons"-->
-                       <!--checklist-value="$index"-->
-                <!--/>-->
-                <!--<label class="col-sm-11 form-group" for="'adn' + $index">-->
-                    <!--<input type="text"-->
+        <ul class="col-sm-12">
+            <li class="row p-rel" ng-repeat="item in addons track by $index">
+                <label class="col-sm-10">
+                    <input type="checkbox"
+                           class="col-sm-1"
+                           ng-model="item.active"
+                    />
+                    <span class="col-sm-11" ng-bind=" item.title "></span>
+                </label>
+                <label class="col-sm-2">
+                    <input type="number"
+                           min="0"
+                           class="form-control"
+                           ng-model="item.pages"
+                    />
+                </label>
+                <button class="btn btn-danger btn-delete-row"
+                        ng-click="deleteData($index)"
+                        ng-if="item.delete">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </li>
+            <!--<li class="row" ng-repeat="i in [0, 1, 2, 3, 4] track by $index">-->
+                <!--<div class="col-sm-10">-->
+                    <!--<input type="checkbox"-->
+                           <!--class="col-sm-1"-->
+                           <!--id="'adn' + $index"-->
+                           <!--checklist-model="data.case.participantCrash.addons"-->
+                           <!--checklist-value="$index"-->
+                    <!--/>-->
+                    <!--<label class="col-sm-11 form-group" for="'adn' + $index">-->
+                        <!--<input type="text"-->
+                               <!--class="form-control"-->
+                               <!--ng-model="$index"-->
+                        <!--/>-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<label class="col-sm-2 form-group">-->
+                    <!--<input type="number"-->
+                           <!--min="0"-->
                            <!--class="form-control"-->
-                           <!--ng-model="$index"-->
                     <!--/>-->
                 <!--</label>-->
-            <!--</div>-->
-            <!--<label class="col-sm-2 form-group">-->
-                <!--<input type="number"-->
-                       <!--min="0"-->
-                       <!--class="form-control"-->
-                <!--/>-->
-            <!--</label>-->
-        <!--</li>-->
-    </ul>
-    <div class="col-sm-12">
-        <form class="form-inline">
-            <label class="form-group">
-                <span>Назва документу</span>
-                <input type="text" class="form-control" ng-model="doc.title">
-            </label>
-            <button class="btn btn-success" ng-click="addDoc()">Додати документ</button>
-        </form>
+            <!--</li>-->
+        </ul>
+        <div class="col-sm-12">
+            <form class="form-inline">
+                <label class="form-group">
+                    <span>Назва документу</span>
+                    <input type="text" class="form-control" ng-model="doc.title">
+                </label>
+                <button class="btn btn-success" ng-click="addDoc()">Додати документ</button>
+            </form>
+        </div>
     </div>
-
 </div>
 
 <br/>
