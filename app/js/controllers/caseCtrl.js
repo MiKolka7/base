@@ -40,13 +40,11 @@ angular.module('baseApp.controller.case', [])
 
 
     $scope.openCaseItem = function (name, i) {
+        $scope.guiltyIndex = i;
         ngDialog.open({
             scope: $scope,
             template: 'template/case/case-item/' + name + '.html',
-            controller: $controller(name + 'Ctrl', {
-              $scope: $scope,
-              guiltyIndex: i
-            })
+            controller: name + 'Ctrl'
         });
     };
 
