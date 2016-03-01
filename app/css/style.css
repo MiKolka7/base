@@ -225,7 +225,8 @@ select {
     -webkit-appearance: button;
 }
 
-.btn-delete-row {
+.btn-delete-row,
+.btn-add-item {
     position: absolute;
     top: 0;
     left: 100%;
@@ -236,7 +237,8 @@ select {
 }
 
 tr:hover .btn-delete-row,
-li:hover .btn-delete-row {
+li:hover .btn-delete-row,
+div.panel-heading:hover .btn-add-item {
     opacity: 1;
     visibility: visible;
     transition: all 0.5s ease;

@@ -1,18 +1,18 @@
 angular.module('baseApp.controller.page.newCase', [])
-    .controller('newCaseCtrl', function ($rootScope, $scope, $http, Notification, SweetAlert, serializeDate) {
+    .controller('newCaseCtrl', function ($scope, $http, Notification, SweetAlert, serializeDate, $log) {
         "use strict";
 
         var table = 'base';
         var dbTable = angular.lowercase(table);
         var selectItemIndex = null;
-
+        //$log.info($scope);
 
         $http.get('http://localhost:2403/' + dbTable).success(function (data) {
-            $rootScope.data[table] = serializeDate(data);
+            $scope.data[table] = serializeDate(data);
             console.log(serializeDate(data));
 
-            if (_.isEmpty($rootScope.data[table]))
-                $rootScope.data[table] = [];
+            if (_.isEmpty($scope.data[table]))
+                $scope.data[table] = [];
         });
 
         // users
@@ -39,7 +39,7 @@ angular.module('baseApp.controller.page.newCase', [])
         };
 
         $scope.deleteData = function (i) {
-            var id = $rootScope.data[table][i].id;
+            var id = $scope.data[table][i].id;
 
             SweetAlert.swal({
                     title: "Видалити запис?",
@@ -54,13 +54,13 @@ angular.module('baseApp.controller.page.newCase', [])
                     if (isConfirm) {
                         $http.delete('http://localhost:2403/' + dbTable + '/' + id).success(function (data) {
                             if (data) {
-                                $rootScope.data[table].splice(selectItemIndex, 1);
+                                $scope.data[table].splice(selectItemIndex, 1);
                                 $scope[table] = {};
                                 $scope.isAdd = true;
                                 swal("Успішно!", "Запис видалено", "success");
 
-                                if (_.isEmpty($rootScope.data[table]))
-                                    $rootScope.data[table] = [];
+                                if (_.isEmpty($scope.data[table]))
+                                    $scope.data[table] = [];
                             }
                         }).error(function () {
                             swal("Відміна", "Сталася помилка", "error");
@@ -74,7 +74,7 @@ angular.module('baseApp.controller.page.newCase', [])
 
             $http.put('http://localhost:2403/' + dbTable + '/' + $scope[table].id, $scope[table]).success(function (data) {
                 if (data) {
-                    $rootScope.data[table][selectItemIndex] = serializeDate(data)[0];
+                    $scope.data[table][selectItemIndex] = serializeDate(data)[0];
                     Notification.success('Дані оновлено!');
                 }
             }).error(function () {
@@ -91,7 +91,7 @@ angular.module('baseApp.controller.page.newCase', [])
             }
 
             $http.post('http://localhost:2403/' + dbTable, $scope[table]).success(function (data) {
-                $rootScope.data[table].unshift(serializeDate(data)[0]);
+                $scope.data[table].unshift(serializeDate(data)[0]);
                 $scope[table] = {};
                 Notification.success('Запис додано!');
             }).error(function () {

@@ -16,7 +16,16 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash.carModel">
+                           ng-model="data.case.participantCrash[index].carBrand">
+                </span>
+            </label>
+
+            <label class="form-group">
+                <span class="col-sm-4 control-label text-left">Модель</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[index].carModel">
                 </span>
             </label>
 
@@ -25,7 +34,7 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash.carNumber">
+                           ng-model="data.case.participantCrash[index].carNumber">
                 </span>
             </label>
 
@@ -51,7 +60,7 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash.trafficRules">
+                           ng-model="data.case.participantCrash[index].trafficRules">
                 </span>
             </label>
 
@@ -60,7 +69,7 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash.protocol">
+                           ng-model="data.case.participantCrash[index].protocol">
                 </span>
             </label>
 
@@ -98,7 +107,7 @@
                     <span class="col-sm-8 col-padding-0">
                         <input type="date"
                                class="form-control"
-                               ng-model="data.case.participantCrash.judgmentDateOrder">
+                               ng-model="data.case.participantCrash[index].judgmentDateOrder">
                     </span>
                 </label>
 
@@ -107,7 +116,7 @@
                     <span class="col-sm-8 col-padding-0">
                         <input type="date"
                                class="form-control"
-                               ng-model="data.case.participantCrash.judgmentDate">
+                               ng-model="data.case.participantCrash[index].judgmentDate">
                     </span>
                 </label>
 
@@ -171,7 +180,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverSurname">
+                       ng-model="data.case.participantCrash[index].driverSurname">
             </span>
         </label>
 
@@ -180,7 +189,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverName">
+                       ng-model="data.case.participantCrash[index].driverName">
             </span>
         </label>
 
@@ -189,7 +198,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverName2">
+                       ng-model="data.case.participantCrash[index].driverName2">
             </span>
         </label>
 
@@ -213,7 +222,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverIndex">
+                       ng-model="data.case.participantCrash[index].driverIndex">
             </span>
         </label>
 
@@ -222,7 +231,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverStreet">
+                       ng-model="data.case.participantCrash[index].driverStreet">
             </span>
         </label>
 
@@ -231,7 +240,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverCity">
+                       ng-model="data.case.participantCrash[index].driverCity">
             </span>
         </label>
 
@@ -252,7 +261,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverCod">
+                       ng-model="data.case.participantCrash[index].driverCod">
             </span>
         </label>
 
@@ -268,7 +277,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="email"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverEmail">
+                       ng-model="data.case.participantCrash[index].driverEmail">
             </span>
         </label>
 
@@ -277,7 +286,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverMobile">
+                       ng-model="data.case.participantCrash[index].driverMobile">
             </span>
         </label>
 
@@ -286,7 +295,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverWorkplace">
+                       ng-model="data.case.participantCrash[index].driverWorkplace">
             </span>
         </label>
 
@@ -295,7 +304,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.driverPosition">
+                       ng-model="data.case.participantCrash[index].driverPosition">
             </span>
         </label>
 
@@ -324,7 +333,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.claimNum">
+                       ng-model="data.case.participantCrash[index].claimNum">
             </span>
         </label>
 
@@ -333,7 +342,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash.claimDate">
+                       ng-model="data.case.participantCrash[index].claimDate">
             </span>
         </label>
 
@@ -342,7 +351,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash.claimDateDelivery">
+                       ng-model="data.case.participantCrash[index].claimDateDelivery">
             </span>
         </label>
 
@@ -454,7 +463,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.polisy">
+                       ng-model="data.case.participantCrash[index].polisy">
             </span>
         </label>
 
@@ -463,7 +472,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.limit">
+                       ng-model="data.case.participantCrash[index].limit">
             </span>
         </label>
 
@@ -476,7 +485,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.franchise">
+                       ng-model="data.case.participantCrash[index].franchise">
             </span>
         </label>
 
@@ -485,7 +494,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash.numberCaseIC">
+                       ng-model="data.case.participantCrash[index].numberCaseIC">
             </span>
         </label>
 
@@ -505,7 +514,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.claimICNum">
+                       ng-model="data.case.participantCrash[index].claimICNum">
             </span>
         </label>
 
@@ -514,7 +523,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash.claimICDate">
+                       ng-model="data.case.participantCrash[index].claimICDate">
             </span>
         </label>
 
@@ -523,7 +532,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash.claimICDateDelivery">
+                       ng-model="data.case.participantCrash[index].claimICDateDelivery">
             </span>
         </label>
 
@@ -532,7 +541,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash.controlDate">
+                       ng-model="data.case.participantCrash[index].controlDate">
             </span>
         </label>
 
@@ -567,7 +576,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerSurname">
+                       ng-model="data.case.participantCrash[index].ownerSurname">
             </span>
         </label>
 
@@ -576,7 +585,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerName">
+                       ng-model="data.case.participantCrash[index].ownerName">
             </span>
         </label>
 
@@ -585,7 +594,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerName2">
+                       ng-model="data.case.participantCrash[index].ownerName2">
             </span>
         </label>
 
@@ -608,7 +617,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerIndex">
+                       ng-model="data.case.participantCrash[index].ownerIndex">
             </span>
         </label>
 
@@ -617,7 +626,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerStreet">
+                       ng-model="data.case.participantCrash[index].ownerStreet">
             </span>
         </label>
 
@@ -626,7 +635,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerCity">
+                       ng-model="data.case.participantCrash[index].ownerCity">
             </span>
         </label>
 
@@ -647,7 +656,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerCod">
+                       ng-model="data.case.participantCrash[index].ownerCod">
             </span>
         </label>
 
@@ -663,7 +672,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="email"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerEmail">
+                       ng-model="data.case.participantCrash[index].ownerEmail">
             </span>
         </label>
 
@@ -672,7 +681,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerMobile">
+                       ng-model="data.case.participantCrash[index].ownerMobile">
             </span>
         </label>
 
@@ -681,7 +690,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerWorkplace">
+                       ng-model="data.case.participantCrash[index].ownerWorkplace">
             </span>
         </label>
 
@@ -690,7 +699,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash.ownerPosition">
+                       ng-model="data.case.participantCrash[index].ownerPosition">
             </span>
         </label>
 

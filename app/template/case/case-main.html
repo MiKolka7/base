@@ -36,12 +36,17 @@
         </div>
     </div>
 
-    <div class="case-section-item">
+    <div class="case-section-item"
+            ng-repeat="item in guilty.collection track by $index">
         <div class="panel panel-success">
-            <div class="panel-heading"
-                 ng-click="openCaseItem('guilty')">
-                Винуватець (учасник ДТП)
+            <div class="panel-heading p-rel"
+                 ng-click="openCaseItem('guilty', $index)">
+                Винуватець {{$index + 1}} (учасник ДТП)
                 <i class="glyphicon glyphicon-pencil pull-right"></i>
+                <button class="btn btn-success btn-add-item"
+                        ng-click="addNewGuilty($event)">
+                    <i class="glyphicon glyphicon-plus-sign"></i>
+                </button>
             </div>
 
             <table class="table">

@@ -1,4 +1,4 @@
-angular.module('baseApp.controller.app', []).controller('appCtrl', function ($rootScope, $scope, $http, serializeDate) {
+angular.module('baseApp.controller.app', []).controller('appCtrl', function ($scope, $http, serializeDate) {
     "use strict";
 
     //$http.get('/json/vdai.json').success(function(data){
@@ -16,7 +16,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($ro
     };
 
 
-    $rootScope.data = {
+    $scope.data = {
         base: {
             f2Region: 10,
             f2Status: "-1"
@@ -38,10 +38,10 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($ro
 
     _.forEach(additionalTables, function(table) {
         $http.get('http://localhost:2403/' + table.toLowerCase()).success(function (data) {
-            $rootScope.data[table] = serializeDate(data);
+            $scope.data[table] = serializeDate(data);
 
-            if (_.isEmpty($rootScope.data[table]))
-                $rootScope.data[table] = [];
+            if (_.isEmpty($scope.data[table]))
+                $scope.data[table] = [];
         });
     });
 
@@ -71,7 +71,7 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($ro
         //$scope.data.base.numberInsuranceContract = String(a);
     //});
 
-    $rootScope.regions = [
+    $scope.regions = [
         {
             id: 0,
             name: 'АР Крим'

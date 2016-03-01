@@ -13,7 +13,8 @@ angular.module('baseApp.controller.aside', [])
 
             ngDialog.open({
                 template: 'template/page/' + name + '.html',
-                controller: ctrl + 'Ctrl'
+                controller: ctrl + 'Ctrl',
+                scope: $scope
             });
         };
 
