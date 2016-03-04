@@ -1,6 +1,6 @@
 angular.module('baseApp.controller.main', [])
-    .controller('mainCtrl', function($scope, Notification){
+    .controller('mainCtrl', function($scope, Notification, $log){
     "use strict";
-
+      $log.info($scope.data);
 
 });

@@ -13,10 +13,8 @@ angular.module('baseApp.controller.case', [])
         alert(a);
     };
 
-    $scope.guilty = {
-      collection: [
-        {}
-      ]
+    $scope.stopEventPropagation = function (e) {
+      e.stopPropagation();
     };
 
     $scope.addNewGuilty = function (e) {
@@ -24,6 +22,7 @@ angular.module('baseApp.controller.case', [])
 
         SweetAlert.swal({
             title: "Додати нового учасника ДТП?",
+            type: "info",
             showCancelButton: true,
             cancelButtonText: "Відміна",
             showLoaderOnConfirm: true,
@@ -31,8 +30,31 @@ angular.module('baseApp.controller.case', [])
           },
           function (isConfirm) {
             if (isConfirm) {
-              $scope.guilty.collection.push({});
+              $scope.data.case.participantCrash.push({});
+              $scope.data.case.insuranceCompany.push({});
             }
+          });
+    };
+
+    $scope.deleteGuilty = function (e, i) {
+        e.stopPropagation();
+
+        SweetAlert.swal({
+            title: "Видалити учасника ДТП?",
+            text: "Відновити буде неможливо!",
+            type: "warning",
+            showCancelButton: true,
+            cancelButtonText: "Відміна",
+            showLoaderOnConfirm: true,
+            closeOnConfirm: true
+          },
+          function (isConfirm) {
+            if (isConfirm && i) {
+              $scope.data.case.participantCrash.splice(i, 1);
+              $scope.data.case.insuranceCompany.splice(i, 1);
+            }
+          }).error(function () {
+            swal("Відміна", "Сталася помилка", "error");
           });
 
     };

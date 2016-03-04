@@ -21,8 +21,15 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($sc
             f2Region: 10,
             f2Status: "-1"
         },
-        case: {}
+        case: {
+        }
     };
+
+    // making ng-repeat create first item of Guilty & Insurance company @case-main.html
+    if(!($scope.data.case.participantCrash)){
+        $scope.data.case.participantCrash = [{}];
+        $scope.data.case.insuranceCompany = [{}];
+    }
 
     var additionalTables = [
         'vdai',

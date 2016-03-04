@@ -37,39 +37,48 @@
     </div>
 
     <div class="case-section-item"
-            ng-repeat="item in guilty.collection track by $index">
+            ng-repeat="item in data.case.participantCrash track by $index">
         <div class="panel panel-success">
-            <div class="panel-heading p-rel"
+            <div class="panel-heading p-rel panel-heading-settings"
                  ng-click="openCaseItem('guilty', $index)">
                 Винуватець {{$index + 1}} (учасник ДТП)
-                <i class="glyphicon glyphicon-pencil pull-right"></i>
-                <button class="btn btn-success btn-add-item"
-                        ng-click="addNewGuilty($event)">
-                    <i class="glyphicon glyphicon-plus-sign"></i>
-                </button>
+                <i class="glyphicon glyphicon-pencil"></i>
+                <div class="table-settings"
+                        ng-click="stopEventPropagation($event)">
+                    <i class="glyphicon glyphicon-cog pull-right glyphicon-settings"></i>
+                    <button class="btn btn-success btn-add-item" title="Додати ще одного винуватця"
+                            ng-click="addNewGuilty($event)">
+                        <i class="glyphicon glyphicon-plus-sign"></i>
+                    </button>
+                    <button class="btn btn-danger btn-delete-item" title="Видалити винуватця"
+                            ng-if="$index"
+                            ng-click="deleteGuilty($event, $index)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                </div>
             </div>
 
             <table class="table">
                 <tbody>
                     <tr>
                         <td>Авто:</td>
-                        <td ng-bind="data.case.participantCrash.carModel"></td>
+                        <td ng-bind-template="{{data.case.participantCrash[$index].carBrand}} {{data.case.participantCrash[$index].carModel}}"></td>
                     </tr>
                     <tr>
                         <td>Д.р.н.:</td>
-                        <td ng-bind="data.case.participantCrash.carNumber"></td>
+                        <td ng-bind="data.case.participantCrash[$index].carNumber"></td>
                     </tr>
                     <tr>
                         <td>Прізвище:</td>
-                        <td ng-bind="data.case.participantCrash.driverSurname"></td>
+                        <td ng-bind="data.case.participantCrash[$index].driverSurname"></td>
                     </tr>
                     <tr>
                         <td>Ім'я:</td>
-                        <td ng-bind="data.case.participantCrash.driverName"></td>
+                        <td ng-bind="data.case.participantCrash[$index].driverName"></td>
                     </tr>
                     <tr>
                         <td>По-батькові:</td>
-                        <td ng-bind="data.case.participantCrash.driverName2"></td>
+                        <td ng-bind="data.case.participantCrash[$index].driverName2"></td>
                     </tr>
                 </tbody>
             </table>
@@ -196,11 +205,12 @@
         </div>
     </div>
 
-    <div class="case-section-item">
+    <div class="case-section-item"
+         ng-repeat="item in data.case.insuranceCompany track by $index">
         <div class="panel panel-success">
             <div class="panel-heading"
                  ng-click="openCaseItem('insuranceCompany')">
-                Страхова компанія
+                Страхова компанія {{$index + 1}}
                 <i class="glyphicon glyphicon-pencil pull-right"></i>
             </div>
 
