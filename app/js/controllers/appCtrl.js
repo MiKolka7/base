@@ -1,4 +1,4 @@
-angular.module('baseApp.controller.app', []).controller('appCtrl', function ($scope, $http, serializeDate) {
+angular.module('baseApp.controller.app', []).controller('appCtrl', function ($scope, $http, serializeDate, $log) {
     "use strict";
 
     //$http.get('/json/vdai.json').success(function(data){
@@ -6,6 +6,22 @@ angular.module('baseApp.controller.app', []).controller('appCtrl', function ($sc
     //
     //    data.forEach(function(item){
     //        $http.post('http://localhost:2403/vdai', item).success(function(data){});
+    //    });
+    //});
+
+    //$http.get('/json/district-court.json').success(function(data){
+    //    console.log(data);
+    //
+    //    data.forEach(function(item){
+    //        $http.post('http://localhost:2403/districtcourt', item).success(function(data){});
+    //    });
+    //});
+
+    //$http.get('/json/insurance-company.json').success(function(data){
+    //    console.log(data);
+    //
+    //    data.forEach(function(item){
+    //        $http.post('http://localhost:2403/insurancecompany', item).success(function(data){});
     //    });
     //});
 

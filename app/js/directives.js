@@ -50,6 +50,19 @@ angular.module('baseApp.directive.case', [])
         }
     })
 
+    .directive('toggleBlock', function() {
+        return {
+            restrict: 'A',
+            scope: true,
+            link: function (scope) {
+                scope.toggleBlock = function () {
+                    this.toggleInput = !this.toggleInput;
+                    return this.toggleInput;
+                };
+            }
+        }
+    })
+
 
     .directive('caseMain', function() {
         return {
@@ -64,7 +77,7 @@ angular.module('baseApp.directive.aside', [])
     .directive('aside', function(ngDialog) {
         return {
             restrict: 'A',
-            templateUrl: 'template/aside.html',
+            templateUrl: 'template/aside.html'
         }
     })
 

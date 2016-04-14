@@ -9,12 +9,12 @@
 			"id": "starckNumber",
 			"order": 0
 		},
-		"partDipanStatus": {
-			"name": "partDipanStatus",
+		"participantStatus": {
+			"name": "participantStatus",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "partDipanStatus",
+			"id": "participantStatus",
 			"order": 1
 		},
 		"carBrand": {
@@ -97,12 +97,12 @@
 			"id": "driverPosition",
 			"order": 11
 		},
-		"driverlndex": {
-			"name": "driverlndex",
+		"driverIndex": {
+			"name": "driverIndex",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "driverlndex",
+			"id": "driverIndex",
 			"order": 12
 		},
 		"driverStreet": {
@@ -217,12 +217,12 @@
 			"id": "ownerCjd",
 			"order": 26
 		},
-		"ownerlndex": {
-			"name": "ownerlndex",
+		"ownerIndex": {
+			"name": "ownerIndex",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "ownerlndex",
+			"id": "ownerIndex",
 			"order": 27
 		},
 		"ownerStreet": {
@@ -337,12 +337,12 @@
 			"id": "claimNumber",
 			"order": 41
 		},
-		"claimData": {
-			"name": "claimData",
+		"claimDate": {
+			"name": "claimDate",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "claimData",
+			"id": "claimDate",
 			"order": 42
 		},
 		"claimDateDelivery": {
@@ -408,6 +408,94 @@
 			"required": false,
 			"id": "numberCaseIC",
 			"order": 50
-		}
+		},
+	  "driverBirthDate": {
+		"name": "driverBirthDate",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "driverBirthDate",
+		"order": 51
+	  },
+	  "ownerBirthDate": {
+		"name": "ownerBirthDate",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "ownerBirthDate",
+		"order": 52
+	  },
+	  "driverRegion": {
+		"name": "driverRegion",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "driverRegion",
+		"order": 53
+	  },
+	  "driverDistrict": {
+		"name": "driverDistrict",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "driverDistrict",
+		"order": 54
+	  },
+	  "franchiseClaimNuber": {
+		"name": "franchiseClaimNuber",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "franchiseClaimNuber",
+		"order": 55
+	  },
+	  "franchiseClaimDate": {
+		"name": "franchiseClaimDate",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "franchiseClaimDate",
+		"order": 56
+	  },
+	  "franchiseClaimDateDelivery": {
+		"name": "franchiseClaimDateDelivery",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "franchiseClaimDateDelivery",
+		"order": 57
+	  },
+	  "differenceClaimNuber": {
+		"name": "differenceClaimNuber",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "differenceClaimNuber",
+		"order": 58
+	  },
+	  "differenceClaimDate": {
+		"name": "differenceClaimDate",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "differenceClaimDate",
+		"order": 59
+	  },
+	  "differenceClaimDateDelivery": {
+		"name": "differenceClaimDateDelivery",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "differenceClaimDateDelivery",
+		"order": 60
+	  },
+	  "provider": {
+		"name": "provider",
+		"type": "string",
+		"typeLabel": "string",
+		"required": false,
+		"id": "provider",
+		"order": 61
+	  }
 	}
 }

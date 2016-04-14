@@ -9,14 +9,16 @@
 
         <div class="col-sm-12">
 
-            <h4 class="case-item-title">Автомобіль</h4>
+            <h4 class="case-item-title">
+                Автомобіль
+            </h4>
 
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">Марка</span>
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash[index].carBrand">
+                           ng-model="data.case.participantCrash[guiltyIndex].carBrand">
                 </span>
             </label>
 
@@ -25,7 +27,7 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash[index].carModel">
+                           ng-model="data.case.participantCrash[guiltyIndex].carModel">
                 </span>
             </label>
 
@@ -34,7 +36,7 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash[index].carNumber">
+                           ng-model="data.case.participantCrash[guiltyIndex].carNumber">
                 </span>
             </label>
 
@@ -42,15 +44,17 @@
 
         <div class="col-sm-12">
 
-            <h4 class="case-item-title">Інфо</h4>
+            <h4 class="case-item-title"
+                ng-click="toggleBlock()">Інфо</h4>
 
             <label class="form-group">
                 <span class="col-sm-4 control-label text-left">Статус учасника</span>
                 <span class="col-sm-8 col-padding-0">
-                    <select class="form-control">
-                        <option value="КАСКО" selected="selected">КАСКО</option>
-                        <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
-                        <option value="Майно">Майно</option>
+                    <select class="form-control"
+                            ng-model="data.case.participantCrash[guiltyIndex].participantStatus">
+                        <option value="option 1" selected="selected">Статус 1</option>
+                        <option value="option 2">Статус 2</option>
+                        <option value="option 3">Статус 3</option>
                     </select>
                 </span>
             </label>
@@ -60,7 +64,7 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash[index].trafficRules">
+                           ng-model="data.case.participantCrash[guiltyIndex].trafficRules">
                 </span>
             </label>
 
@@ -69,7 +73,7 @@
                 <span class="col-sm-8 col-padding-0">
                     <input type="text"
                            class="form-control"
-                           ng-model="data.case.participantCrash[index].protocol">
+                           ng-model="data.case.participantCrash[guiltyIndex].protocol">
                 </span>
             </label>
 
@@ -94,10 +98,11 @@
                 <label class="form-group">
                     <span class="col-sm-4 control-label text-left">Статус (наявність)</span>
                     <span class="col-sm-8 col-padding-0">
-                        <select class="form-control">
-                            <option value="КАСКО" selected="selected">КАСКО</option>
-                            <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
-                            <option value="Майно">Майно</option>
+                        <select class="form-control"
+                                ng-model="data.case.participantCrash[guiltyIndex].judgmentStatus">
+                            <option value="-1">Замовити</option>
+                            <option value="0">Замовлено</option>
+                            <option value="1">Отримано</option>
                         </select>
                     </span>
                 </label>
@@ -107,7 +112,7 @@
                     <span class="col-sm-8 col-padding-0">
                         <input type="date"
                                class="form-control"
-                               ng-model="data.case.participantCrash[index].judgmentDateOrder">
+                               ng-model="data.case.participantCrash[guiltyIndex].judgmentDateOrder">
                     </span>
                 </label>
 
@@ -116,7 +121,7 @@
                     <span class="col-sm-8 col-padding-0">
                         <input type="date"
                                class="form-control"
-                               ng-model="data.case.participantCrash[index].judgmentDate">
+                               ng-model="data.case.participantCrash[guiltyIndex].judgmentDate">
                     </span>
                 </label>
 
@@ -127,10 +132,12 @@
                 <label class="form-group">
                     <span class="col-sm-4 control-label text-left">Регіон суд</span>
                     <span class="col-sm-8 col-padding-0">
-                        <select class="form-control">
-                            <option value="КАСКО" selected="selected">КАСКО</option>
-                            <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
-                            <option value="Майно">Майно</option>
+                        <select class="form-control"
+                                ng-model="data.case.participantCrash[guiltyIndex].courtRegion">
+                            <option ng-repeat="item in data.districtCourt | unique : 'region'"
+                                    ng-click="selectOption(item, 'region')"
+                                    ng-bind="::regions[item].name">
+                            </option>
                         </select>
                     </span>
                 </label>
@@ -138,10 +145,11 @@
                 <label class="form-group">
                     <span class="col-sm-4 control-label text-left">Назва суд</span>
                     <span class="col-sm-8 col-padding-0">
-                        <select class="form-control">
-                            <option value="КАСКО" selected="selected">КАСКО</option>
-                            <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
-                            <option value="Майно">Майно</option>
+                        <select class="form-control"
+                                ng-model="data.case.participantCrash[guiltyIndex].courtName">
+                            <option ng-repeat="item in data.districtCourt | exactlyFilter : selectKey : selectValue"
+                                    ng-bind="::item.name">
+                            </option>
                         </select>
                     </span>
                 </label>
@@ -161,259 +169,310 @@
 
 <div class="row">
 
-    <h4 class="col-sm-12 case-item-title">
-        Водій
-        <button class="btn btn-default pull-right" type="button">
-            <i class="glyphicon glyphicon-file"></i>
-            ДВС
-        </button>
-        <button class="btn btn-default pull-right" type="button">
-            <i class="glyphicon glyphicon-file"></i>
-            Позов
-        </button>
-    </h4>
+    <div class="toggle-block"
+         toggle-block>
+        <h4 class="col-sm-12 case-item-title"
+            ng-click="toggleBlock()">
+            Водій
+            <button class="btn btn-default pull-right" type="button">
+                <i class="glyphicon glyphicon-file"></i>
+                ДВС
+            </button>
+            <button class="btn btn-default pull-right" type="button">
+                <i class="glyphicon glyphicon-file"></i>
+                Позов
+            </button>
+        </h4>
 
-    <div class="col-sm-4">
+        <div class="col-sm-4">
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Прізвище</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverSurname">
-            </span>
-        </label>
+            <label class="form-group">
+                <span class="col-sm-4 control-label text-left">Прізвище</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverSurname">
+                </span>
+            </label>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Ім'я</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverName">
-            </span>
-        </label>
+            <label class="form-group">
+                <span class="col-sm-4 control-label text-left">Ім'я</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverName">
+                </span>
+            </label>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">По батькові</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverName2">
-            </span>
-        </label>
+            <label class="form-group">
+                <span class="col-sm-4 control-label text-left">По батькові</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverName2">
+                </span>
+            </label>
 
-        <br/>
-        <br/>
-
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Регіон</span>
-            <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
-                    <option value="КАСКО" selected="selected">КАСКО</option>
-                    <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
-                    <option value="Майно">Майно</option>
-                </select>
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Індекс</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverIndex">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Вулиця</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverStreet">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Село/місто</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverCity">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Район</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
-            </span>
-        </label>
+            <br/>
+            <br/>
 
 
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverRegion">
+                <span class="col-sm-4 control-label text-left">Регіон</span>
+                <span class="col-sm-8 col-padding-0">
+                    <select class="form-control"
+                            ng-options="item.id as item.name for item in regions"
+                            ng-model="data.case.participantCrash[guiltyIndex].driverRegion">
+                    </select>
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverIndex">
+                <span class="col-sm-4 control-label text-left">Індекс</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverIndex">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverStreet">
+                <span class="col-sm-4 control-label text-left">Вулиця</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverStreet">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverCity">
+                <span class="col-sm-4 control-label text-left">Село/місто</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverCity">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverDistrict">
+                <span class="col-sm-4 control-label text-left">Район</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverDistrict">
+                </span>
+            </label>
+
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverCod">
+                <span class="col-sm-4 control-label text-left">ІПН</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverCod">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverBirthDate">
+                <span class="col-sm-4 control-label text-left">Дата нар.</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="date"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverBirthDate">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverEmail">
+                <span class="col-sm-4 control-label text-left">Email</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="email"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverEmail">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverMobile">
+                <span class="col-sm-4 control-label text-left">Тел. моб</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverMobile">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverWorkplace">
+                <span class="col-sm-4 control-label text-left">Місце роботи</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverWorkplace">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverPosition">
+                <span class="col-sm-4 control-label text-left">Посада</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverPosition">
+                </span>
+            </label>
+
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].driverPhone">
+                <span class="col-sm-4 control-label text-left">Тел. роб.</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].driverPhone">
+                </span>
+            </label>
+
+        </div>
     </div>
 
     <div class="col-sm-4">
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">ІПН</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverCod">
-            </span>
-        </label>
+        <div class="toggle-block"
+             toggle-block>
+            <h4 class="case-item-title"
+                ng-click="toggleBlock()">
+                Претензія на всю суму
+                <button class="btn btn-default pull-right" type="button">
+                    <i class="glyphicon glyphicon-file"></i>
+                    Претензія
+                </button>
+            </h4>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Дата нар.</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
-            </span>
-        </label>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].claimNumber">
+                <span class="col-sm-4 control-label text-left">№</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].claimNumber">
+                </span>
+            </label>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Email</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="email"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverEmail">
-            </span>
-        </label>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].claimDate">
+                <span class="col-sm-4 control-label text-left">Дата</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="date"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].claimDate">
+                </span>
+            </label>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Тел. моб</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverMobile">
-            </span>
-        </label>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].claimDateDelivery">
+                <span class="col-sm-4 control-label text-left">Дата вручення</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="date"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].claimDateDelivery">
+                </span>
+            </label>
+        </div>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Місце роботи</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverWorkplace">
-            </span>
-        </label>
+        <div class="toggle-block"
+             toggle-block>
+            <h4 class="case-item-title"
+                ng-click="toggleBlock()">
+                Претензія на франшизу
+                <button class="btn btn-default pull-right" type="button">
+                    <i class="glyphicon glyphicon-file"></i>
+                    Претензія
+                </button>
+            </h4>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Посада</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].driverPosition">
-            </span>
-        </label>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].franchiseClaimNuber">
+                <span class="col-sm-4 control-label text-left">№</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].franchiseClaimNuber">
+                </span>
+            </label>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Тел. роб.</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
-            </span>
-        </label>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].franchiseClaimDate">
+                <span class="col-sm-4 control-label text-left">Дата</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="date"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].franchiseClaimDate">
+                </span>
+            </label>
 
-    </div>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].franchiseClaimDateDelivery">
+                <span class="col-sm-4 control-label text-left">Дата вручення</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="date"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].franchiseClaimDateDelivery">
+                </span>
+            </label>
+        </div>
 
+        <div class="toggle-block"
+             toggle-block>
+            <h4 class="case-item-title"
+                ng-click="toggleBlock()">
+                Претензія на різницю
+                <button class="btn btn-default pull-right" type="button">
+                    <i class="glyphicon glyphicon-file"></i>
+                    Претензія
+                </button>
+            </h4>
 
-    <div class="col-sm-4">
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].differenceClaimNuber">
+                <span class="col-sm-4 control-label text-left">№</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="text"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].differenceClaimNuber">
+                </span>
+            </label>
 
-        <h4 class="case-item-title">
-            Претензія на всю суму
-            <button class="btn btn-default pull-right" type="button">
-                <i class="glyphicon glyphicon-file"></i>
-                Претензія
-            </button>
-        </h4>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].differenceClaimDate">
+                <span class="col-sm-4 control-label text-left">Дата</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="date"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].differenceClaimDate">
+                </span>
+            </label>
 
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">№</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].claimNum">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Дата</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="date"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].claimDate">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Дата вручення</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="date"
-                       class="form-control"
-                       ng-model="data.case.participantCrash[index].claimDateDelivery">
-            </span>
-        </label>
-
-
-        <h4 class="case-item-title">
-            Претензія на франшизу
-            <button class="btn btn-default pull-right" type="button">
-                <i class="glyphicon glyphicon-file"></i>
-                Претензія
-            </button>
-        </h4>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">№</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Дата</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Дата вручення</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
-            </span>
-        </label>
-
-
-        <h4 class="case-item-title">
-            Претензія на різницю
-            <button class="btn btn-default pull-right" type="button">
-                <i class="glyphicon glyphicon-file"></i>
-                Претензія
-            </button>
-        </h4>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">№</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Дата</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
-            </span>
-        </label>
-
-        <label class="form-group">
-            <span class="col-sm-4 control-label text-left">Дата вручення</span>
-            <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
-            </span>
-        </label>
+            <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].differenceClaimDateDelivery">
+                <span class="col-sm-4 control-label text-left">Дата вручення</span>
+                <span class="col-sm-8 col-padding-0">
+                    <input type="date"
+                           class="form-control"
+                           ng-model="data.case.participantCrash[guiltyIndex].differenceClaimDateDelivery">
+                </span>
+            </label>
+        </div>
 
 
     </div>
@@ -427,9 +486,11 @@
 <br/>
 
 
-<div class="row">
+<div class="row"
+     toggle-block>
 
-    <h4 class="col-sm-12 case-item-title">
+    <h4 class="col-sm-12 case-item-title"
+        ng-click="toggleBlock()">
         Страхова компанія
         <button class="btn btn-default pull-right" type="button">
             <i class="glyphicon glyphicon-file"></i>
@@ -450,29 +511,32 @@
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Назва</span>
             <span class="col-sm-8 col-padding-0">
-                <select class="form-control">
-                    <option value="КАСКО" selected="selected">КАСКО</option>
-                    <option value="ОСЦПВВНТЗ">ОСЦПВВНТЗ</option>
-                    <option value="Майно">Майно</option>
+                <select class="form-control"
+                        ng-model="data.case.participantCrash[guiltyIndex].insuranceCompany">
+                    <option ng-repeat="item in data.insuranceCompany"
+                            ng-bind="::item.name">
+                    </option>
                 </select>
             </span>
         </label>
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].polisy">
             <span class="col-sm-4 control-label text-left">Поліс</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].polisy">
+                       ng-model="data.case.participantCrash[guiltyIndex].polisy">
             </span>
         </label>
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].limit">
             <span class="col-sm-4 control-label text-left">Ліміт</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].limit">
+                       ng-model="data.case.participantCrash[guiltyIndex].limit">
             </span>
         </label>
 
@@ -480,28 +544,33 @@
 
     <div class="col-sm-4">
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].franchise">
             <span class="col-sm-4 control-label text-left">Франшиза</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].franchise">
+                       ng-model="data.case.participantCrash[guiltyIndex].franchise">
             </span>
         </label>
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].numberCaseIC">
             <span class="col-sm-4 control-label text-left">№ справи</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].numberCaseIC">
+                       ng-model="data.case.participantCrash[guiltyIndex].numberCaseIC">
             </span>
         </label>
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].provider">
             <span class="col-sm-4 control-label text-left">Виконавець</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash[guiltyIndex].provider">
             </span>
         </label>
 
@@ -509,39 +578,43 @@
 
     <div class="col-sm-4">
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].claimICNum">
             <span class="col-sm-4 control-label text-left">№</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].claimICNum">
+                       ng-model="data.case.participantCrash[guiltyIndex].claimICNum">
             </span>
         </label>
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].claimICDate">
             <span class="col-sm-4 control-label text-left">Дата</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].claimICDate">
+                       ng-model="data.case.participantCrash[guiltyIndex].claimICDate">
             </span>
         </label>
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].claimICDateDelivery">
             <span class="col-sm-4 control-label text-left">Дата вруч.</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].claimICDateDelivery">
+                       ng-model="data.case.participantCrash[guiltyIndex].claimICDateDelivery">
             </span>
         </label>
 
-        <label class="form-group">
+        <label class="form-group"
+                   ng-if="toggleInput || data.case.participantCrash[guiltyIndex].controlDate">
             <span class="col-sm-4 control-label text-left">Конт. дата</span>
             <span class="col-sm-8 col-padding-0">
                 <input type="date"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].controlDate">
+                       ng-model="data.case.participantCrash[guiltyIndex].controlDate">
             </span>
         </label>
 
@@ -576,7 +649,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerSurname">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerSurname">
             </span>
         </label>
 
@@ -585,7 +658,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerName">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerName">
             </span>
         </label>
 
@@ -594,7 +667,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerName2">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerName2">
             </span>
         </label>
 
@@ -617,7 +690,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerIndex">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerIndex">
             </span>
         </label>
 
@@ -626,7 +699,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerStreet">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerStreet">
             </span>
         </label>
 
@@ -635,7 +708,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerCity">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerCity">
             </span>
         </label>
 
@@ -656,14 +729,16 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerCod">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerCod">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Дата нар.</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="date" class="form-control">
+                <input type="date"
+                       class="form-control"
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerBirthDate">
             </span>
         </label>
 
@@ -672,7 +747,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="email"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerEmail">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerEmail">
             </span>
         </label>
 
@@ -681,7 +756,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerMobile">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerMobile">
             </span>
         </label>
 
@@ -690,7 +765,7 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerWorkplace">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerWorkplace">
             </span>
         </label>
 
@@ -699,14 +774,16 @@
             <span class="col-sm-8 col-padding-0">
                 <input type="text"
                        class="form-control"
-                       ng-model="data.case.participantCrash[index].ownerPosition">
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerPosition">
             </span>
         </label>
 
         <label class="form-group">
             <span class="col-sm-4 control-label text-left">Тел. роб.</span>
             <span class="col-sm-8 col-padding-0">
-                <input type="text" class="form-control">
+                <input type="text"
+                       class="form-control"
+                       ng-model="data.case.participantCrash[guiltyIndex].ownerPhone">
             </span>
         </label>
 
